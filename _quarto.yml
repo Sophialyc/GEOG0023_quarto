@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "GEOG0023 -- Learning Diary"
+  author: "Ling Yi Cheung"
+  date: "1/19/2023"
+  chapters:
+    - index.qmd
+    - Week1.qmd
+    - Week2.qmd
+    - Week3.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

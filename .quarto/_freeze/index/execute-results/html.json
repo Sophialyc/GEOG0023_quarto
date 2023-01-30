@@ -1,0 +1,14 @@
+{
+  "hash": "3b843f9ff571c52c3f3a0ac6a95abab8",
+  "result": {
+    "markdown": "# Welcome {.unnumbered}\n\nThis is a Quarto book of learning diary of CASA0023 Remotely Sensing Cities and Environments.\n\nTo learn more about Quarto books visit <https://quarto.org/docs/books>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

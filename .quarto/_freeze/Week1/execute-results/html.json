@@ -1,0 +1,16 @@
+{
+  "hash": "6b109624e6e9eba80c69740ceeafa735",
+  "result": {
+    "markdown": "---\ntitle: \"Week 1\"\n---\n\n\n## Summary of Lecture 1\n\nThere are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.\n\n-   Active Sensors: reflect light emitted from the sun\n\n-   Passive Sensors:\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](../../../Screenshot 2023-01-25 at 9.25.21 PM.png){fig-align='center' width=60%}\n:::\n:::\n\n\n\\\n",
+    "supporting": [
+      "Week1_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

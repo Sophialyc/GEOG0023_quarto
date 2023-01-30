@@ -1,0 +1,7 @@
+# Welcome {.unnumbered}
+
+This is a Quarto book of learning diary of CASA0023 Remotely Sensing Cities and Environments.
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+For each week, there will be summary and application example, followed by a reflection, please enjoy.

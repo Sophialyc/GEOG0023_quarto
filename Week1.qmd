@@ -1,0 +1,18 @@
+---
+title: "Week 1"
+---
+
+## Summary of Lecture 1
+
+There are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.
+
+-   Active Sensors: reflect light emitted from the sun
+
+-   Passive Sensors:
+
+```{r  echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("/Users/sophiac/Desktop/Screenshot 2023-01-25 at 9.25.21 PM.png")
+
+```
+
+\
