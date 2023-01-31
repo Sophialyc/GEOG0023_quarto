@@ -11,7 +11,7 @@ There are different types of remote sensing, the differentiation of different ty
 -   Passive Sensors:
 
 ```{r echo=FALSE, out.width = "70%", fig.align='center', cache=TRUE}
-knitr::include_graphics("/Users/sophiac/Desktop/Remotely sensing/Week1/qgis.png")
+knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week1/qgis.png')
 ```
 
 \
