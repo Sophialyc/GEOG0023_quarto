@@ -1,7 +1,7 @@
 {
-  "hash": "a0df61f68b9fa76d3772e224c5737d04",
+  "hash": "49d910acf67a3d6f37673e4849f0b559",
   "result": {
-    "markdown": "---\ntitle: \"Week 1\"\n---\n\n\n## Summary of Lecture 1\n\nThere are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.\n\n-   Active Sensors: reflect light emitted from the sun\n\n-   Passive Sensors:\n\n\n::: {.cell layout-align=\"center\" hash='Week1_cache/html/unnamed-chunk-1_029bda6ac788fa76988e773b55d2bdbb'}\n::: {.cell-output-display}\n![](../../Week1/qgis.png){fig-align='center' width=70%}\n:::\n:::\n\n\n\\\n",
+    "markdown": "---\ntitle: \"Week 1\"\n---\n\n\n## Summary of Lecture 1\n\nThere are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.\n\n-   Active Sensors: Illuminates target object\n\n    Actively sends pulses and measure the backscatter reflected to the sensor\n\n-   Passive Sensors: Detects and reflect light emitted from the sun\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](../../Week1/qgis.png){fig-align='center' width=100%}\n:::\n:::\n\n\n\\\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

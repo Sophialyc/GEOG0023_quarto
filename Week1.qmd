@@ -6,11 +6,13 @@ title: "Week 1"
 
 There are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.
 
--   Active Sensors: reflect light emitted from the sun
+-   Active Sensors: Illuminates target object
 
--   Passive Sensors:
+    Actively sends pulses and measure the backscatter reflected to the sensor
 
-```{r echo=FALSE, out.width = "70%", fig.align='center', cache=TRUE}
+-   Passive Sensors: Detects and reflect light emitted from the sun
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE}
 knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week1/qgis.png')
 ```
 

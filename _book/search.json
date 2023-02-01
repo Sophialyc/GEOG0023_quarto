@@ -39,6 +39,13 @@
     "href": "Week1.html#summary-of-lecture-1",
     "title": "1  Week 1",
     "section": "1.1 Summary of Lecture 1",
-    "text": "1.1 Summary of Lecture 1\nThere are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.\n\nActive Sensors: reflect light emitted from the sun\nPassive Sensors:"
+    "text": "1.1 Summary of Lecture 1\nThere are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.\n\nActive Sensors: Illuminates target object\nActively sends pulses and measure the backscatter reflected to the sensor\nPassive Sensors: Detects and reflect light emitted from the sun"
+  },
+  {
+    "objectID": "Week2.html",
+    "href": "Week2.html",
+    "title": "2  Week 2",
+    "section": "",
+    "text": "In week 2, we have learnt about concepts in Xanringana nd Quarto and the weekly task is to create both documents"
   }
 ]
