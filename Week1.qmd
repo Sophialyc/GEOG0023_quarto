@@ -2,18 +2,30 @@
 title: "Week 1"
 ---
 
+<div style="text-align: justify">
+
+------------------------------------------------------------------------
+
 ## Summary of Lecture 1
 
-There are different types of remote sensing, the differentiation of different types of remote sensing depends on the types of sensors.
+Remote sensing in short is the detection and monitoring of the earth or a certain area through measurements of the reflected and emitted radiation at a distance. There are various types of remote sensing instruments, and there are 2 types of them, including active sensor and passive sensor.
 
--   Active Sensors: Illuminates target object
+-   Active Sensors: Contain own energy source for illumination. They illuminate target objects and actively send pulses and measure the backscatters reflected to them. Synthetic Aperture Radar (SAR) and laser fluorosensor are examples of active sensors.
 
-    Actively sends pulses and measure the backscatter reflected to the sensor
+-   Passive Sensors: Do not have any illuminating source. They detect and reflect energy when it is naturally available, and only take place during the time when the sun is illuminating the Earth. Passive infrared sensor (PIR) and radiometers are examples of passive sensors.
 
--   Passive Sensors: Detects and reflect light emitted from the sun
+The aforementioned term of "energy" is concisely referring to the energy emitted from the sun, which comes as Electromagnetic radiation or Electromagnetic waves (EM waves) to the earth. They are waves of magnetic and electric fields spreading across different wavelength from very short gamma rays, x-ray to infrared waves, and micro waves etc. EM waves travel through vacuum of space at constant speed of light.
 
-```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE}
-knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week1/qgis.png')
+```{r echo=FALSE, out.width = "70%", fig.align='center', cache=TRUE, fig.cap="The Electromagnetic Spectrum. Source:https://mynasadata.larc.nasa.gov/basic-page/electromagnetic-spectrum-diagram"}
+knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/electromagnetic spectrum.png')
 ```
 
-\
+A brief summary of the content, this could include outputs from the practical, small code chunks with relevant explanation and flow charts (either by hand or using software). It will also include questions you might have either about the presented data and methods or their applications. • Applications: A narrative /discussion on how the data / concepts / methods (or related concepts) have been applied in literature / policy or other studies. It is vital to do some reading and reference it each week. Here you must comment on the approaches in literature. • Reflection: A personal reflection on the presented content (e.g. what was interesting, why and why might the data or tools presented this week be useful in the future to you or perhaps they won't be useful but something similar might be).
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE}
+knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/qgis.png')
+```
+
+## Application
+
+## lit review on how to apply remote sensing data in real context
