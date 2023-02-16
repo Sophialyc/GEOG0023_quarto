@@ -1,6 +1,6 @@
 project:
   type: book
-
+  output-dir: docs
 book:
   title: "GEOG0023 -- Learning Diary"
   author: "Ling Yi Cheung"

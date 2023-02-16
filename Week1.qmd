@@ -8,24 +8,40 @@ title: "Week 1"
 
 ## Summary of Lecture 1
 
+A brief summary of the content, this could include outputs from the practical, small code chunks with relevant explanation and flow charts (either by hand or using software). It will also include questions you might have either about the presented data and methods or their applications.
+
 Remote sensing in short is the detection and monitoring of the earth or a certain area through measurements of the reflected and emitted radiation at a distance. There are various types of remote sensing instruments, and there are 2 types of them, including active sensor and passive sensor.
 
 -   Active Sensors: Contain own energy source for illumination. They illuminate target objects and actively send pulses and measure the backscatters reflected to them. Synthetic Aperture Radar (SAR) and laser fluorosensor are examples of active sensors.
 
 -   Passive Sensors: Do not have any illuminating source. They detect and reflect energy when it is naturally available, and only take place during the time when the sun is illuminating the Earth. Passive infrared sensor (PIR) and radiometers are examples of passive sensors.
 
-The aforementioned term of "energy" is concisely referring to the energy emitted from the sun, which comes as Electromagnetic radiation or Electromagnetic waves (EM waves) to the earth. They are waves of magnetic and electric fields spreading across different wavelength from very short gamma rays, x-ray to infrared waves, and micro waves etc. EM waves travel through vacuum of space at constant speed of light.
+The aforementioned term of "energy" is concisely referring to the energy emitted from the sun, which comes as Electromagnetic radiation (EMR) or Electromagnetic waves (EM waves) to the earth. They are waves of magnetic and electric fields spreading across different wavelength from very short gamma rays, x-ray to infrared waves, and micro waves etc. EM waves travel through vacuum of space at constant speed of light.
 
 ```{r echo=FALSE, out.width = "70%", fig.align='center', cache=TRUE, fig.cap="The Electromagnetic Spectrum. Source:https://mynasadata.larc.nasa.gov/basic-page/electromagnetic-spectrum-diagram"}
 knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/electromagnetic spectrum.png')
 ```
 
-A brief summary of the content, this could include outputs from the practical, small code chunks with relevant explanation and flow charts (either by hand or using software). It will also include questions you might have either about the presented data and methods or their applications. • Applications: A narrative /discussion on how the data / concepts / methods (or related concepts) have been applied in literature / policy or other studies. It is vital to do some reading and reference it each week. Here you must comment on the approaches in literature. • Reflection: A personal reflection on the presented content (e.g. what was interesting, why and why might the data or tools presented this week be useful in the future to you or perhaps they won't be useful but something similar might be).
+Before EMR is received by sensors, several processes and changes are required before hitting the sensors, including energy absorption by the surface, transmission through surface and scattering by particles in the atmosphere.
+
+In practical 1, sentinel products were used. It is a product that has been processed through multi-spectral imagery. The spectral imagery is one of the four resolutions use in all remotely sensed data, it contains layer of different bands. I have chosen the area that is between the Netherlands and Belgium near the sea
+
+```{r echo=FALSE, out.width="100%", fig.align='center', cache=FALSE}
+knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/Screenshot 2023-02-08 at 4.13.36 PM.png')
+```
+
+This figure shown above is a True Color Image (TCI) that contains B02, B03 and B04 for blue, green and red bands. Yet, the image remain a single raster layer that has a limited value from 0 - 255. In order to enhance the resolution for the sentinel product that has higher much higher brightness level, a raster band could be made manually with the existing separate bands in the data.
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE}
-knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/qgis.png')
+knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/Screenshot 2023-02-07 at 5.14.55 PM.png')
 ```
+
+As shown in the figure, I have recreated the true color composite using the RGB window, selecting band B04 , B03 and B02 for red, green and blue respectively. And the Scatter plot on the left is B04 against B08, which implies the vegetation cover of the area. As the y-axis is the near-infrared reflectance, and x-axis is the red band, high values of y and low values of x in the plot represents dense canopy while low values of both x and y are most likely wet bare soil. From the graph, the image contains little vegetation cover and more soil that is wet and bare.
 
 ## Application
 
-## lit review on how to apply remote sensing data in real context
+While remote sensors detect, quantify and record the EM energy, the captured satellite images are either georeferenced
+
+## Reflection
+
+• Reflection: A personal reflection on the presented content (e.g. what was interesting, why and why might the data or tools presented this week be useful in the future to you or perhaps they won't be useful but something similar might be).
