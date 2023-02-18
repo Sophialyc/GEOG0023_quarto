@@ -163,7 +163,6 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <section id="summary-of-lecture-1" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="summary-of-lecture-1"><span class="header-section-number">1.1</span> Summary of Lecture 1</h2>
-<p>A brief summary of the content, this could include outputs from the practical, small code chunks with relevant explanation and flow charts (either by hand or using software). It will also include questions you might have either about the presented data and methods or their applications.</p>
 <p>Remote sensing in short is the detection and monitoring of the earth or a certain area through measurements of the reflected and emitted radiation at a distance. There are various types of remote sensing instruments, and there are 2 types of them, including active sensor and passive sensor.</p>
 <ul>
 <li><p>Active Sensors: Contain own energy source for illumination. They illuminate target objects and actively send pulses and measure the backscatters reflected to them. Synthetic Aperture Radar (SAR) and laser fluorosensor are examples of active sensors.</p></li>
@@ -181,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>Before EMR is received by sensors, several processes and changes are required before hitting the sensors, including energy absorption by the surface, transmission through surface and scattering by particles in the atmosphere.</p>
-<p>In practical 1, sentinel products were used. It is a product that has been processed through multi-spectral imagery. The spectral imagery is one of the four resolutions use in all remotely sensed data, it contains layer of different bands. I have chosen the area that is between the Netherlands and Belgium near the sea</p>
+<p>In practical 1, sentinel products were used. It is a product that has been processed through multi-spectral imagery. The spectral imagery is one of the four resolutions use in all remotely sensed data, it contains layer of different bands. I have chosen the Zeeland province of the Netherlands, it is located in the southwestern part consisting islands and peninsulas which are interconnected by the dams and bridges of the Delta Works.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -191,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>This figure shown above is a True Color Image (TCI) that contains B02, B03 and B04 for blue, green and red bands. Yet, the image remain a single raster layer that has a limited value from 0 - 255. In order to enhance the resolution for the sentinel product that has higher much higher brightness level, a raster band could be made manually with the existing separate bands in the data.</p>
+<p>This figure shown above is a True Color Image (TCI) that contains B02, B03 and B04 for blue, green and red bands. Yet, the image remain a single raster layer that has a limited value from 0 - 255. In order to enhance the resolution for the sentinel product that has higher much higher brightness level, a raster band could be made manually with the existing separate bands from the Sentinel-2 Level-2A product.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -201,7 +200,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>As shown in the figure, I have recreated the true color composite using the RGB window, selecting band B04 , B03 and B02 for red, green and blue respectively. And the Scatter plot on the left is B04 against B08, which implies the vegetation cover of the area. As the y-axis is the near-infrared reflectance, and x-axis is the red band, high values of y and low values of x in the plot represents dense canopy while low values of both x and y are most likely wet bare soil. From the graph, the image contains little vegetation cover and more soil that is wet and bare.</p>
+<p>As shown in the figure, I have recreated the true color composite using the RGB window, selecting band B04 , B03 and B02 for red, green and blue respectively. The image colour is slightly different from the TCI because I have used the ‘Colour Manipulation’ function to change the distribution of the three bands. The scatter plot on the left shows B04 against B08, which implies the vegetation cover of the area. As the y-axis is the near-infrared reflectance, and x-axis is the red band, high values of y and low values of x in the plot represents dense canopy while low values of both x and y are most likely wet bare soil. From the graph, the image contains little vegetation cover and more soil that is wet and bare.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/Screenshot 2023-02-08 at 9.15.03 PM.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="application" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> Application</h2>
