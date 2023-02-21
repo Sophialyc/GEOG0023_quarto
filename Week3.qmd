@@ -1,3 +1,11 @@
 ---
 title: "Week 3"
 ---
+
+<div style="text-align: justify">
+
+## Summary of Lecture 3
+
+## Application
+
+## Reflection

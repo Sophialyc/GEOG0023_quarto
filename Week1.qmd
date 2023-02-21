@@ -4,8 +4,6 @@ title: "Week 1"
 
 <div style="text-align: justify">
 
-------------------------------------------------------------------------
-
 ## Summary of Lecture 1
 
 Remote sensing in short is the detection and monitoring of the earth or a certain area through measurements of the reflected and emitted radiation at a distance. There are various types of remote sensing instruments, and there are 2 types of them, including active sensor and passive sensor.

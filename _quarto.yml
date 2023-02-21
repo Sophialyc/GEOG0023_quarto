@@ -2,7 +2,7 @@ project:
   type: book
   output-dir: docs
 book:
-  title: "GEOG0023 -- Learning Diary"
+  title: "GEOG0023 -- Learning Diary" 
   author: "Ling Yi Cheung"
   date: "1/19/2023"
   chapters:
@@ -10,6 +10,11 @@ book:
     - Week1.qmd
     - Week2.qmd
     - Week3.qmd
+    - Week4.qmd
+    - Week5.qmd
+    - Week6.qmd
+    - Week7.qmd
+    - Week8.qmd
     - summary.qmd
     - references.qmd
 
