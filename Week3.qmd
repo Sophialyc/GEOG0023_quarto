@@ -6,6 +6,8 @@ title: "Week 3"
 
 ## Summary of Lecture 3
 
+Geometric correction is used to correct positional errors and to transform original image to a new image
+
 ## Application
 
 ## Reflection

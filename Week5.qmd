@@ -1,3 +1,13 @@
 ---
 title: "Week5"
 ---
+
+<div style="text-align: justify">
+
+## Summary of Lecture 5
+
+Geometric correction is used to correct positional errors and to transform original image to a new image
+
+## Application
+
+## Reflection
