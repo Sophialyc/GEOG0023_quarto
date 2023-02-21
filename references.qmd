@@ -1,4 +1,7 @@
 # References {.unnumbered}
 
 ::: {#refs}
+@aplin2004
+
+@tempfli2009
 :::
