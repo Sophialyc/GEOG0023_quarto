@@ -6,7 +6,13 @@ title: "Week 3"
 
 ## Summary of Lecture 3
 
-Geometric correction is used to correct positional errors and to transform original image to a new image
+Raw remote sensing images are known to have notable distortions and flaws, which is mainly caused by the curved Earth, incompletely transparent atmosphere, varying solar radiation throughout the day and limitations of instruments. Therefore, most of the raw data captured by remote sensors are preprocessed to remove most of the flaws, it is called **Image Correction.**
+
+Below shows a summary of 4 different correction methods, including **Geometric correction, Atmospheric correction, Orthorectification correction** and **Radiometric correction.**
+
+```{r echo=FALSE, out.width = "100%", fig.align='center', cache=FALSE}
+knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/correction summary.jpg')
+```
 
 ## Application
 

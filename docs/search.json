@@ -53,7 +53,7 @@
     "href": "Week3.html#summary-of-lecture-3",
     "title": "3  Week 3",
     "section": "3.1 Summary of Lecture 3",
-    "text": "3.1 Summary of Lecture 3\nRaw remote sensing images are known to have notable distortions and flaws, which is mainly caused by the curved Earth, incompletely transparent atmosphere, varying solar radiation throughout the day and limitations of instruments. Therefore, most of the raw data captured by remote sensors are preprocessed to remove most of the flaws, it is called Image Correction.\nGeometric correction is used to correct positional errors and to transform original image to a new image"
+    "text": "3.1 Summary of Lecture 3\nRaw remote sensing images are known to have notable distortions and flaws, which is mainly caused by the curved Earth, incompletely transparent atmosphere, varying solar radiation throughout the day and limitations of instruments. Therefore, most of the raw data captured by remote sensors are preprocessed to remove most of the flaws, it is called Image Correction.\nBelow shows a summary of 4 different correction methods, including Geometric correction, Atmospheric correction, Orthorectification correction and Radiometric correction."
   },
   {
     "objectID": "Week3.html#application",
@@ -89,5 +89,89 @@
     "title": "4  Week 4",
     "section": "4.3 Reflection",
     "text": "4.3 Reflection"
+  },
+  {
+    "objectID": "Week5.html#summary-of-lecture-5",
+    "href": "Week5.html#summary-of-lecture-5",
+    "title": "5  Week 5",
+    "section": "5.1 Summary of Lecture 5",
+    "text": "5.1 Summary of Lecture 5\nGeometric correction is used to correct positional errors and to transform original image to a new image"
+  },
+  {
+    "objectID": "Week5.html#application",
+    "href": "Week5.html#application",
+    "title": "5  Week 5",
+    "section": "5.2 Application",
+    "text": "5.2 Application"
+  },
+  {
+    "objectID": "Week5.html#reflection",
+    "href": "Week5.html#reflection",
+    "title": "5  Week 5",
+    "section": "5.3 Reflection",
+    "text": "5.3 Reflection"
+  },
+  {
+    "objectID": "Week6.html#summary-of-lecture-6",
+    "href": "Week6.html#summary-of-lecture-6",
+    "title": "6  Week 6",
+    "section": "6.1 Summary of Lecture 6",
+    "text": "6.1 Summary of Lecture 6\nGeometric correction is used to correct positional errors and to transform original image to a new image"
+  },
+  {
+    "objectID": "Week6.html#application",
+    "href": "Week6.html#application",
+    "title": "6  Week 6",
+    "section": "6.2 Application",
+    "text": "6.2 Application"
+  },
+  {
+    "objectID": "Week6.html#reflection",
+    "href": "Week6.html#reflection",
+    "title": "6  Week 6",
+    "section": "6.3 Reflection",
+    "text": "6.3 Reflection"
+  },
+  {
+    "objectID": "Week7.html#summary-of-lecture-7",
+    "href": "Week7.html#summary-of-lecture-7",
+    "title": "7  Week 7",
+    "section": "7.1 Summary of Lecture 7",
+    "text": "7.1 Summary of Lecture 7\nGeometric correction is used to correct positional errors and to transform original image to a new image"
+  },
+  {
+    "objectID": "Week7.html#application",
+    "href": "Week7.html#application",
+    "title": "7  Week 7",
+    "section": "7.2 Application",
+    "text": "7.2 Application"
+  },
+  {
+    "objectID": "Week7.html#reflection",
+    "href": "Week7.html#reflection",
+    "title": "7  Week 7",
+    "section": "7.3 Reflection",
+    "text": "7.3 Reflection"
+  },
+  {
+    "objectID": "Week8.html#summary-of-lecture-8",
+    "href": "Week8.html#summary-of-lecture-8",
+    "title": "8  Week 8",
+    "section": "8.1 Summary of Lecture 8",
+    "text": "8.1 Summary of Lecture 8\nGeometric correction is used to correct positional errors and to transform original image to a new image"
+  },
+  {
+    "objectID": "Week8.html#application",
+    "href": "Week8.html#application",
+    "title": "8  Week 8",
+    "section": "8.2 Application",
+    "text": "8.2 Application"
+  },
+  {
+    "objectID": "Week8.html#reflection",
+    "href": "Week8.html#reflection",
+    "title": "8  Week 8",
+    "section": "8.3 Reflection",
+    "text": "8.3 Reflection"
   }
 ]
