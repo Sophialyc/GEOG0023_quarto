@@ -9,9 +9,6 @@ book:
     collapse-below: lg
     background: info
     search: true
-    right: 
-      - icon: github
-    
   author: "Ling Yi Cheung"
   date: "1/19/2023"
   chapters:
