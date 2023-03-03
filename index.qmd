@@ -3,7 +3,7 @@
 
 # Welcome {.unnumbered}
 
-My name is Ling Yi Cheung, Sophia. I was born and raised in Hong Kong, I have recently finished my Bachelor's degree at the Chinese University of Hong Kong in 2022, majoring in Geography and Resource Management. I would love to share a picture of one of my favourite places in Hong Kong, which is the Victoria Harbour, it separates the Hong Kong Island in the southe from the Kowloon Peninsula to the north.
+My name is Ling Yi Cheung, Sophia. I was born and raised in Hong Kong, I have recently finished my Bachelor's degree at the Chinese University of Hong Kong in 2022, majoring in Geography and Resource Management. I would love to share a picture of one of my favourite places in Hong Kong, which is the Victoria Harbour, it separates the Hong Kong Island in the south from the Kowloon Peninsula to the north.
 
 ```{r echo=FALSE, out.width="100%", fig.align='center', cache=TRUE, fig.cap= "Hong Kong's skyline. Source:https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Hong%20Kong/hong-kong-victoria-peak-pano-guide.jpg"}
 knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/Hong-Kong.jpeg')
