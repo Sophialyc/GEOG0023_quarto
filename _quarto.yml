@@ -3,6 +3,14 @@ project:
   output-dir: docs
 book:
   title: "GEOG0023 -- Learning Diary" 
+  navbar: 
+    logo: ucl.jpg
+    collapse: true
+    collapse-below: lg
+    background: info
+    search: true
+    right: 
+      - icon: github
   author: "Ling Yi Cheung"
   date: "1/19/2023"
   chapters:
@@ -18,6 +26,8 @@ book:
     - summary.qmd
     - references.qmd
 
+title-block-banner: /Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/Hong-Kong.jpeg
+
 bibliography: references.bib
 
 format:
@@ -25,6 +35,4 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
-
-editor: visual
 

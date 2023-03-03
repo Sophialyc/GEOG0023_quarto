@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "GEOG0023 – Learning Diary",
+    "section": "",
+    "text": "Welcome\nMy name is Ling Yi Cheung, Sophia. I was born and raised in Hong Kong, I have recently finished my Bachelor’s degree at the Chinese University of Hong Kong in 2022, majoring in Geography and Resource Management. I would love to share a picture of one of my favourite places in Hong Kong, which is the Victoria Harbour, it separates the Hong Kong Island in the southe from the Kowloon Peninsula to the north.\n\n\n\n\n\nHong Kong’s skyline. Source:https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Hong%20Kong/hong-kong-victoria-peak-pano-guide.jpg\n\n\n\n\nWith interest in geospatial science, I have decided to pursue a Master’s degree related to it, hence, I am now studying the MSc Social and Geographic Data Science at UCL. I am very new to programming, and it is always a challenge for me to troubleshoot errors and problems in Rstudio and python when performing different types of spatial analysis, and data manipulation. I hope to improve and enhance my skills on geospatial science in this degree. Besides, I want to learn more about remote sensing, because I have not been taking many courses related to remote sensing in the past. So, I hope I can learn about the principles and important concepts in remote sensing, and utilize the knowledge in the future. For each week, there will be summary and application example, followed by a reflection, please enjoy.\n\n\n\n\n\nHong Kong at Night. Source:https://cityprintsmapart.com/world-city-maps/hong-kong-at-night/"
+  },
+  {
     "objectID": "Week1.html#summary-of-lecture-1",
     "href": "Week1.html#summary-of-lecture-1",
     "title": "1  Week 1",
@@ -26,27 +33,6 @@
     "title": "2  Week 2",
     "section": "",
     "text": "In week 2, we have learnt about concepts in Xanringan and Quarto and the weekly task is to create both documents"
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "4  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "GEOG0023 – Learning Diary",
-    "section": "",
-    "text": "Welcome\nMy name is Ling Yi Cheung, Sophia. I was born and raised in Hong Kong, I have recently finished my Bachelor’s degree at the Chinese University of Hong Kong in 2022, majoring in Geography and Resource Management. I would love to share a picture of one of my favourite places in Hong Kong, which is the Victoria Harbour, it separates the Hong Kong Island in the southe from the Kowloon Peninsula to the north.\n\n\n\n\n\nHong Kong’s skyline. Source:https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Hong%20Kong/hong-kong-victoria-peak-pano-guide.jpg\n\n\n\n\nWith interest in geospatial science, I have decided to pursue a Master’s degree related to it, hence, I am now studying the MSc Social and Geographic Data Science at UCL. I am very new to programming, and it is always a challenge for me to troubleshoot errors and problems in Rstudio and python when performing different types of spatial analysis, and data manipulation. I hope to improve and enhance my skills on geospatial science in this degree. Besides, I want to learn more about remote sensing, because I have not been taking many courses related to remote sensing in the past. So, I hope I can learn about the principles and important concepts in remote sensing, and utilize the knowledge in the future. For each week, there will be summary and application example, followed by a reflection, please enjoy.\n\n\n\n\n\nHong Kong at Night. Source:https://cityprintsmapart.com/world-city-maps/hong-kong-at-night/"
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Aplin, Paul. 2004. “Remote Sensing: Land Cover.”\nProgress in Physical Geography: Earth and Environment 28 (2):\n283–93. https://doi.org/10.1191/0309133304pp413pr.\n\n\nTempfli, Klaus, G. C. Huurneman, Wim Bakker, L. L. F. Janssen, W. F.\nFeringa, Ambro Gieske, K. A. Grabmaier, et al. 2009. “Principles\nof Remote Sensing : An Introductory Textbook.” In, 56–85."
   },
   {
     "objectID": "Week3.html#summary-of-lecture-3",
@@ -173,5 +159,19 @@
     "title": "8  Week 8",
     "section": "8.3 Reflection",
     "text": "8.3 Reflection"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "9  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Aplin, Paul. 2004. “Remote Sensing: Land Cover.”\nProgress in Physical Geography: Earth and Environment 28 (2):\n283–93. https://doi.org/10.1191/0309133304pp413pr.\n\n\nTempfli, Klaus, G. C. Huurneman, Wim Bakker, L. L. F. Janssen, W. F.\nFeringa, Ambro Gieske, K. A. Grabmaier, et al. 2009. “Principles\nof Remote Sensing : An Introductory Textbook.” In, 56–85."
   }
 ]
