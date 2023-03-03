@@ -8,6 +8,7 @@ book:
     collapse: true
     collapse-below: lg
     background: info
+    style: "docked"
     search: true
   author: "Ling Yi Cheung"
   date: "1/19/2023"
@@ -23,7 +24,7 @@ book:
     - Week8.qmd
     - summary.qmd
     - references.qmd
-
+    
 title-block-banner: /Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/Hong-Kong.jpeg
 
 bibliography: references.bib
