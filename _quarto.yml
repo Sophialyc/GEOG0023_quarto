@@ -38,7 +38,7 @@ bibliography: references.bib
  
 format:
   html:
-    theme: simplex
+    theme: cosmo
     css: styles.css
     toc: false
     title-block-banner: "figures/hk.jpeg"
