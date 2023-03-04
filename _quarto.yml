@@ -39,8 +39,8 @@ bibliography: references.bib
 format:
   html:
     theme:
-      light: flatly
-      dark: yeti
+      light: [Lux, flatly]
+      dark: [Lux, darkly]
     css: styles.css
     toc: false
     title-block-banner: "figures/hk.jpeg"
