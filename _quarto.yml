@@ -7,7 +7,7 @@ book:
     logo: figures/ucl.jpg
     collapse: true
     collapse-below: lg
-    background: info
+    background: "light"
     style: docked
     search: true
     right:
@@ -46,7 +46,7 @@ format:
     title-block-banner: "figures/hk.jpeg"
     title-block-style: default
     title-block-categories: false
-    title-block-banner-color: "#4B0082"
+    title-block-banner-color: "body"
 
 
 
