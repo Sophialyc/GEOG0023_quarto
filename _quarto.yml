@@ -40,13 +40,13 @@ format:
   html:
     theme:
       light: flatly
-      dark: darkly
+      dark: yeti
     css: styles.css
     toc: false
     title-block-banner: "figures/hk.jpeg"
     title-block-style: default
     title-block-categories: false
-    title-block-banner-color: body
+    title-block-banner-color: "#4B0082"
 
 
 
