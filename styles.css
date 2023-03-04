@@ -1,0 +1,15 @@
+/*-- scss:defaults --*/
+
+body {
+  background-image: "/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/hk.jpeg";
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*background-position: center center;*/
+  /*background-attachment: fixed;*/
+}
+
+.splash {
+  background-image: "/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/hk.jpeg";
+  background-size: cover;
+  background-repeat: no-repeat;
+}

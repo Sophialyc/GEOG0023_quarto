@@ -4,12 +4,14 @@ project:
 book:
   title: "GEOG0023 -- Learning Diary" 
   navbar: 
-    logo: ucl.jpg
+    logo: /Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/ucl.jpg
     collapse: true
     collapse-below: lg
     background: info
     style: docked
     search: true
+    pinned: true
+    align: center
   author: "Ling Yi Cheung"
   date: "1/19/2023"
   chapters:
@@ -24,14 +26,15 @@ book:
     - Week8.qmd
     - summary.qmd
     - references.qmd
-    
-title-block-banner: /Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/Hong-Kong.jpeg
-
+ 
 bibliography: references.bib
-
+ 
 format:
   html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreprt
+    theme: "styles.css"
+
+
+
+
+   
 
