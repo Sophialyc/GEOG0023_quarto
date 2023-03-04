@@ -4,14 +4,21 @@ project:
 book:
   title: "GEOG0023 -- Learning Diary" 
   navbar: 
-    logo: /Users/sophiac/Desktop/Remotely sensing/Week2_quarto/Week2_Quarto/figures/ucl.jpg
+    logo: figures/ucl.jpg
     collapse: true
     collapse-below: lg
     background: info
     style: docked
     search: true
+    right:
+      - icon: github
     pinned: true
     align: center
+  sidebar:
+    title: "CASA0023"
+    style: floating
+    reader-mode: true
+  repo-url: https://github.com/Sophialyc/GEOG0023_quarto.git
   author: "Ling Yi Cheung"
   date: "1/19/2023"
   chapters:
