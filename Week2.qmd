@@ -2,4 +2,27 @@
 title: "Week 2"
 ---
 
-In week 2, we have learnt about concepts in Xanringan and Quarto and the weekly task is to create both documents
+# Summary
+
+In week 2, we have learnt concepts of Xanringan and Quarto.
+
+## Xaringan
+
+**\[ʃaː.' riŋ.ɡan\]** is an R package for creating slideshows with remark. js through R Markdown.
+
+```{r echo=FALSE}
+knitr::include_graphics('https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png')
+
+```
+
+It uses JavaScript library remark.js ([https://remarkjs.com](https://remarkjs.com/)) to generate HTML5 presentations of a different style.
+
+## Quarto
+
+an open-source scientific and technical publishing system built on Pandoc. It allows you to publish Python, R, Julia or Observable in a online book or presentation.
+
+This week, the weekly task is to create a xaringan preentation on a sensor, and I have chosen Synthetic Aperture Radar (SAR).
+
+```{r xaringan_embed, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://sophialyc.github.io/GEOG0023_xaringan/#1", ratio = "4:3")
+```

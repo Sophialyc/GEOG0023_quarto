@@ -8,7 +8,7 @@ book:
     collapse: true
     collapse-below: lg
     background: "light"
-    style: docked
+    style: "docked"
     search: true
     right:
       - icon: github
@@ -32,7 +32,6 @@ book:
     - Week7.qmd
     - Week8.qmd
     - summary.qmd
-    - references.qmd
  
 bibliography: references.bib
  
@@ -40,7 +39,7 @@ format:
   html:
     theme:
       light: [Lux, flatly]
-      dark: [Lux, darkly]
+      dark: [Lux, darkly, dark.css]
     css: styles.css
     toc: false
     title-block-banner: "figures/hk.jpeg"

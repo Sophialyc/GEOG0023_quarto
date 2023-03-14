@@ -6,7 +6,7 @@ title: "Week 5"
 
 ## Summary of Lecture 5
 
-Geometric correction is used to correct positional errors and to transform original image to a new image
+Google Earth Engine (GEE)
 
 ## Application
 

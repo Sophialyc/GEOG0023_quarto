@@ -32,7 +32,21 @@
     "href": "Week2.html",
     "title": "2  Week 2",
     "section": "",
-    "text": "In week 2, we have learnt about concepts in Xanringan and Quarto and the weekly task is to create both documents"
+    "text": "3 Summary\nIn week 2, we have learnt concepts of Xanringan and Quarto."
+  },
+  {
+    "objectID": "Week2.html#xaringan",
+    "href": "Week2.html#xaringan",
+    "title": "2  Week 2",
+    "section": "3.1 Xaringan",
+    "text": "3.1 Xaringan\n[ʃaː.’ riŋ.ɡan] is an R package for creating slideshows with remark. js through R Markdown.\n\n\n\n\n\nIt uses JavaScript library remark.js (https://remarkjs.com) to generate HTML5 presentations of a different style."
+  },
+  {
+    "objectID": "Week2.html#quarto",
+    "href": "Week2.html#quarto",
+    "title": "2  Week 2",
+    "section": "3.2 Quarto",
+    "text": "3.2 Quarto\nan open-source scientific and technical publishing system built on Pandoc. It allows you to publish Python, R, Julia or Observable in a online book or presentation.\nThis week, the weekly task is to create a xaringan preentation on a sensor, and I have chosen Synthetic Aperture Radar (SAR)."
   },
   {
     "objectID": "Week3.html#summary-of-lecture-3",
@@ -60,21 +74,21 @@
     "href": "Week4.html#summary-of-lecture-4",
     "title": "4  Week 4",
     "section": "4.1 Summary of Lecture 4",
-    "text": "4.1 Summary of Lecture 4\nGeometric correction is used to correct positional errors and to transform original image to a new image"
+    "text": "4.1 Summary of Lecture 4\n\nThe summary criterion will refer to the summary of the policy and city you have selected.\nMadrid, the capital city of Spain has an urban redevelopment programme named Madrid Nuevo Norte.\nhttps://coolcoalition.org/el-bosque-metropolitano-madrid-announces-urban-forest-plan-to-combat-urban-heat-and-pollution/\nshttps://www.bloomberg.com/news/articles/2022-03-15/madrid-tree-planting-effort-pits-residents-v-bosque-metropolitano"
   },
   {
     "objectID": "Week4.html#application",
     "href": "Week4.html#application",
     "title": "4  Week 4",
     "section": "4.2 Application",
-    "text": "4.2 Application"
+    "text": "4.2 Application\n\nThe application criterion will refer to how the remotely sensed data you sourced could be used to assist with contributing to the policy goal. How could the data be applied to solve the policy challenge."
   },
   {
     "objectID": "Week4.html#reflection",
     "href": "Week4.html#reflection",
     "title": "4  Week 4",
     "section": "4.3 Reflection",
-    "text": "4.3 Reflection"
+    "text": "4.3 Reflection\n\nThe reflection criterion will refer to what you have learnt in relation to the policy, city and the application of the data."
   },
   {
     "objectID": "Week5.html#summary-of-lecture-5",
