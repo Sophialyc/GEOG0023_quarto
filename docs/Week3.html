@@ -63,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>
     .quarto-title-block .quarto-title-banner {
-      background-image: url(figures/Hong-Kong_2.jpeg);
+      background-image: url(figures/hk.jpeg);
 background-size: cover;
     }
     </style>
@@ -190,11 +190,6 @@ background-size: cover;
   <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -221,6 +216,39 @@ background-size: cover;
 </div>
 </div>
 </div>
+<p>In some cases, some areas we want to observe or the Region of interest (ROI) cannot be completely acquired from a single image, therefore, we would use <strong>mosaicking</strong>, a procedure to create a new large area image from multiple overlapping images on the same areas. The typical image mosaicking procedure includes 3 steps, including 1) tonal adjustment 2) seamline detection, and 3) image blending. In R, the function of “mosaic()” does the whole process in 1 line to form a new object with a larger spatial extent. We can specify which function to use such as mean, minimum and maximum value for output.</p>
+<p>In this practical, I have chosen 4 tiles that make up Hong Kong, including 1 landsat8 tile and 3 landsat 9 tiles. However, as the tiles are with 2 different coordinate reference system of EPSG:32650 for two of them and EPSG:32649 for the remaining two tiles. I have tried using different methods to reproject rasters into the same projection (EPSG: 32649), however, the resolutions for the images are different from each other with 30.03617, 30.03617 (x, y) and 30.05118, 30.05118 (x, y) I couldn’t figure how to alter resolution to create a mosaic image with 4 raster images, hence, I only used two of them. It works fine considering Hong kong has a really small area and can fit well in two of the images.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week3_1.png" style="width:49.0%;height:20.0%" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week3_2.png" style="width:49.0%;height:20.0%" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week3_3.png" style="width:49.0%;height:20.0%" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<p><br>
+</p>
 </section>
 <section id="application" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
