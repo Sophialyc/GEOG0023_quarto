@@ -60,7 +60,7 @@
     "href": "Week3.html#application",
     "title": "3  Week 3",
     "section": "3.2 Application",
-    "text": "3.2 Application"
+    "text": "3.2 Application\n\nSome of the basic image enhancements were done in this practical. As numerous remote sensing applications such as mapping, classification, soil moisture detection require high resolution and high quality images, therefore , image enhancement is required to improve the contrast and edge information of the input image are applied to the raw input images"
   },
   {
     "objectID": "Week3.html#reflection",

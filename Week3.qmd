@@ -18,22 +18,15 @@ In some cases, some areas we want to observe or the Region of interest (ROI) can
 
 In this practical, I have chosen 4 tiles that make up Hong Kong, including 1 landsat8 tile and 3 landsat 9 tiles. However, as the tiles are with 2 different coordinate reference system of EPSG:32650 for two of them and EPSG:32649 for the remaining two tiles. I have tried using different methods to reproject rasters into the same projection (EPSG: 32649), however, the resolutions for the images are different from each other with 30.03617, 30.03617 (x, y) and 30.05118, 30.05118 (x, y) I couldn't figure how to alter resolution to create a mosaic image with 4 raster images, hence, I only used two of them. It works fine considering Hong kong has a really small area and can fit well in two of the images.
 
-```{r, echo=FALSE,out.width="49%", out.height="20%",fig.show='hold', fig.align='center'}
-knitr::include_graphics(c("figures/week3_1.png","figures/week3_2.png"))
+```{r, echo=FALSE,out.width="100%", out.height="20%",fig.show='hold', fig.align='center'}
+knitr::include_graphics('figures/week3.png')
 
 ```
-
-\
-
-```{r, echo=FALSE,out.width="49%", out.height="20%",fig.show='hold', fig.align='center'}
-knitr::include_graphics('figures/week3_3.png')
-
-```
-
-\
-
-\
 
 ## Application
+
+![](images/image-2093053228.png)
+
+Some of the basic image enhancements were done in this practical. As numerous remote sensing applications such as mapping, classification, soil moisture detection require high resolution and high quality images, therefore , image enhancement is required to improve the contrast and edge information of the input image are applied to the raw input images
 
 ## Reflection
