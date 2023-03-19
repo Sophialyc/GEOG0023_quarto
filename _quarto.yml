@@ -45,7 +45,7 @@ format:
     css: styles.css
     toc: true
     toc-depth: 2
-    toc-location: right
+    toc-location: left
     title-block-banner: "figures/hk.jpeg"
     title-block-style: default
     title-block-categories: false
