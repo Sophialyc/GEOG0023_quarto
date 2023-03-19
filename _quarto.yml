@@ -41,7 +41,8 @@ format:
       light: [Lux, flatly]
       dark: [Lux, darkly, dark.css]
     css: styles.css
-    toc: false
+    toc: true
+    toc-depth: 2
     title-block-banner: "figures/hk.jpeg"
     title-block-style: default
     title-block-categories: false
