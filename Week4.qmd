@@ -6,8 +6,6 @@ title: "Week 4"
 
 ## Summary of Lecture 4
 
-The summary criterion will refer to the summary of the policy and city you have selected.
-
 ### City --- Madrid, Spain
 
 Climate change is a global phenomenon, yet affects different countries and places at different rate. While global warming is not a globally uniform warming phenomenon, some regions are affected at greater level.
@@ -36,7 +34,7 @@ knitr::include_graphics('https://images.english.elpais.com/resizer/s_2stmxRADYuz
 
 "El Bosque Metropolitano" is an urban redevelopment programme implemented by the City Council of Madrid. Winning proposal from competitions hosted for Metropolitan Foest is used as a feasible way in developing the Metropolitan forest. The aim of this programme is to combat climate change by building a 75km-long metropolitan forest in the city. The forest construction will contribute to the rebalancing of the city, reducing of CO2 emissions, improving air quality, decreasing desertification and flood risks, support biodiversity, and act as a thermal regulator for the city as it will mitigate Madrid's urban heat island. It is a long-term city project that will take about 12 years to complete. When this forest reaches maturity, it will potentially be able to absorb 170,000 tons of CO2. The proposed plan would not only alleviate the impacts brought by climate change, but will also benefit in nature and social aspects. It will facilitate ecological and landscape restoration of degraded areas and increasing pedestrian and cycling routes, as well as benefiting the health of the population.
 
-The proposed plan is to create environmental belt around Madrid's perimeters with new parks, children's zones, dog trails and hiking and biking routes for city-dwellers and tourists. The Strategic Planning of the Madrid Metropolitan Forest is shown below.
+The proposed plan is to create environmental belt around Madrid's perimeters with new parks, children's zones, dog trails and hiking and biking routes for city-dwellers and tourists. It will be a forest belt encircling the city. The Strategic Planning of the Madrid Metropolitan Forest is shown below.
 
 ```{r echo=FALSE, out.width="100%", fig.cap= "Strategic Planning of the Madrid Metropolitan Forest. Source: https://mymodernmet.com/madrid-urban-forest/"}
 knitr::include_graphics('https://mymodernmet.com/wp/wp-content/uploads/2021/07/madrid-urban-forest-park-bosque-metropolitano-spain-my-modern-met-1.jpeg')
@@ -46,10 +44,6 @@ knitr::include_graphics('https://mymodernmet.com/wp/wp-content/uploads/2021/07/m
 The existing woodlands in the northern part will be connected with green metropolitan rings in the south and east parts as they appear to have fewer spaces and less connected. The authority considered the southern part as a great opportunity to make interconnected green infrastructure. The first phase will take place in areas that allow immediate interventions including Vicálvaro and Villa de Vallecas.
 
 While this is a long-term policy that is expected to finish in 12 years, various uncertainties and challenges are faced on implementing different phases of greening in the city. Hence, remote sensing techniques can be used to identify and provide suggestions in combating these challenges.
-
-https://coolcoalition.org/el-bosque-metropolitano-madrid-announces-urban-forest-plan-to-combat-urban-heat-and-pollution/
-
-shttps://www.bloomberg.com/news/articles/2022-03-15/madrid-tree-planting-effort-pits-residents-v-bosque-metropolitano
 
 ## Application
 
@@ -68,10 +62,42 @@ library(kableExtra)
 tab %>% kbl() %>% kable_styling()
 ```
 
-Since the project aims to not only combat climate change, but also on air quality. Hence, in the southern part, remote sensing could be adopted to identify air quality in different levels and
+While the project does not only combat climate change, but also on air quality and improve the living environment of the city, comprehensive and cautious assessment should be carried out before implementing any measures. Remote sensing is an ideal tool for conducting various analysis and monitoring a large scale urban forestry project. In this context, there are 5 different regions that could adopt remote sensing differently in aid to the project's objectives.
 
--   **The application criterion will refer to how the remotely sensed data you sourced could be used to assist with contributing to the policy goal. How could the data be applied to solve the policy challenge.**
+#### Area 1: Among Natural Forest
+
+First, for area 1, that is to connect a peri-urban space of 1,400 ha to the high valuable forests of El Prado, Valdelatas mountains and Casa de Campo. The area acts as a transitional space between the nature to existing urban parks, making environmental protection compatible with walks and healthy leisure activities. Hence, remote sensing for biodiversity in the forests in the north, distinguishing species, or identify species of individual trees [@turner2003]. The information of the diversity pattern , especially on the fringe could be used to determine types of trees, and the density of trees to be planted so as to conserve species and lower impacts on local ecosystem, simultaneously, helping the design of infrastructures such as walks, experimental farms and leisure activities in the transitional space. For example, @polyakova2023 has used **Sentinel-2 Satellite Data** in automated recognition of tree species in Raifa forest, Russia. The reflectances of tree species are observed in the red-edge (Band 6, Band 7) and near-infrared (Band 8, Band 8a) bands in all images. The image below shows the classification of tree specices using sentinel-2 level2A images.
+
+```{r echo=FALSE, out.width="100%", fig.cap="Sentinel-2 data classification results: (a) RF method; (b) GTM method. Source: https://www.mdpi.com/2072-4292/15/2/329"}
+knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-15-00329/article_deploy/html/images/remotesensing-15-00329-g006.png')
+```
+
+#### Area 2: Uniting Urban Parks
+
+While for area 2, large parks in Madrid are often disconnected with the presence of infrastructures. Hence, the main objective is to connect green spaces of the general system of free spaces with a forest avenue that will have a bike path and a large walking area that will unite all the large parks of our city. As urban green spaces should be constructed in a hierachical structure, where vegetations in different areas contains different social functions, such as public parks, residential green space, green buffer. Remote sensing images can identify different social functions of different vegetation patches with spectral analysis to vegetation and non-vegetation areas. Hence, the extent of disconnected green spaces in aid with functions of existing green spaces can be used to determine the density of trees and types of greening to implement, such as ecoducts that allow cyclist and pedestrians movement. This way, the urban structures and urban functions of the original areas could be retained while greening is built on.
+
+```{r echo=FALSE, out.width="100%", fig.cap="Vegetation types (a–c) and vegetation patches with various social functions (d–h) in satellite images. Source: https://www.sciencedirect.com/science/article/pii/S0924271618302910"}
+knitr::include_graphics('https://ars.els-cdn.com/content/image/1-s2.0-S0924271618302910-gr1.jpg')
+```
+
+#### Area 3: Green Ring of Southeast
+
+In the southeast of Madrid, the specific physical environment makes vegetation more challenging to establish. The main objective is to value the free spaces of the new growths of the southeast. Arid soil in the area can be captured with remote sensors for soil analysis, the variations in soil properties within the large areas can imply the specific type of vegetation and soil conservation measures in order to successfully establish roots in the varying arid soils, hence connecting to the fertile valleys of Manzanares and Jarama. Soil parameters including soil moisture, roughness, temperature and texture could be retrieved through both active and passive remote sensing. For active remote sensing, sensors like Synthetic Aperture radar (SAR) are more focused on local and regional studies with high resolution images, while scatterometers are more adopted for global estimations of soil properties [@zribi2012]. For passive remote sensing, Landsat, ASTER are more use for vegetation cover description, land use analysis, hyperspectral sensors provides soil texture description and thermal infrared band are adapted for soil temperature estimation [@zribi2012].
+
+#### Area 4: River Parks of the South
+
+The creation of an agricultural park is planned to enhance the fertile plain of the Manzanares, which will be complemented with equipment in the area of ​​the fourth lock, called the farmer's house. The essential resources for establishing forests can be retreived through remote sensing such as temperature variations, soil properties, water resources, solar radiation variability. Passive remote sensing could be adopted in this sense to capture the illumination hour of solar radiation on the area. Thus, with the information, trees could be planted in a cautious manner to aid sustainable forest management, such as preventing erosion or the accumulation of runoff water from the surrounding hills to increase the flow of the river. The planting of trees does not only improve the air quality and physical environment, but also regulating the water cycle indirectly.
+
+#### Area 5: The Metropolitan Ring
+
+The main objective for this area is to create a green space between the neighboring municipalities supported by infrastructure borders, the Butarque stream and the large Campamento land reserve. This area's forestation will demand more on serving the neigbouring population and neighboring municipalities supported by infrastructure borders. The purpose of trees plantation in this area is to create an ecological restoration center and a equipment dedicated to a business incubator that promotes the green economy model. Hence, remote sensing could do similar work to the other areas to create a plan that benifits the envionrment, economy and society functionings. One of the possible ways is to implement street tree planting with precise locations or developing vertical plantations that helps alleviate high urban temperature area using remotely sensed thermal infrared data for land surface temperature (LST) to detect urban heat island effects to the urban areas within the area [@keeratikasikorn2018]. Then, the correspond surface urban heat island (SUHI) map can be generated to compare with the previous Land plan maps to identify places that are required to plant trees [@keeratikasikorn2018].
+
+```{r echo=FALSE, out.width="100%", fig.cap="SUHI maps of Bangkok urban area obtained by the seven Landsat 8 clear-sky images. The last map represents the mean SUHI of the seven images. Source: https://www.mdpi.com/2072-4292/10/3/440"}
+knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-10-00440/article_deploy/html/images/remotesensing-10-00440-g004-550.jpg')
+```
+
+Remotely sensed data can be used in different ways to generate essential information corresponding to the objectives of a certain area. In general, data for air quality, land cover classification, heat index, soil parameters are common criteria for solving challenges for the implementation of metropolitan forests in Madrid.
 
 ## Reflection
 
--   The reflection criterion will refer to what you have learnt in relation to the policy, city and the application of the data.
+Climate change is an imminent problem faced by the globe, the impacts brought by is definitely not only by the rise of surface temperature, but also harming the balance of the world such as extreme natural hazards, heat waves and dangerous weathers that threaten lives on earth. I think the metropolitan forest plan brought up in Madrid is a very direct action responding to climate change as growing trees remove carbon dioxides and increased carbon sink, bringing immediate benefits to the society and climate. I think remote sensing could contribute a lot in policies like this as it provides crucial visualisation that reveal the potentials and the basis of an urban area, hence can act as a guidance for constructing a feasible plan to implement within urbanised land. However, one concern that comes to mind is the sustainability and maintenance of the urban forests. **Regular and attentive monitoring** on the growth of trees is a requisite element because of various possibilites. For instance, the growing conditions in urban environment can be hard, such as pollutants, limited space above and below ground that inhibit growth. Also, encroachment to development can also occur, where roots of trees could cause structural damage to buildings, and in extreme cases, harming the foundations of buildings. Hence, I think a large scale urban forest plan should have more frequent assessment and monitoring so as to prevent and maintain a stable conditions for both urban and nature.

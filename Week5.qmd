@@ -6,7 +6,7 @@ title: "Week 5"
 
 ## Summary of Lecture 5
 
-Google Earth Engine (GEE)
+Google Earth Engine (GEE) is
 
 ## Application
 
