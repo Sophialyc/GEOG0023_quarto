@@ -32,6 +32,8 @@ book:
     - Week7.qmd
     - Week8.qmd
     - summary.qmd
+    
+reader-mode: true
  
 bibliography: references.bib
  
@@ -39,10 +41,11 @@ format:
   html:
     theme:
       light: [Lux, flatly]
-      dark: [Lux, darkly, dark.css]
+      dark: [Lux,darkly]
     css: styles.css
     toc: true
     toc-depth: 2
+    toc-location: right
     title-block-banner: "figures/hk.jpeg"
     title-block-style: default
     title-block-categories: false

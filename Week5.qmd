@@ -6,7 +6,7 @@ title: "Week 5"
 
 ## Summary of Lecture 5
 
-Google Earth Engine (GEE) is
+Google Earth Engine (GEE) is a cloud-based geospatial processing platform that uses Javascript.
 
 ## Application
 
