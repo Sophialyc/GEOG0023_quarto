@@ -41,7 +41,7 @@ format:
   html:
     theme:
       light: [Lux, flatly]
-      dark: [Lux,darkly]
+      dark: [Lux,darkly, dark.css]
     css: styles.css
     toc: true
     toc-location: right
