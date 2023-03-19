@@ -2,11 +2,11 @@
 title: "Week 2"
 ---
 
-# Summary
+## Week 2
 
 In week 2, we have learnt concepts of Xanringan and Quarto.
 
-## Xaringan
+### Xaringan
 
 **\[ʃaː.' riŋ.ɡan\]** is an R package for creating slideshows with remark. js through R Markdown.
 
@@ -15,9 +15,9 @@ knitr::include_graphics('https://user-images.githubusercontent.com/163582/454381
 
 ```
 
-It uses JavaScript library remark.js ([https://remarkjs.com](https://remarkjs.com/)) to generate HTML5 presentations of a different style. According to the author of Xaringan, he claims that the name \"xaringan\" came from Sharingan (<http://naruto.wikia.com/wiki/Sharingan>) in the Japanese manga and anime \"Naruto". It was meant to be a difficult word to understand and pronounce as the author did not want this style of slideshow to be too popular.
+It uses JavaScript library remark.js ([https://remarkjs.com](https://remarkjs.com/)) to generate HTML5 presentations of a different style. According to the author of Xaringan, he claims that the name "xaringan" came from Sharingan (<http://naruto.wikia.com/wiki/Sharingan>) in the Japanese manga and anime "Naruto". It was meant to be a difficult word to understand and pronounce as the author did not want this style of slideshow to be too popular.
 
-## Quarto
+### Quarto 
 
 an open-source scientific and technical publishing system built on Pandoc. It allows you to publish Python, R, Julia or Observable in a online book or presentation. It combines the functionality of R Markdown, bookdown, distill, and other packages into a single system.
 
@@ -25,7 +25,7 @@ an open-source scientific and technical publishing system built on Pandoc. It al
 knitr::include_graphics('https://d33wubrfki0l68.cloudfront.net/744922f70a84c7100803bb5985d362120e3d2f14/bf5ac/blog/quarto-rmarkdown-comparison/featured.png')
 ```
 
-## Xaringan slide presentation on Synthetic Aperture Radar (SAR)
+### Xaringan slide presentation on Synthetic Aperture Radar (SAR)
 
 This week, the weekly task is to create a xaringan preentation on a sensor, and I have chosen Synthetic Aperture Radar (SAR).
 

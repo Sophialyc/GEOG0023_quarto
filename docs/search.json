@@ -194,5 +194,12 @@
     "title": "2  Week 2",
     "section": "3.3 Xaringan slide presentation on Synthetic Aperture Radar (SAR)",
     "text": "3.3 Xaringan slide presentation on Synthetic Aperture Radar (SAR)\nThis week, the weekly task is to create a xaringan preentation on a sensor, and I have chosen Synthetic Aperture Radar (SAR)."
+  },
+  {
+    "objectID": "Week2.html#week-2",
+    "href": "Week2.html#week-2",
+    "title": "2  Week 2",
+    "section": "2.1 Week 2",
+    "text": "2.1 Week 2\nIn week 2, we have learnt concepts of Xanringan and Quarto.\n\n2.1.1 Xaringan\n[ʃaː.’ riŋ.ɡan] is an R package for creating slideshows with remark. js through R Markdown.\n\n\n\n\n\nXaringan Logo\n\n\n\n\nIt uses JavaScript library remark.js (https://remarkjs.com) to generate HTML5 presentations of a different style. According to the author of Xaringan, he claims that the name “xaringan” came from Sharingan (http://naruto.wikia.com/wiki/Sharingan) in the Japanese manga and anime “Naruto”. It was meant to be a difficult word to understand and pronounce as the author did not want this style of slideshow to be too popular.\n\n\n2.1.2 Quarto\nan open-source scientific and technical publishing system built on Pandoc. It allows you to publish Python, R, Julia or Observable in a online book or presentation. It combines the functionality of R Markdown, bookdown, distill, and other packages into a single system.\n\n\n\n\n\nQuarto logo. Source:https://www.jumpingrivers.com/blog/quarto-rmarkdown-comparison/\n\n\n\n\n\n\n2.1.3 Xaringan slide presentation on Synthetic Aperture Radar (SAR)\nThis week, the weekly task is to create a xaringan preentation on a sensor, and I have chosen Synthetic Aperture Radar (SAR)."
   }
 ]
