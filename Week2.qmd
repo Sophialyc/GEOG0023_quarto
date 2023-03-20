@@ -10,18 +10,18 @@ In week 2, we have learnt concepts of Xanringan and Quarto.
 
 **\[ʃaː.' riŋ.ɡan\]** is an R package for creating slideshows with remark. js through R Markdown.
 
-```{r echo=FALSE, fig.align='center', fig.cap='Xaringan Logo'}
+```{r echo=FALSE, fig.align='center', fig.cap='Xaringan Logo', cache=FALSE}
 knitr::include_graphics('https://user-images.githubusercontent.com/163582/45438104-ea200600-b67b-11e8-80fa-d9f2a99a03b0.png')
 
 ```
 
 It uses JavaScript library remark.js ([https://remarkjs.com](https://remarkjs.com/)) to generate HTML5 presentations of a different style. According to the author of Xaringan, he claims that the name "xaringan" came from Sharingan (<http://naruto.wikia.com/wiki/Sharingan>) in the Japanese manga and anime "Naruto". It was meant to be a difficult word to understand and pronounce as the author did not want this style of slideshow to be too popular.
 
-### Quarto 
+### Quarto
 
 an open-source scientific and technical publishing system built on Pandoc. It allows you to publish Python, R, Julia or Observable in a online book or presentation. It combines the functionality of R Markdown, bookdown, distill, and other packages into a single system.
 
-```{r echo=FALSE, fig.align='center', fig.cap= 'Quarto logo. Source:https://www.jumpingrivers.com/blog/quarto-rmarkdown-comparison/'}
+```{r echo=FALSE, fig.align='center', cache=FALSE, fig.cap= 'Quarto logo. Source:https://www.jumpingrivers.com/blog/quarto-rmarkdown-comparison/'}
 knitr::include_graphics('https://d33wubrfki0l68.cloudfront.net/744922f70a84c7100803bb5985d362120e3d2f14/bf5ac/blog/quarto-rmarkdown-comparison/featured.png')
 ```
 

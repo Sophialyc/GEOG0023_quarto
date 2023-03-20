@@ -26,7 +26,7 @@ knitr::include_graphics('figures/spain_tchange.png')
 
 The temperature that exceeds 35ºC in July 2021 in Spain was shown in the GIF below. A meteorologist for the State Meteorological agency (AEMET) stated that large parts of the peninsula will enter one of the hottest regions on the surface of the planet. It will be an extension of the [traditional summer 'heat belt'](https://english.elpais.com/spanish_news/2021-05-27/experts-predict-iraq-like-weather-for-spain-in-the-near-future.html) that usually extends from Algeria to India @benayas2021. For Madrid, it has increased 2°C in the past 30 years, the maximum summer temperatures are on average higher than 38°C and the city is suffering from longer and more frequents heatwaves. In order to mitigate and combat climate change, different approaches regarding to different city context are proposed.
 
-```{r echo=FALSE, out.width="100%",cache=FALSE, fig.cap= "A map of the areas that will reach or exceed 35ºC between Friday and Monday in July, 2021. Source: https://english.elpais.com/spain/2021-07-09/spain-braces-for-extreme-weekend-heat-with-temperatures-set-to-top-44c.html"}
+```{r echo=FALSE, out.width="100%",cache=FALSE, fig.align='center', fig.cap= "A map of the areas that will reach or exceed 35ºC between Friday and Monday in July, 2021. Source: https://english.elpais.com/spain/2021-07-09/spain-braces-for-extreme-weekend-heat-with-temperatures-set-to-top-44c.html"}
 knitr::include_graphics('https://images.english.elpais.com/resizer/s_2stmxRADYuz_0ZizJb6DibYEg=/1200x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/WK42UIRNNFEJJCWYPHV7ZCHCR4.gif')
 ```
 
@@ -36,7 +36,7 @@ knitr::include_graphics('https://images.english.elpais.com/resizer/s_2stmxRADYuz
 
 The proposed plan is to create environmental belt around Madrid's perimeters with new parks, children's zones, dog trails and hiking and biking routes for city-dwellers and tourists. It will be a forest belt encircling the city. The Strategic Planning of the Madrid Metropolitan Forest is shown below.
 
-```{r echo=FALSE, out.width="100%", fig.cap= "Strategic Planning of the Madrid Metropolitan Forest. Source: https://mymodernmet.com/madrid-urban-forest/"}
+```{r echo=FALSE, out.width="100%", fig.align='center', cache=FALSE, fig.cap= "Strategic Planning of the Madrid Metropolitan Forest. Source: https://mymodernmet.com/madrid-urban-forest/"}
 knitr::include_graphics('https://mymodernmet.com/wp/wp-content/uploads/2021/07/madrid-urban-forest-park-bosque-metropolitano-spain-my-modern-met-1.jpeg')
 
 ```
@@ -47,7 +47,7 @@ While this is a long-term policy that is expected to finish in 12 years, various
 
 ## Application
 
-```{r echo=FALSE, out.width="100%", fig.cap= " 5 crowns of the Forest development. Source: https://bosquemetropolitano.madrid.es/bosque-del-manana/"}
+```{r echo=FALSE, out.width="100%", cache=FALSE, fig.align='center', cache=FALSE, fig.cap= " 5 crowns of the Forest development. Source: https://bosquemetropolitano.madrid.es/bosque-del-manana/"}
 knitr::include_graphics('https://bosquemetropolitano.madrid.es/wp-content/uploads/2023/01/Divisi%E0%B8%82n-de-lotes.png')
 ```
 
@@ -68,7 +68,7 @@ While the project does not only combat climate change, but also on air quality a
 
 First, for area 1, that is to connect a peri-urban space of 1,400 ha to the high valuable forests of El Prado, Valdelatas mountains and Casa de Campo. The area acts as a transitional space between the nature to existing urban parks, making environmental protection compatible with walks and healthy leisure activities. Hence, remote sensing for biodiversity in the forests in the north, distinguishing species, or identify species of individual trees [@turner2003]. The information of the diversity pattern , especially on the fringe could be used to determine types of trees, and the density of trees to be planted so as to conserve species and lower impacts on local ecosystem, simultaneously, helping the design of infrastructures such as walks, experimental farms and leisure activities in the transitional space. For example, @polyakova2023 has used **Sentinel-2 Satellite Data** in automated recognition of tree species in Raifa forest, Russia. The reflectances of tree species are observed in the red-edge (Band 6, Band 7) and near-infrared (Band 8, Band 8a) bands in all images. The image below shows the classification of tree specices using sentinel-2 level2A images.
 
-```{r echo=FALSE, out.width="100%", fig.cap="Sentinel-2 data classification results: (a) RF method; (b) GTM method. Source: https://www.mdpi.com/2072-4292/15/2/329"}
+```{r echo=FALSE, out.width="100%", fig.align='center', cache=FALSE, fig.cap="Sentinel-2 data classification results: (a) RF method; (b) GTM method. Source: https://www.mdpi.com/2072-4292/15/2/329"}
 knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-15-00329/article_deploy/html/images/remotesensing-15-00329-g006.png')
 ```
 
@@ -76,7 +76,7 @@ knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-15-003
 
 While for area 2, large parks in Madrid are often disconnected with the presence of infrastructures. Hence, the main objective is to connect green spaces of the general system of free spaces with a forest avenue that will have a bike path and a large walking area that will unite all the large parks of our city. As urban green spaces should be constructed in a hierachical structure, where vegetations in different areas contains different social functions, such as public parks, residential green space, green buffer. Remote sensing images can identify different social functions of different vegetation patches with spectral analysis to vegetation and non-vegetation areas. Hence, the extent of disconnected green spaces in aid with functions of existing green spaces can be used to determine the density of trees and types of greening to implement, such as ecoducts that allow cyclist and pedestrians movement. This way, the urban structures and urban functions of the original areas could be retained while greening is built on.
 
-```{r echo=FALSE, out.width="100%", fig.cap="Vegetation types (a–c) and vegetation patches with various social functions (d–h) in satellite images. Source: https://www.sciencedirect.com/science/article/pii/S0924271618302910"}
+```{r echo=FALSE, out.width="100%", fig.align='center', cache=FALSE, fig.cap="Vegetation types (a–c) and vegetation patches with various social functions (d–h) in satellite images. Source: https://www.sciencedirect.com/science/article/pii/S0924271618302910"}
 knitr::include_graphics('https://ars.els-cdn.com/content/image/1-s2.0-S0924271618302910-gr1.jpg')
 ```
 
@@ -92,7 +92,7 @@ The creation of an agricultural park is planned to enhance the fertile plain of 
 
 The main objective for this area is to create a green space between the neighboring municipalities supported by infrastructure borders, the Butarque stream and the large Campamento land reserve. This area's forestation will demand more on serving the neigbouring population and neighboring municipalities supported by infrastructure borders. The purpose of trees plantation in this area is to create an ecological restoration center and a equipment dedicated to a business incubator that promotes the green economy model. Hence, remote sensing could do similar work to the other areas to create a plan that benifits the envionrment, economy and society functionings. One of the possible ways is to implement street tree planting with precise locations or developing vertical plantations that helps alleviate high urban temperature area using remotely sensed thermal infrared data for land surface temperature (LST) to detect urban heat island effects to the urban areas within the area [@keeratikasikorn2018]. Then, the correspond surface urban heat island (SUHI) map can be generated to compare with the previous Land plan maps to identify places that are required to plant trees [@keeratikasikorn2018].
 
-```{r echo=FALSE, out.width="100%", fig.cap="SUHI maps of Bangkok urban area obtained by the seven Landsat 8 clear-sky images. The last map represents the mean SUHI of the seven images. Source: https://www.mdpi.com/2072-4292/10/3/440"}
+```{r echo=FALSE, out.width="100%", fig.align='center', cache=FALSE, fig.cap="SUHI maps of Bangkok urban area obtained by the seven Landsat 8 clear-sky images. The last map represents the mean SUHI of the seven images. Source: https://www.mdpi.com/2072-4292/10/3/440"}
 knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-10-00440/article_deploy/html/images/remotesensing-10-00440-g004-550.jpg')
 ```
 

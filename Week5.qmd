@@ -6,8 +6,72 @@ title: "Week 5"
 
 ## Summary of Lecture 5
 
-Google Earth Engine (GEE) is a cloud-based geospatial processing platform that uses Javascript.
+### Basics of Google Earth Engine (GEE)
+
+Google Earth Engine (GEE) is a cloud-based geospatial processing platform that uses **Javascript**. It was introduced in 2010 by Google, allow users to conduct geospatial analysis at scale, which includes access to a large warehouse of satellite imagery and the prompt computational power needed to analyze those images. Below shows a comprehensive navigation guide to different tabs of the GEE layout.
+
+```{r echo=FALSE,cache=FALSE, fig.align='center', fig.cap="GEE layout. Source:https://ourcodingclub.github.io/tutorials/earth-engine/"}
+knitr::include_graphics('https://ourcodingclub.github.io/assets/img/tutorials/earth-engine/gee_layout.png')
+```
+
+Codes that run on the browser is called the **Client Side,** while codes that run on the server where data is stored is called **Server Side.** I think it is very useful to get to know more about the Java script style, including the data types, Earth Engine Objects (ee.object), and functional programming like For loop on the official [Google Earth Engine Guide](https://developers.google.com/earth-engine/tutorials/tutorial_js_02). During the lecture, it was specially mentioned that a loop is not possible to execute over the contents of an ee. ImageCollection because it is on the server side. Instead, a better option would be using the **map()** throughcreating a function that can be independently applied to each element. The figure below illustrates a simplified example of how map() would be better than for-loops in. GEE.
+
+```{r echo=FALSE,cache=FALSE, fig.align='center'}
+knitr::include_graphics('figures/week5_1.png')
+
+```
 
 ## Application
+
+### Melbourne in GEE 
+
+I used Melbourne for this practical. I downloaded the GADM boundary for Australia from [GADM](https://gadm.org/). The original intention was to select Tasmania, however, the available imagery for the location is very limited, I adjusted several filters including the date and cloud cover to include larger range of imagery in the area:
+
+{<  .filterDate('2017-01-01', '2022-10-10')>}
+{<  .filter(ee.Filter.lt("CLOUD_COVER", 0.5));}
+
+```{r echo=FALSE,cache=FALSE, fig.align='center', fig.cap='Tasmania'}
+knitr::include_graphics('figures/week5_3.gif')
+
+```
+
+However, the imagery shown are not sufficient, the screenshot below shows the coverage for Tasmania was not complete. Hence, I have selected other locations with more complete coverage of imagery. I found Melbourne with fulle coverage image, hence I chose it as the city for exploration in GEE. The figure below shows the True Colour Image that is clipped to SA boundary.
+
+```{r echo=FALSE, cache=FALSE, fig.align='center', out.width="100%", fig.cap='True COlour Image of South Australia'}
+knitr::include_graphics('figures/week5_tci.png')
+```
+
+I have mosaiced the image collection, and with the overlapping pixels, I took the mean to create less obvious demarcation of image overlap. Then, I clip it back with Melbourne boundary.
+
+```{r echo=FALSE, cache=FALSE, fig.align='center', out.width="100%", fig.cap='Mosaicking and Clipping of images from South Australia'}
+knitr::include_graphics('figures/week5_4.gif')
+
+```
+
+### Texture analysis of Melbourne
+
+GEE has several methods to estimate spatial texture, `image.entropy()` can be used when the image is discrete valued to compute the entropy in a neighbourhood. Other than that, another method is a familiar method with gray-level co-occurrence matrix (GLCM). `glcmTexture()` however works with integer value, hence, the value in surface refectance will be converted to integers, which is 1 and 0 in this case, as shown in the histogram below. The range is too subtly small. therefore, it has to be multiplied so the texture can be computed with the following codes.
+
+```{javascript eval=FALSE}
+var glcm = clip.select(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7])
+  .multiply(1000)
+  .toUint16()
+  .glcmTexture({size: 1})
+  .select('SR_.._contrast|SR_.._diss')
+  .addBands(clip);
+```
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="7 bands'pixel value"}
+knitr::include_graphics('figures/week5_ee-chart.png')
+```
+
+The GLCM considers spatial relationships of pixels in an image, I used the statistics of contrast GLCM for Melbourne, measuring the local variations in the gray-level co-occurrence matrix. The lower contrast areas(dark purple to black) are mainly green
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Contrast GLCM"}
+knitr::include_graphics('figures/week5_glcm.png')
+
+```
+
+GCI (Landsat 8) = (B5 / B3) -1
 
 ## Reflection

@@ -18,14 +18,14 @@ In some cases, some areas we want to observe or the Region of interest (ROI) can
 
 In this practical, I have chosen 4 tiles that consist parts of Hong Kong, including 1 Landsat 8 tile and 3 Landsat 9 tiles. However, as the tiles are with 2 different coordinate reference system of EPSG:32650 for two of them and EPSG:32649 for the remaining two tiles. I have tried using different methods to reproject rasters into the same projection (EPSG: 32649), however, the resolutions for the images are different from each other with 30.03617, 30.03617 (x, y) and 30.05118, 30.05118 (x, y). Hence, with limimte time and I couldn't figure how to alter resolution to create a mosaic image with 4 raster images. I decided to only used two of tiles to create mosaic image of the Pearl River Delta whicn includes also Hong Kong. It works fine considering Hong kong is a really small area and can fit well with two of the images.
 
-```{r, echo=FALSE,out.width="100%", out.height="20%",fig.show='hold', fig.align='center'}
+```{r, echo=FALSE,out.width="100%", out.height="20%",cache=FALSE, fig.show='hold', fig.align='center'}
 knitr::include_graphics('figures/week3.png')
 
 ```
 
 Below shows a summary of the initial obtained image of the mosaic image, which are bands of Landsat 9. Landsat 9 is similar to Landsat 8, but is designed to image four visible spectral bands, one near-infrared spectral band, three shortwave-infrared spectral bands at 30 m (98 ft) spatial resolution, and one panchromatic band at 15 m (49 ft) spatial resolution, and two thermal bands at 100 m (328 ft) spatial resolution. In this practical, band 8 of the spectral bands are not used. Band 1 is used specially to measure chlorophyll concentrations, band 9 is used to detect cirrus clouds by measuring light in the part of the electromagnetic spectrum where the clouds are most visible.
 
-```{r echo=FALSE,out.width="100%", fig.align='center', fig.cap="Bands of created image"}
+```{r echo=FALSE,out.width="100%", fig.align='center', cache=FALSE, fig.cap="Bands of created image"}
 knitr::include_graphics('figures/bands.png')
 ```
 
@@ -35,7 +35,7 @@ knitr::include_graphics('figures/bands.png')
 
 Some of the basic image enhancements were done in this practical. As numerous remote sensing applications such as mapping, classification, soil moisture detection require high resolution and high quality images, therefore , the raw remote sensing images can be enhanced by improving the contrast and edge information of the input image. I have followed the steps in the practical to create the Normalised Difference Vegetation Index (NDVI) for the images around Hong Kong. It is calculated from the visible and near-infrared light reflected by vegetation where healthy and green vegetation reflects more in the NIR and absorbs in the Red wavelength. The land surfaces shown below are mostly yellowish (0.2-0.4) in colour, except where the delta lies in the middle. The colour scheme for the red circled area (Hong Kong) displayed shows gradual change from yellow to green (\>0/4). The green areas are mostly green spaces are hills in Hong Kong.
 
-```{r echo=FALSE, out.width="100%", fig.align='center', fig.cap="the NDVI index for Pearl River Delta."}
+```{r echo=FALSE, out.width="100%", fig.align='center', cache=FALSE, fig.cap="the NDVI index for Pearl River Delta."}
 knitr::include_graphics('figures/week3_3.png')
 
 ```
@@ -62,7 +62,7 @@ The next interesting thing of this practical is the texture analysis. Image text
 |     |
 |:----|
 
-```{r echo=FALSE, out.width="100%", fig.align='center', fig.cap="Texture "}
+```{r echo=FALSE, out.width="100%", cache=FALSE, fig.align='center', fig.cap="Texture "}
 knitr::include_graphics('figures/week3_texture.png')
 
 ```
