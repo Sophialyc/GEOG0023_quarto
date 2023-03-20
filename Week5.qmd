@@ -65,13 +65,51 @@ var glcm = clip.select(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'S
 knitr::include_graphics('figures/week5_ee-chart.png')
 ```
 
-The GLCM considers spatial relationships of pixels in an image, I used the statistics of contrast GLCM for Melbourne, measuring the local variations in the gray-level co-occurrence matrix. The lower contrast areas(dark purple to black) are mainly green
+The GLCM considers spatial relationships of pixels in an image, I used the statistics of contrast GLCM for Melbourne, measuring the local variations in the gray-level co-occurrence matrix. The lower contrast areas(dark purple to black) are mainly natural environment and forestry, while the high contrast area (pink to light purple) are urban areas, such as settlements, urban structures. There is a comparison below between the glcm map and the tci image.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Contrast GLCM"}
-knitr::include_graphics('figures/week5_glcm.png')
+knitr::include_graphics('figures/week5_glcm.2.png')
 
 ```
 
-GCI (Landsat 8) = (B5 / B3) -1
+### PCA analysis of Melbourne
+
+Principle Component analysis(PCA) transforms the original vector image data into smaller set of uncorrelated variables such, allowing the identification of standards in data and their expression to emphasise the similarities and differences [@santo2012]. From the 21 element of the PCA analysis, the first 4 components are shown as they explain for cumulative **98.68%** of total variance within the whole image collection. The variation captured in Melbourne is quite obvious as the different land use tend to form a cluster, the urban areas are located around the coast while the inner regions are mostly natural environment with less significant clusters of settlements.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="PCA "}
+knitr::include_graphics('figures/week5_pc1-4.gif')
+```
+
+### Band math in GEE 
+
+GEE also supports band math generation, I have illustrated with **Normalized Difference Vegetation Index(NDVI)** and **Normalized Difference Water Index** **(NDWI)** with simple lines of code.
+
+```{javascript eval=FALSE}
+//NDVI
+var NDVI_1 = clip.select('SR_B5').subtract(clip.select('SR_B4'))
+  .divide(clip.select('SR_B5').add(clip.select('SR_B4')));
+
+Map.addLayer(NDVI_1, { min: -1, max: 1, palette: ['blue', 'white', 'green']}, 'NDVI');
+```
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="NDVI of Melbourne"}
+knitr::include_graphics('figures/week5_ndvi.png')
+```
+
+```{javascript eval=FALSE}
+//NDWI
+var NDWI = clip.select('SR_B3').subtract(clip.select('SR_B5'))
+  .divide(clip.select('SR_B3').add(clip.select('SR_B5')));
+
+Map.addLayer(NDWI, { min: -1, max: 1, palette: ['blue', 'white', 'green']}, 'NDWI');
+```
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="NDWI of Melbourne"}
+knitr::include_graphics('figures/week5_NDWI.png')
+```
 
 ## Reflection
+
+GEE is very new and interesting to me, I am surprised of the capability of GEE in remote sensing. Other than the confusion with JavaScript, I think GEE in general is a very useful tool for carrying out large scale geospatial analysis. In this practical, I got to explore Melbourne by creating various parameters such as texture, PCA and band maths. I think that the GEE window is sometimes hard to navigate because if there is a variable viewer automatically, and rather than requiring users to use `print()` function to write in console. With a variable viewer, it would be more convenient and easily understandable about what I have created because I sometimes get confused about how to interpret the maps and want to go back to check values of the layer. Also, I am still figuring out a way to create legend to collate for interpretations on maps.
+
+In general, I think GEE is a pragmatic tool but perhaps the errors could be more comprehendible for users to debug. I do think that the large dataset available on a cloud-based platform is awesome and I really like the **"Google Earth Timelapse"** on GEE. I saw the timelapse displaying the urban growth in Naypytaw, Myanmar from 1984 to 2020 is simply amazing.

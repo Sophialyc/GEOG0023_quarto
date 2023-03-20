@@ -155,7 +155,7 @@ background-size: cover;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img" aria-label="Source Code">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -270,6 +270,7 @@ background-size: cover;
   <ul class="collapse">
   <li><a href="#melbourne-in-gee" id="toc-melbourne-in-gee" class="nav-link" data-scroll-target="#melbourne-in-gee"><span class="toc-section-number">5.2.1</span>  Melbourne in GEE</a></li>
   <li><a href="#texture-analysis-of-melbourne" id="toc-texture-analysis-of-melbourne" class="nav-link" data-scroll-target="#texture-analysis-of-melbourne"><span class="toc-section-number">5.2.2</span>  Texture analysis of Melbourne</a></li>
+  <li><a href="#pca-analysis" id="toc-pca-analysis" class="nav-link" data-scroll-target="#pca-analysis"><span class="toc-section-number">5.2.3</span>  PCA analysis</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">5.3</span>  Reflection</a></li>
   </ul>
@@ -370,7 +371,31 @@ background-size: cover;
 </div>
 </div>
 </div>
-<p>The GLCM considers spatial relationships of pixels in an image, I used the statistics of contrast GLCM for Melbourne, measuring the local variations in the gray-level co-occurrence matrix.</p>
+<p>The GLCM considers spatial relationships of pixels in an image, I used the statistics of contrast GLCM for Melbourne, measuring the local variations in the gray-level co-occurrence matrix. The lower contrast areas(dark purple to black) are mainly natural environment and forestry, while the high contrast area (pink to light purple) are urban areas, such as settlements, urban structures. There is a comparison below between the glcm map and the tci image.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week5_glcm.2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Contrast GLCM</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pca-analysis" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="pca-analysis"><span class="header-section-number">5.2.3</span> PCA analysis</h3>
+<p>Principle Component analysis(PCA) transforms the original vector image data into smaller set of uncorrelated variables such, allowing the identification of standards in data and their expression to emphasise the similarities and differences. From the 21 element of the PCA analysis, the first 4 components are shown as they explain for <strong>98.68%</strong> of the variance within the whole image collection.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week5_pc1-4.gif" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">PCA</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 <p>GCI (Landsat 8) = (B5 / B3) -1</p>
 </section>
 </section>
