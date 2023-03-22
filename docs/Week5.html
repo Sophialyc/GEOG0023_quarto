@@ -83,6 +83,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -270,7 +289,8 @@ background-size: cover;
   <ul class="collapse">
   <li><a href="#melbourne-in-gee" id="toc-melbourne-in-gee" class="nav-link" data-scroll-target="#melbourne-in-gee"><span class="toc-section-number">5.2.1</span>  Melbourne in GEE</a></li>
   <li><a href="#texture-analysis-of-melbourne" id="toc-texture-analysis-of-melbourne" class="nav-link" data-scroll-target="#texture-analysis-of-melbourne"><span class="toc-section-number">5.2.2</span>  Texture analysis of Melbourne</a></li>
-  <li><a href="#pca-analysis" id="toc-pca-analysis" class="nav-link" data-scroll-target="#pca-analysis"><span class="toc-section-number">5.2.3</span>  PCA analysis</a></li>
+  <li><a href="#pca-analysis-of-melbourne" id="toc-pca-analysis-of-melbourne" class="nav-link" data-scroll-target="#pca-analysis-of-melbourne"><span class="toc-section-number">5.2.3</span>  PCA analysis of Melbourne</a></li>
+  <li><a href="#band-math-in-gee" id="toc-band-math-in-gee" class="nav-link" data-scroll-target="#band-math-in-gee"><span class="toc-section-number">5.2.4</span>  Band math in GEE</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">5.3</span>  Reflection</a></li>
   </ul>
@@ -383,9 +403,9 @@ background-size: cover;
 </div>
 </div>
 </section>
-<section id="pca-analysis" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="pca-analysis"><span class="header-section-number">5.2.3</span> PCA analysis</h3>
-<p>Principle Component analysis(PCA) transforms the original vector image data into smaller set of uncorrelated variables such, allowing the identification of standards in data and their expression to emphasise the similarities and differences. From the 21 element of the PCA analysis, the first 4 components are shown as they explain for <strong>98.68%</strong> of the variance within the whole image collection.</p>
+<section id="pca-analysis-of-melbourne" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="pca-analysis-of-melbourne"><span class="header-section-number">5.2.3</span> PCA analysis of Melbourne</h3>
+<p>Principle Component analysis(PCA) transforms the original vector image data into smaller set of uncorrelated variables such, allowing the identification of standards in data and their expression to emphasise the similarities and differences <span class="citation" data-cites="santo2012">(<a href="#ref-santo2012" role="doc-biblioref">Santo 2012</a>)</span>. From the 21 element of the PCA analysis, the first 4 components are shown as they explain for cumulative <strong>98.68%</strong> of total variance within the whole image collection. The variation captured in Melbourne is quite obvious as the different land use tend to form a cluster, the urban areas are located around the coast while the inner regions are mostly natural environment with less significant clusters of settlements.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -396,13 +416,57 @@ background-size: cover;
 </div>
 </div>
 </div>
-<p>GCI (Landsat 8) = (B5 / B3) -1</p>
+</section>
+<section id="band-math-in-gee" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="band-math-in-gee"><span class="header-section-number">5.2.4</span> Band math in GEE</h3>
+<p>GEE also supports band math generation, I have illustrated with <strong>Normalized Difference Vegetation Index(NDVI)</strong> and <strong>Normalized Difference Water Index</strong> <strong>(NDWI)</strong> with simple lines of code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">//NDVI</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> NDVI_1 <span class="op">=</span> clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B5'</span>)<span class="op">.</span><span class="fu">subtract</span>(clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B4'</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">divide</span>(clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B5'</span>)<span class="op">.</span><span class="fu">add</span>(clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B4'</span>)))<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(NDVI_1<span class="op">,</span> { <span class="dt">min</span><span class="op">:</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">palette</span><span class="op">:</span> [<span class="st">'blue'</span><span class="op">,</span> <span class="st">'white'</span><span class="op">,</span> <span class="st">'green'</span>]}<span class="op">,</span> <span class="st">'NDVI'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week5_ndvi.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">NDVI of Melbourne</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">//NDWI</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> NDWI <span class="op">=</span> clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B3'</span>)<span class="op">.</span><span class="fu">subtract</span>(clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B5'</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">divide</span>(clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B3'</span>)<span class="op">.</span><span class="fu">add</span>(clip<span class="op">.</span><span class="fu">select</span>(<span class="st">'SR_B5'</span>)))<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(NDWI<span class="op">,</span> { <span class="dt">min</span><span class="op">:</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">palette</span><span class="op">:</span> [<span class="st">'blue'</span><span class="op">,</span> <span class="st">'white'</span><span class="op">,</span> <span class="st">'green'</span>]}<span class="op">,</span> <span class="st">'NDWI'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week5_NDWI.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">NDWI of Melbourne</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="reflection" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">5.3</span> Reflection</h2>
+<p>GEE is very new and interesting to me, I am surprised of the capability of GEE in remote sensing. Other than the confusion with JavaScript, I think GEE in general is a very useful tool for carrying out large scale geospatial analysis. In this practical, I got to explore Melbourne by creating various parameters such as texture, PCA and band maths. I think that the GEE window is sometimes hard to navigate because if there is a variable viewer automatically, and rather than requiring users to use <code>print()</code> function to write in console. With a variable viewer, it would be more convenient and easily understandable about what I have created because I sometimes get confused about how to interpret the maps and want to go back to check values of the layer. Also, I am still figuring out a way to create legend to collate for interpretations on maps.</p>
+<p>In general, I think GEE is a pragmatic tool but perhaps the errors could be more comprehendible for users to debug. I do think that the large dataset available on a cloud-based platform is awesome and I really like the <strong>“Google Earth Timelapse”</strong> on GEE. I saw the timelapse displaying the urban growth in Naypytaw, Myanmar from 1984 to 2020 is simply amazing.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-santo2012" class="csl-entry" role="doc-biblioentry">
+Santo, Rafael do Espírito. 2012. <span>“Principal Component Analysis Applied to Digital Image Compression.”</span> <em>Einstein (São Paulo)</em> 10 (June): 135–39. <a href="https://doi.org/10.1590/S1679-45082012000200004">https://doi.org/10.1590/S1679-45082012000200004</a>.
+</div>
+</div>
 </section>
 
 </div></main> <!-- /main -->
