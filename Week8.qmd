@@ -24,13 +24,15 @@ The figure below illustrates the average surface temperatures in New Orleans fro
 knitr::include_graphics('https://i0.wp.com/dirt.asla.org/wp-content/uploads/2023/01/23_01_19-Reforestation-Plan_Urban-Heat-Island_blog.jpg?w=625&ssl=1')
 ```
 
-To combat extreme heat, authority in New Orleans proposed a new master plan for rebuilding itsurban forest calls for 100,000 new trees to be planted by 2040. It was hoping that the strategic planting of 100,000 trees could increase the tree canopy in each New Orleans neighborhood to cover at least 10% of the area.
+To combat extreme heat, authority in New Orleans proposed a new master plan for rebuilding itsurban forest calls for 100,000 new trees to be planted by 2040. It was hoping that the strategic planting of 100,000 trees could increase the tree canopy in each New Orleans neighborhood to cover at least 10% of the area. While trees and plants have a significant cooling benefit, the reforestation plan offers a more equitable model to reduce dangerous extreme heat while lowering energy use.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="A mix of imagery and LiDAR paint a picture New Orleans' tree canop Soruce:https://www.wwno.org/coastal-desk/2023-01-20/new-orleans-has-a-new-goal-for-building-a-greener-city-plant-100k-trees-in-20-years"}
 knitr::include_graphics('https://npr.brightspotcdn.com/dims4/default/b7a6cc3/2147483647/strip/true/crop/2550x3300+0+0/resize/1760x2278!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F98%2Fe2%2F029e7ecd45e1b9265f94d9fe33c1%2F23-01-19-reforestation-plan-existing-tree-canopy-no-title.jpg')
 ```
 
-global policy
+## global policy
+
+From the perspective of the whole world, the urban population around the world has doubled from 1754 million in 1980 to 3,594 million in 2010, and this number will reach up to 5,167 million in 2030 (United Nations, [**2018**](https://onlinelibrary.wiley.com/doi/full/10.1111/1477-8947.12245#narf12245-bib-0033)). It was predicted that by 2050, over 68% of the global population will be living in cities, the rapid urbanisation has caused the various problems, especially when urban areas actually only constitute less than 1% of the earth's surface. UHI has become a more concerning issue across the globe. In 2021, the UN Environment Programme (UNEP) published detailed guidance to help the world combatting extreme heat, especially in urban areas where heating occurs twice the global average rate.
 
 mitigation methods
 
