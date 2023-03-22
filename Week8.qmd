@@ -6,11 +6,33 @@ title: "Week 8"
 
 ## Summary of Lecture 8
 
-This week, we covered Urban Heat Island (UHI) and policy related to it. UHI occur when cities replace natural land cover with dense concentrations of pavement, buildings and urban structures that absorb and retain heat. In highly concentrated urrban areas with limited greenery, the area will become "islands" of higher temperatures relative to outlying areas [@usepa2014]. There are factors that cause and intensify UHI, such as heat generated from human activities, weather and geography and reduced natural landscapes in urban areas. However, from the view of remote sensing, there are two main factors that is identified as UHI from the images, including the dark surfaces that retain heat and less vegetation to regulate temperature. The magnitude of UHI in world cities are shown below,
+This week, we covered Urban Heat Island (UHI) and policy related to it. UHI effects occur when cities replace natural land cover with dense concentrations of pavement, buildings and urban structures that absorb and retain heat. In highly concentrated urban areas with limited greenery, the area will become "islands" of higher temperatures relative to outlying areas [@usepa2014]. There are factors that cause and intensify UHI, such as heat generated from human activities, weather and geography and reduced natural landscapes in urban areas. However, from the view of remote sensing, there are two main factors that is identified as UHI from the images, including the dark surfaces that retain heat and less vegetation to regulate temperature. The magnitude of UHI in world cities are shown below, showing the variations in different regions.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%" fig.align='center', fig.cap="Map of summertime UHI intensity in world cities (a), EU (b), and SEA (c). d–g, Observed probability distribution of ΔTs (d), population N (e), mean annual precipitation P (f), and urban green cover gc,u (g). Large circles in b, c indicate cities with green cover data20,22 used to compute the statistics in d–. Source:https://www.nature.com/articles/s41586-019-1512-9"}
 knitr::include_graphics('https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-019-1512-9/MediaObjects/41586_2019_1512_Fig2_HTML.png?as=webp')
 ```
+
+## Local Policy
+
+### New Orleans, US
+
+In the US, Climate Central, nonprofit news organization, created an index to evaluate the intensity of urban heat islands and applied it to 159 cities across the U.S by measuring the type of land cover in each city, from greenspace to paved areas, and factoring in building height and population density. The cities with the five most intense urban heat islands are New Orleans, Newark, N.J., New York City, Houston, and San Francisco. According to a study by the Climate Central, on average the city is about 9 degrees hotter than the surrounding countryside.
+
+The figure below illustrates the average surface temperatures in New Orleans from 2019 to 2021. The areas with higher temperature are areas with less than 10% of tree canopy. Hence, the authority has decided to
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="Surface temperatures in New Orleans (2019-2021) Source:Spackman Mossop Michaels"}
+knitr::include_graphics('https://i0.wp.com/dirt.asla.org/wp-content/uploads/2023/01/23_01_19-Reforestation-Plan_Urban-Heat-Island_blog.jpg?w=625&ssl=1')
+```
+
+To combat extreme heat, authority in New Orleans proposed a new master plan for rebuilding itsurban forest calls for 100,000 new trees to be planted by 2040. It was hoping that the strategic planting of 100,000 trees could increase the tree canopy in each New Orleans neighborhood to cover at least 10% of the area.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="A mix of imagery and LiDAR paint a picture New Orleans' tree canop Soruce:https://www.wwno.org/coastal-desk/2023-01-20/new-orleans-has-a-new-goal-for-building-a-greener-city-plant-100k-trees-in-20-years"}
+knitr::include_graphics('https://npr.brightspotcdn.com/dims4/default/b7a6cc3/2147483647/strip/true/crop/2550x3300+0+0/resize/1760x2278!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F98%2Fe2%2F029e7ecd45e1b9265f94d9fe33c1%2F23-01-19-reforestation-plan-existing-tree-canopy-no-title.jpg')
+```
+
+global policy
+
+mitigation methods
 
 ## Application
 
