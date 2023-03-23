@@ -6,7 +6,7 @@ title: "Week 6"
 
 ## Summary of Lecture 6
 
-This is the second lecture that covers Google Earth Engine (GEE), and it is more focused on image classification. Before going deep into what image classification refers to in technical terms, this lecture focused on how classified images are used in different contexts to solve various problems. To briefly understand the term image classification, it refers to the process of identifying and categorising images according to their appearances or pixels, it is an imperative process before actually analyzing them in research or studies because the classified images provides concrete information of the classes captured in an image.
+This is the second lecture that covers Google Earth Engine (GEE), and it is more focused on image classification. Before going deep into what image classification refers to in technical terms, this lecture focused on how classified images are used in different contexts to solve various problems, also introducing machine learning in remote sensing. To briefly understand the term image classification, it refers to the process of identifying and categorising images according to their appearances or pixels, it is an imperative process before actually analyzing them in research or studies because the classified images provides concrete information of the classes captured in an image.
 
 ### Utilising classified image in different scenarios
 
@@ -24,7 +24,7 @@ Object-Based Image Analysis (OBIA) was adopted to classify images at image objec
 
 #### Air Pollution and LULC
 
-Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by [@superczynski2011] has explored LULC and Pm~2.5~ emissions. The classified images to LULC map was linked to Pm~2.5~ mass concentration in Alabama to examine the correlation between the two variables. Classification was done with selecting representative samples for each class, which is a supervised classification. It was mentioned that some calssed in the image has to be split into subclasses and combined into Level I Anderson classification in post-classification processing. The figure below shows the result of classification to Birmingham in Alabama
+Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by [@superczynski2011] has explored LULC and Pm~2.5~ emissions. The classified images to LULC map was linked to Pm~2.5~ mass concentration in Alabama to examine the correlation between the two variables. Classification was done with selecting representative samples for each class, which is a supervised classification. It was mentioned that some calssed in the image has to be split into subclasses and combined into Level I Anderson classification in post-classification processing. The figure below shows the result of classification to urban areas in Birmingham in Alabama. Then, the data was used to compute with Pm~2.5~ data for further air pollution analysis.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="progression of urbanized land around the city of Birmingham since 1998. Source: https://www.mdpi.com/2072-4292/3/12/2552"}
 knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-03-02552/article_deploy/html/images/remotesensing-03-02552-g002-1024.png')
@@ -32,6 +32,58 @@ knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-03-025
 
 ### Machine learning in remote sensing with GEE
 
+Machine learning has been applied in remote sensing for various usage, including image classification, regression, clustering, coding and source separation. In the lecture, **Classification and regression trees (CART)** was introduced. The two types of decision trees are:
+
+-   Classification trees (CA) : classify data into **≥** 2 discrete categories
+
+    -   examples: temperature. rainfall, wind, saturation
+
+-   Regression trees (RT) : predict continuous dependable variables
+
+    -   examples: age, height, score
+
+#### Classification trees
+
+The CART algorithm was published by Leo Breiman in 1984, using decision tree to provide more information to learn from in the form of basic if-else-decision rules. The decision tree is a simple structure that consist of different kinds of elements, a **starting point (Root)**, **decision nodes** and **multiple terminal nodes (Leaves)**. Eventually, each pixel points will be assigned to class for classification purpose. In other words, classification trees tries to subset data into smaller chunks, it is useful when linear regression does not fit, by subseting the original data, the classification tree can generate different category.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Knowledge-based decision tree. Source: https://www.mdpi.com/2072-4292/4/6/1741"}
+knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-04-01741/article_deploy/html/images/remotesensing-04-01741f8-1024.png')
+```
+
+The concept of decision tree is easily grasped, hence, it is rather easy to employ in different analysis. Also, as it can be visualised, people that works better with visualisation in problem solving will benefit from it. However, on the downside, decision tree are prone to **overfitting,** causing more complex trees fail to properly generalise data. Also, there is the possibility that the final leaves result with a mixture of different categories --\> **Impurity.**
+
+To solve the impurity for clear classification, the **Gini Impurity** is quantified and used as splitting methods, where it measures the likelihood of an incorrect classification of a new instance of a random variable. The Gini Impurity formula is calculated as:
+
+$$
+G=i=1∑C​p(i)∗(1−p(i))
+$$
+
+Two other common impurity metrics are **Entropy:**
+
+$$
+Ie(S) = −∑pilog2(pi) 
+$$
+
+and **Missclassifcation error:**
+
+$$
+Ic(S) =1 – max(pi)
+$$
+
+Gini index and entropy behave similarly,both attempting to reach a unique maximum, though at slightly different positions. Gini Impurity of 0 is the lowest and best possible impurity, but it only occurs when all the pixels are in the same class. While for misclassification error, it is simply the fraction of points in the subset that are not in the major vote class, it's more of pruning nature and not growing a tree.
+
+#### Regression trees
+
+Different from classification trees, regression trees are used when the response variable is [continuous]{.underline}. With many predictor variables, the decision trees can undergo trials of different thresholds and calculate the sum of squared residuals (SSR). It helps to predict continuous variables such as amount of pollution. The figure below shows major difference of regression tree and classification tree.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Classifcation vs Regression . Source: https://www.javatpoint.com/regression-vs-classification-in-machine-learning"}
+knitr::include_graphics('https://static.javatpoint.com/tutorial/machine-learning/images/regression-vs-classification-in-machine-learning.png')
+```
+
+The normal workflow for a regression tree is in the first split, compare and find the lowest average value, then consider another split, find the lowest value again and so on.
+
 ## Application
+
+In this practical, I chose
 
 ## Reflection

@@ -238,7 +238,7 @@ background-size: cover;
 
 <section id="summary-of-lecture-6" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="summary-of-lecture-6"><span class="header-section-number">6.1</span> Summary of Lecture 6</h2>
-<p>This is the second lecture that covers Google Earth Engine (GEE), and it is more focused on image classification. Before going deep into what image classification refers to in technical terms, this lecture focused on how classified images are used in different contexts to solve various problems. To briefly understand the term image classification, it refers to the process of identifying and categorising images according to their appearances or pixels, it is an imperative process before actually analyzing them in research or studies because the classified images provides concrete information of the classes captured in an image.</p>
+<p>This is the second lecture that covers Google Earth Engine (GEE), and it is more focused on image classification. Before going deep into what image classification refers to in technical terms, this lecture focused on how classified images are used in different contexts to solve various problems, also introducing machine learning in remote sensing. To briefly understand the term image classification, it refers to the process of identifying and categorising images according to their appearances or pixels, it is an imperative process before actually analyzing them in research or studies because the classified images provides concrete information of the classes captured in an image.</p>
 <section id="utilising-classified-image-in-different-scenarios" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="utilising-classified-image-in-different-scenarios"><span class="header-section-number">6.1.1</span> Utilising classified image in different scenarios</h3>
 <section id="urban-expansion" class="level4" data-number="6.1.1.1">
@@ -259,7 +259,7 @@ background-size: cover;
 </section>
 <section id="air-pollution-and-lulc" class="level4" data-number="6.1.1.2">
 <h4 data-number="6.1.1.2" class="anchored" data-anchor-id="air-pollution-and-lulc"><span class="header-section-number">6.1.1.2</span> Air Pollution and LULC</h4>
-<p>Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by <span class="citation" data-cites="superczynski2011">(<a href="#ref-superczynski2011" role="doc-biblioref">Superczynski and Christopher 2011</a>)</span> has explored LULC and Pm<sub>2.5</sub> emissions. The classified images to LULC map was linked to Pm<sub>2.5</sub> mass concentration in Alabama to examine the correlation between the two variables. Classification was done with selecting representative samples for each class, which is a supervised classification. It was mentioned that some calssed in the image has to be split into subclasses and combined into Level I Anderson classification in post-classification processing. The figure below shows the result of classification to Birmingham in Alabama</p>
+<p>Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by <span class="citation" data-cites="superczynski2011">(<a href="#ref-superczynski2011" role="doc-biblioref">Superczynski and Christopher 2011</a>)</span> has explored LULC and Pm<sub>2.5</sub> emissions. The classified images to LULC map was linked to Pm<sub>2.5</sub> mass concentration in Alabama to examine the correlation between the two variables. Classification was done with selecting representative samples for each class, which is a supervised classification. It was mentioned that some calssed in the image has to be split into subclasses and combined into Level I Anderson classification in post-classification processing. The figure below shows the result of classification to urban areas in Birmingham in Alabama. Then, the data was used to compute with Pm<sub>2.5</sub> data for further air pollution analysis.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -274,6 +274,35 @@ background-size: cover;
 </section>
 <section id="machine-learning-in-remote-sensing-with-gee" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="machine-learning-in-remote-sensing-with-gee"><span class="header-section-number">6.1.2</span> Machine learning in remote sensing with GEE</h3>
+<p>Machine learning has been applied in remote sensing for various usage, including image classification, regression, clustering, coding and source separation. In the lecture, <strong>Classification and regression trees (CART)</strong> was introduced.</p>
+<ul>
+<li><p>Classification trees (CA) : classify data into <strong>≥</strong> 2 discrete categories</p>
+<ul>
+<li>examples: temperature. rainfall, wind, saturation</li>
+</ul></li>
+<li><p>Regression trees (RT) : predict continuous dependable variables</p>
+<ul>
+<li>examples: age, height, score</li>
+</ul></li>
+</ul>
+<p>The CART algorithm was published by Leo Breiman in 1984, using decision tree to provide more information to learn from in the form of basic if-else-decision rules. The decision tree is a simple structure that consist of different kinds of elements, a <strong>starting point (Root)</strong>, <strong>decision nodes</strong> and <strong>multiple terminal nodes (Leaves)</strong>. Eventually, each pixel points will be assigned to class for classification purpose. In other words, regression tree tries to subset data into smaller chunks, it is useful when linear regression does not fit, by subseting the original data, the regression tree can generate different category.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.mdpi.com/remotesensing/remotesensing-04-01741/article_deploy/html/images/remotesensing-04-01741f8-1024.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Knowledge-based decision tree. Source: https://www.mdpi.com/2072-4292/4/6/1741</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The concept of decision tree is easily grasped, hence, it is rather easy to employ in different analysis. Also, as it can be visualised, people that works better with visualisation in problem solving will benefit from it. However, on the downside, decision tree are prone to overfitting, causing more complex trees fail to properly generalise data. Also, there is the possibility that the final leaves result with a mixture of different categories –&gt; <strong>Impurity.</strong></p>
+<p>To solve the impurity for clear classification, the <strong>Gini Impurity</strong> is quantified, where it measures the likelihood of an incorrect classification of a new instance of a random variable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://miro.medium.com/v2/resize:fit:594/1*21vpI4SYfqRLrItRVH0ySg.png" class="img-fluid figure-img" alt=""></p>
+</figure>
+</div>
 </section>
 </section>
 <section id="application" class="level2" data-number="6.2">
