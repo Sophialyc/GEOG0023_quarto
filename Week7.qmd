@@ -6,7 +6,55 @@ title: "Week 7"
 
 ## Summary of Lecture 7
 
-Geometric correction is used to correct positional errors and to transform original image to a new image
+```{r echo=FALSE,cache=FALSE, fig.align='center', fig.cap="The feature relations map learning (FRML) chart for hyperspectral image classification. Source: mdpi.com/2072-4292/12/18/2956"}
+knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-12-02956/article_deploy/html/images/remotesensing-12-02956-g001.png')
+```
+
+Due to the synoptic view nature in remote sensing images, the remote sensing images produces are in map-like format, making it a viable source of gathering effective land cover information. However, just the raw image and identification with the naked eye is not reliable and accurate. Therefore, basic image classification is important to categorize all pixels in a digital image into one of several classes. Image classification is regarded as one of the most essential part in digital image analysis as it allows allocation of semantic labels to capture image. It is useful for research, and policy making purposes as it provides better understanding and details to the content within the image. The image above is a type of image processing using a technique of **Feature Relations Map Learning** for hyperspectral image, it automatically enhance the separability of different objects in an image [@dou2020]. While using a segmented feature relations map (SFRM), it reflects the relations between spectral features through a normalized difference index (NDI), and it can then learn new features from SFRM using a CNN-based feature extractor [@dou2020]. Conventionally, there are three types of image classification, including
+
+1.  ***Manual Classification***
+
+2.  ***Pixel-based classification***
+
+    1.  Supervised image classification
+
+    2.  Unsupervised image classification
+
+3.  ***Feature or object-based image classification***
+
+In pixel-based classification, there are two types of image classifications,including **Unsupervised** and **Supervised** classification, where unsupervised classification is calculated by the software supervised is mainly a human-guided classification. The supervised image classification creates outcomes that are based on the software analysis without giving it sample classes. On the other hand, unsupervised classification creates outcome that is aided by providing sample pixels in an image that are representative of specific classes and then direct the image processing software to use these training sites as references for the classification of all other pixels in the image.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Supervised and unsupervised classification on an image. Source: https://beekangsi.com/the-pros-and-cons-supervised-and-unsupervised-image-classification/"}
+knitr::include_graphics('https://i0.wp.com/beekangsi.com/wp-content/uploads/2022/04/Supervised-and-unsupervised-classification-of-SPOT-5-image-of-the-study-area-1.jpg?fit=738%2C613&ssl=1&w=640')
+```
+
+Referencing to [@bekan2022]'s GIS blog about the pros and cons of supervised and unsupervised image classification, both classification techniques has its disadvantages
+
++---------------------------------+--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+|                                 | Advantage                                                                                        | Disadvantage                                                                    |
++=================================+==================================================================================================+=================================================================================+
+| **Unsupervised Classification** | 1.  The operator can spot mistakes and often corrects them.                                      | 1.  gathering training for different class is very difficult and time consuming |
+|                                 |                                                                                                  |                                                                                 |
+|                                 | 2.  The analyst does not have to worry about matching categories on the final map to field data. | 2.  the unrepresented place in training data is difficult to recognize          |
+|                                 |                                                                                                  |                                                                                 |
+|                                 | 3.  The process is completely within the control of the analyzer.                                | 3.  needs very clear training process                                           |
+|                                 |                                                                                                  |                                                                                 |
+|                                 | 4.  Specific sections of known identity are linked to processing.                                | 4.  and also requires labelled data set                                         |
+|                                 |                                                                                                  |                                                                                 |
+|                                 | 5.  the class s defined by the Analyst                                                           |                                                                                 |
+|                                 |                                                                                                  |                                                                                 |
+|                                 | \                                                                                                |                                                                                 |
++---------------------------------+--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| **Supervised Classification**   | 1.  It is not necessary to label the training data set.                                          | 1.  Along the classification process, there is no concept of output.            |
+|                                 |                                                                                                  |                                                                                 |
+|                                 | 2.  it is time saving process                                                                    | 2.  It is not possible to estimate or map the outcome of a new sample.          |
+|                                 |                                                                                                  |                                                                                 |
+|                                 | 3.  fast classification                                                                          | 3.  In the presence of outliers, the outcome varies greatly.                    |
++---------------------------------+--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+In the lecture, another type od image classification
+
+\
 
 ## Application
 
