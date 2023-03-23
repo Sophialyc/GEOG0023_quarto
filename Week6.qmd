@@ -24,9 +24,13 @@ Object-Based Image Analysis (OBIA) was adopted to classify images at image objec
 
 #### Air Pollution and LULC
 
-Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by [@superczynski2011] has explored LULC and Pm~2.5~ emissions. The classified images to LULC map was linked to Pm~2.5~ mass concentration in Alabama
+Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by [@superczynski2011] has explored LULC and Pm~2.5~ emissions. The classified images to LULC map was linked to Pm~2.5~ mass concentration in Alabama to examine the correlation between the two variables. Classification was done with selecting representative samples for each class, which is a supervised classification. It was mentioned that some calssed in the image has to be split into subclasses and combined into Level I Anderson classification in post-classification processing. The figure below shows the result of classification to Birmingham in Alabama
 
-to examine the correlation between the two variables.
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="progression of urbanized land around the city of Birmingham since 1998. Source: https://www.mdpi.com/2072-4292/3/12/2552"}
+knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-03-02552/article_deploy/html/images/remotesensing-03-02552-g002-1024.png')
+```
+
+### Machine learning in remote sensing with GEE
 
 ## Application
 

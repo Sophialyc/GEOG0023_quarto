@@ -22,7 +22,7 @@ Due to the synoptic view nature in remote sensing images, the remote sensing ima
 
 3.  ***Feature or object-based image classification***
 
-### ***Pixel-based Classification***
+### **Pixel-based Classification**
 
 In pixel-based classification, there are two types of image classifications,including **Unsupervised** and **Supervised** classification, where unsupervised classification is calculated by the software supervised is mainly a human-guided classification. The supervised image classification creates outcomes that are based on the software analysis without giving it sample classes. On the other hand, unsupervised classification creates outcome that is aided by providing sample pixels in an image that are representative of specific classes and then direct the image processing software to use these training sites as references for the classification of all other pixels in the image. The figures below shows the two types of image classification technique used on the same image, producing approximately similar results, yet the details are quite different.
 
@@ -88,9 +88,9 @@ knitr::include_graphics('figures/week7_japanshiga.png')
 
 ```
 
-**: A narrative /discussion on how the data / concepts / methods (or related
+: A narrative /discussion on how the data / concepts / methods (or related
 concepts) have been applied in literature / policy or other studies. It is vital to do some
 reading and reference it each week. Here you must comment on the approaches in
-literature.**
+literature.
 
 ## Reflection
