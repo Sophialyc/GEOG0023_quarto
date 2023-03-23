@@ -14,7 +14,19 @@ This is the second lecture that covers Google Earth Engine (GEE), and it is more
 
 Urban land use chages have long been a hot topic for the research field, the incoporation of satellite images and GIS has generated a new dimension for researchers to assess and monitor land use cover change [@tewolde2011]. But the raw images captured from remote sensors are not easy to use as they do not convey any useful information for analysis, hence, studies that use satellite images for urban land use changes area often classified, creating a scale of values to compare and use.
 
-For instance, in a study on Eritrea, an independent state in north-eastern Africa, its capital city Asmara was examined with its settlement patterns of urban and suburban areas. Images used were Landsat TM satellite images with 30m resolution from 1908, 2000 and 2009. Pre-processing include
+For instance, in a study on Eritrea, an independent state in north-eastern Africa, its capital city Asmara was examined with its settlement patterns of urban and suburban areas. Images used were Landsat TM satellite images with 30m resolution from 1908, 2000 and 2009. Processing steps of landsat image is shown below:
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Data and Methodology used for image classification and result validation. Source: https://www.mdpi.com/2072-4292/3/10/2148"}
+knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-03-02148/article_deploy/html/images/remotesensing-03-02148-g002-1024.png')
+```
+
+Object-Based Image Analysis (OBIA) was adopted to classify images at image object level instead of pixel level. For land use study, OBIA is useful because the real world is not made up of pixels, instead, it is arrnaged in objects. Therefore, OBIA can avoid mixed pixel problems such as bare sand soil and the impervious parts of urban areas could create a mixed pixel problem. Hence, with classified images, it can be put to a model for analysis in urban expansion.
+
+#### Air Pollution and LULC
+
+Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by [@superczynski2011] has explored LULC and Pm~2.5~ emissions. The classified images to LULC map was linked to Pm~2.5~ mass concentration in Alabama
+
+to examine the correlation between the two variables.
 
 ## Application
 
