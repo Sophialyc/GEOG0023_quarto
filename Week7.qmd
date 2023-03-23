@@ -22,6 +22,8 @@ Due to the synoptic view nature in remote sensing images, the remote sensing ima
 
 3.  ***Feature or object-based image classification***
 
+### ***Pixel-based Classification***
+
 In pixel-based classification, there are two types of image classifications,including **Unsupervised** and **Supervised** classification, where unsupervised classification is calculated by the software supervised is mainly a human-guided classification. The supervised image classification creates outcomes that are based on the software analysis without giving it sample classes. On the other hand, unsupervised classification creates outcome that is aided by providing sample pixels in an image that are representative of specific classes and then direct the image processing software to use these training sites as references for the classification of all other pixels in the image. The figures below shows the two types of image classification technique used on the same image, producing approximately similar results, yet the details are quite different.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Supervised and unsupervised classification on an image. Source: https://beekangsi.com/the-pros-and-cons-supervised-and-unsupervised-image-classification/"}
@@ -52,14 +54,38 @@ Referencing to [@bekan2022]'s GIS blog about the pros and cons of supervised and
 |                                 | 3.  fast classification                                                                          | 3.  In the presence of outliers, the outcome varies greatly.                    |
 +---------------------------------+--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
+### **Object Based Image Analysis (OBIA)**
+
 In the lecture, another type of image classification is taught, the **Object based image analysis (OBIA)**. It involves pixels first being grouped into objects based on either spectral similarity or an external variable such as ownership, land use, shape and geological unit. **Superpixels** in OBIA are segmentating an image into regions by considering similarity(homogenity) or difference(heterogeneity) measures defined using perceptual features. To achieve that, Simple Linear Iterative Clustering (SLIC) algorithm is commonly used to generate Superpixels. SLIC uses euclidean distance to work out spatial distance between points to centre of pixels and is an adapted k means clustering. Thereby, it does not consider connectivity and do not compare each pixels with all pixels in the scene. Different from SLIC, another version of SLIC that is parameter-free has been proposed, called SLICO. It generates regular shaped Superpixels across the scene, regardless of textured or non-textured regions in the image.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="SLIC and SLICO Superpixel Generation. Source: https://www.mdpi.com/2072-4292/9/3/243"}
 knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-09-00243/article_deploy/html/images/remotesensing-09-00243-g004-550.jpg')
 ```
 
-\
+### Sub Pixel Analysis
+
+Sub pixel classification (SPC) extracts meaningful information on land-cover classes from the mixed pixels. The figure below shows what a mixed pixel looks like. The proportion and abundance of each classes in the mixed pixel can be accounted for. In general, a few endmembers that are specturally pure are generated will work out fractions per pixel and establish a spectral library.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Sparse modeling at sub-pixel level using the pre-learned dictionary. Source: https://www.mdpi.com/2072-4292/13/2/190"}
+knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-13-00190/article_deploy/html/images/remotesensing-13-00190-g004-550.jpg')
+
+```
+
+According to [@powell2007], for multiple endmember, Spectral mixture analysis (SMA) is done based on the assumptionthat the reflectance P' measured at pixel i can be modeled as the linear sum of N endmembers, or spectrally \'pure\' materials, weighted by the fraction cover fki of each endmember within the field of view of pixel i. Below shows the calculation of the sum of end member reflectance franction contribution to best-fit mixed spectrum where eiλ is a residual term indicating the disagreement between the measured and modeled spectra.:
+
+$$
+p_i\lambda=\sum_{k=1}^{n} (p_{ki\lambda} * f_ki) + ei_\lambda
+$$
+
+By the end, there will be the percentage/fraction of components for each pixels, for example, fraction of vegetation, soil, urban areas.
 
 ## Application
+
+To actually understand how classification works, in this week's practical, I have chosen Shiga, a prefecture of Japan that is located in the Kansai Region of Honshu.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Shiga"}
+knitr::include_graphics('images/image-2093053228.png')
+
+```
 
 ## Reflection
