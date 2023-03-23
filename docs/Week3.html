@@ -95,7 +95,7 @@ background-size: cover;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img" aria-label="Source Code">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -202,8 +202,17 @@ background-size: cover;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary-of-lecture-3" id="toc-summary-of-lecture-3" class="nav-link active" data-scroll-target="#summary-of-lecture-3"><span class="toc-section-number">3.1</span>  Summary of Lecture 3</a></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">3.2</span>  Application</a></li>
+  <li><a href="#summary-of-lecture-3" id="toc-summary-of-lecture-3" class="nav-link active" data-scroll-target="#summary-of-lecture-3"><span class="toc-section-number">3.1</span>  Summary of Lecture 3</a>
+  <ul class="collapse">
+  <li><a href="#correction" id="toc-correction" class="nav-link" data-scroll-target="#correction"><span class="toc-section-number">3.1.1</span>  Correction</a></li>
+  <li><a href="#mosaicking-images" id="toc-mosaicking-images" class="nav-link" data-scroll-target="#mosaicking-images"><span class="toc-section-number">3.1.2</span>  Mosaicking images</a></li>
+  <li><a href="#corrections-in-hong-kong" id="toc-corrections-in-hong-kong" class="nav-link" data-scroll-target="#corrections-in-hong-kong"><span class="toc-section-number">3.1.3</span>  Corrections in Hong Kong</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">3.2</span>  Application</a>
+  <ul class="collapse">
+  <li><a href="#image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi" id="toc-image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi" class="nav-link" data-scroll-target="#image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi"><span class="toc-section-number">3.2.1</span>  Image Enhancment with the mosaicked images in Hong Kong – NDVI</a></li>
+  <li><a href="#different-indices-for-image-enhancement" id="toc-different-indices-for-image-enhancement" class="nav-link" data-scroll-target="#different-indices-for-image-enhancement"><span class="toc-section-number">3.2.2</span>  Different Indices for image enhancement</a></li>
+  </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
   </ul>
 </nav>
@@ -218,6 +227,8 @@ background-size: cover;
 
 <section id="summary-of-lecture-3" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="summary-of-lecture-3"><span class="header-section-number">3.1</span> Summary of Lecture 3</h2>
+<section id="correction" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="correction"><span class="header-section-number">3.1.1</span> Correction</h3>
 <p>Raw remote sensing images are known to have notable distortions and flaws, which is mainly caused by the curved Earth, incompletely transparent atmosphere, varying solar radiation throughout the day and limitations of instruments. Therefore, most of the raw data captured by remote sensors are preprocessed to remove most of the flaws, it is called <strong>Image Correction.</strong></p>
 <p>Below shows a summary of 4 different correction methods, including <strong>Geometric correction, Atmospheric correction, Orthorectification correction</strong> and <strong>Radiometric correction.</strong></p>
 <div class="cell" data-layout-align="center">
@@ -229,7 +240,13 @@ background-size: cover;
 </div>
 </div>
 </div>
+</section>
+<section id="mosaicking-images" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="mosaicking-images"><span class="header-section-number">3.1.2</span> Mosaicking images</h3>
 <p>In some cases, some areas we want to observe or the Region of interest (ROI) cannot be completely acquired from a single image, therefore, we would use <strong>mosaicking</strong>, a procedure to create a new large area image from multiple overlapping images on the same areas. The typical image mosaicking procedure includes 3 steps, including 1) tonal adjustment 2) seamline detection, and 3) image blending. In R, the function of “mosaic()” does the whole process in 1 line to form a new object with a larger spatial extent. We can specify which function to use such as mean, minimum and maximum value for output.</p>
+</section>
+<section id="corrections-in-hong-kong" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="corrections-in-hong-kong"><span class="header-section-number">3.1.3</span> Corrections in Hong Kong</h3>
 <p>In this practical, I have chosen 4 tiles that consist parts of Hong Kong, including 1 Landsat 8 tile and 3 Landsat 9 tiles. However, as the tiles are with 2 different coordinate reference system of EPSG:32650 for two of them and EPSG:32649 for the remaining two tiles. I have tried using different methods to reproject rasters into the same projection (EPSG: 32649), however, the resolutions for the images are different from each other with 30.03617, 30.03617 (x, y) and 30.05118, 30.05118 (x, y). Hence, with limimte time and I couldn’t figure how to alter resolution to create a mosaic image with 4 raster images. I decided to only used two of tiles to create mosaic image of the Pearl River Delta whicn includes also Hong Kong. It works fine considering Hong kong is a really small area and can fit well with two of the images.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -252,9 +269,11 @@ background-size: cover;
 </div>
 </div>
 </section>
+</section>
 <section id="application" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
-<p><img src="images/image-2093053228.png" class="img-fluid"></p>
+<section id="image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi"><span class="header-section-number">3.2.1</span> Image Enhancment with the mosaicked images in Hong Kong – NDVI</h3>
 <p>Some of the basic image enhancements were done in this practical. As numerous remote sensing applications such as mapping, classification, soil moisture detection require high resolution and high quality images, therefore , the raw remote sensing images can be enhanced by improving the contrast and edge information of the input image. I have followed the steps in the practical to create the Normalised Difference Vegetation Index (NDVI) for the images around Hong Kong. It is calculated from the visible and near-infrared light reflected by vegetation where healthy and green vegetation reflects more in the NIR and absorbs in the Red wavelength. The land surfaces shown below are mostly yellowish (0.2-0.4) in colour, except where the delta lies in the middle. The colour scheme for the red circled area (Hong Kong) displayed shows gradual change from yellow to green (&gt;0/4). The green areas are mostly green spaces are hills in Hong Kong.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -277,6 +296,9 @@ background-size: cover;
 </div>
 </div>
 </div>
+</section>
+<section id="different-indices-for-image-enhancement" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="different-indices-for-image-enhancement"><span class="header-section-number">3.2.2</span> Different Indices for image enhancement</h3>
 <p>The table below shows some other different indices and corresponding equations for different features’ identification, such as water, geology and landscape indices. I think this makes remote sensing a very useful tool as it helps identify different land features easily.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -339,10 +361,6 @@ background-size: cover;
 </div>
 </div>
 <p>The next interesting thing of this practical is the texture analysis. Image texture is generally considered as the change and repeat of image grey in space, by adding texture information to the original spectral information of the image can improve the correction and precision. Image texture is the quantification of intuitive qualities described by terms such as rough, smooth, silky, or bumpy as a function of the spatial variation in pixel intensities. I used band 4 (red) and band 5(NIR) for texture analysis illustration, <strong>Grey Level Co-occurrence Matrices (GLCM)</strong> is adopted to describe the basic cell of texture orrandom and spatial statistic character in local pattern. To find texture features from GLCM for texture classification, the criteria of <strong>Homogeneity</strong> is adopted, which measures the closeness of the distribution of elements in the GLCM to the GLCM diagonal. Some other possible criteria such as <strong>Energy, Entropy, Contrast</strong> etc.</p>
-<table>
-<tbody>
-</tbody>
-</table>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -353,6 +371,7 @@ background-size: cover;
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="reflection" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
