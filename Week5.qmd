@@ -107,6 +107,8 @@ Map.addLayer(NDWI, { min: -1, max: 1, palette: ['blue', 'white', 'green']}, 'NDW
 knitr::include_graphics('figures/week5_NDWI.png')
 ```
 
+In this practical, some basic tasks and analysis were performed with remote sensing data, however, there are more advanced applications with GEE, such as natural resource management through detecting trends of natural and human phenomenon to understand the correlations. Hence, using th information generated, it could be applied to organisations and governments for better sustainable management, such as forests and water [@introduc2022]. For instance, a company called Regrow used GEE to generate granular field data at state or country level across millions of acres of farmlands around the world to help them decarbonize their agricultural practices [@introduc2022]. GEE enable regenerative and reproducible technique to be applied to different contexts.
+
 ## Reflection
 
 GEE is very new and interesting to me, I am surprised of the capability of GEE in remote sensing. Other than the confusion with JavaScript, I think GEE in general is a very useful tool for carrying out large scale geospatial analysis. In this practical, I got to explore Melbourne by creating various parameters such as texture, PCA and band maths. I think that the GEE window is sometimes hard to navigate because if there is a variable viewer automatically, and rather than requiring users to use `print()` function to write in console. With a variable viewer, it would be more convenient and easily understandable about what I have created because I sometimes get confused about how to interpret the maps and want to go back to check values of the layer. Also, I am still figuring out a way to create legend to collate for interpretations on maps.

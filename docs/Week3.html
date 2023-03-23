@@ -212,6 +212,7 @@ background-size: cover;
   <ul class="collapse">
   <li><a href="#image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi" id="toc-image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi" class="nav-link" data-scroll-target="#image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi"><span class="toc-section-number">3.2.1</span>  Image Enhancment with the mosaicked images in Hong Kong – NDVI</a></li>
   <li><a href="#different-indices-for-image-enhancement" id="toc-different-indices-for-image-enhancement" class="nav-link" data-scroll-target="#different-indices-for-image-enhancement"><span class="toc-section-number">3.2.2</span>  Different Indices for image enhancement</a></li>
+  <li><a href="#texture-analysis" id="toc-texture-analysis" class="nav-link" data-scroll-target="#texture-analysis"><span class="toc-section-number">3.2.3</span>  Texture analysis</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
   </ul>
@@ -360,6 +361,9 @@ background-size: cover;
 
 </div>
 </div>
+</section>
+<section id="texture-analysis" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="texture-analysis"><span class="header-section-number">3.2.3</span> Texture analysis</h3>
 <p>The next interesting thing of this practical is the texture analysis. Image texture is generally considered as the change and repeat of image grey in space, by adding texture information to the original spectral information of the image can improve the correction and precision. Image texture is the quantification of intuitive qualities described by terms such as rough, smooth, silky, or bumpy as a function of the spatial variation in pixel intensities. I used band 4 (red) and band 5(NIR) for texture analysis illustration, <strong>Grey Level Co-occurrence Matrices (GLCM)</strong> is adopted to describe the basic cell of texture orrandom and spatial statistic character in local pattern. To find texture features from GLCM for texture classification, the criteria of <strong>Homogeneity</strong> is adopted, which measures the closeness of the distribution of elements in the GLCM to the GLCM diagonal. Some other possible criteria such as <strong>Energy, Entropy, Contrast</strong> etc.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
