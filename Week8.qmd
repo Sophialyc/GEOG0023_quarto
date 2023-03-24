@@ -42,15 +42,24 @@ Below shows some of the case studies
 | **Medellín, Colombia** | From 2016 to 2019, the city created 36 corridors, 18 along major roads and 18 along waterways, covering over 36 hectares.                                                                  | The areas with green corridors have already seen temperature reductions of up to 4°C                                                          |
 | **Guangzhou, China**   | The municipal government adopted regional centralized cooling as part of a green and environmentally friendly modern urban centre in the core area of the Pearl River New City development | The local environmental temperature in the core area of Zhujiang New Town was reduced by 2-3°C compared to using distributed cooling systems. |
 
-In remote sensing, it is capable to provide global and temporal observations to monitor the effects brought by UHI. One common way to capture data about UHI is through thermal mapping to monitor the Land Surface Temperature (LST). Other than UHI, Voogt and Oke (2003) suggested an alternative sub-classification analogous to UHI, called Surface Urban Heat Island (SUHI). The SUHI studies surface temperature differences between urban and rural areas, also addresses temporal variability. In this practical, I have chosen my hometown Hong Kong to analysis the UHI with Landsat and MODIS. The reason I chose Hong Kong is because it is high density city situated in the sub-tropical climate region with hot and humid summer months. Hence, it is a city that suffers from UHI and is valuable to examine.
+In remote sensing, it is capable to provide global and temporal observations to monitor the effects brought by UHI. One common way to capture data about UHI is through thermal mapping to monitor the Land Surface Temperature (LST). Other than UHI, Voogt and Oke (2003) suggested an alternative sub-classification analogous to UHI, called Surface Urban Heat Island (SUHI). The SUHI studies surface temperature differences between urban and rural areas, also addresses temporal variability.
 
-## Application
+### Hong Kong's UHI
 
-I load up a level 2 administrative area to extract termperature data for Hong Kong in summer months from May to September. As mentioned in the practical, the data comes with Kelvin (K), converting it back to celcius (C), the formula is
+In this practical, I have chosen my hometown Hong Kong to analysis the UHI with Landsat and MODIS. The reason I chose Hong Kong is because it is high density city situated in the sub-tropical climate region with hot and humid summer months. Hence, it is a city that suffers from UHI and is valuable to examine. I load up a level 2 administrative area to extract temperature data for Hong Kong in summer months from May to September. As mentioned in the practical, the data comes with Kelvin (K), converting it back to celcius (C), the formula is
 
     C = K - 273.15.
 
 Hence, with the ImageCollection extracted from "2018-01-01', '2022-12-10" in May to September, there are many images used. I have to put larger range in the date as the data is not sufficient with only 2 year, it did not cover the administrative area of Hong Kong. the `.subtract` doesn't work on ImageCollection, so the 273.15 from the formula is adopted to subtract each image within the collection. After that, the reducer using mean as argument is used to create a map
+
+## Application
+
+A narrative /discussion on how the data / concepts / methods (or related
+concepts) have been applied in literature / policy or other studies. It is vital to do some
+reading and reference it each week. Here you must comment on the approaches in
+literature.
+
+## 
 
 ## Reflection
 

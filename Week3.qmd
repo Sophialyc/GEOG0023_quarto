@@ -69,7 +69,6 @@ knitr::include_graphics('figures/week3_texture.png')
 
 
 ## Reflection
-
 ```{r, echo=FALSE}
 results <- matrix(c(2.6720079, 0.83171901, 0.70789579, 0.5985590, 0.4424598, 0.290805771, 0.129419504, 0.100884842, 0.0442960741,0.7932918, 0.07686183, 0.05567961, 0.0398081, 0.0217523, 0.009396444, 0.001861045, 0.001130861, 0.0002180158,0.7932918, 0.87015363, 0.92583324, 0.9656413, 0.9873936, 0.996790078, 0.998651123, 0.999781984, 1.0000000000), ncol = 9, byrow = T)
 colnames(results) <- c('Component 1','Component 2','Component 3', 'Component 4','Component 5','Component 6','Component 7','Component 8','Component 9')
@@ -77,4 +76,5 @@ rownames(results) <- c('Standard deviation','Proportion of Variance','Cumulative
 tab <- as.data.frame(results)
 library(kableExtra)
 tab %>% kbl() %>% kable_styling()
+
 ```
