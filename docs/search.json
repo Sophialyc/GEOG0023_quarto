@@ -67,7 +67,7 @@
     "href": "Week3.html#reflection",
     "title": "3  Week 3",
     "section": "3.3 Reflection",
-    "text": "3.3 Reflection\nCorrection in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is\n\n\n\n\nSule, Suki Dauda, and Aidan Wood. 2020. “Remote Sensing for Agriculture, Ecosystems, and Hydrology XXII.” In, 11528:17–29. SPIE. https://doi.org/10.1117/12.2573725."
+    "text": "3.3 Reflection\nCorrection in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is useful as it improves the correction and precise through adding texture information to original image spectral information. It allows comparing between textures within a certain time period. the GLCM is a specific texture analysis method that allows examination on the texture of an image captured.\n\n\n\n\nSule, Suki Dauda, and Aidan Wood. 2020. “Remote Sensing for Agriculture, Ecosystems, and Hydrology XXII.” In, 11528:17–29. SPIE. https://doi.org/10.1117/12.2573725."
   },
   {
     "objectID": "Week4.html#summary-of-lecture-4",
