@@ -30,7 +30,7 @@ To combat extreme heat, authority in New Orleans proposed a new master plan for 
 knitr::include_graphics('https://npr.brightspotcdn.com/dims4/default/b7a6cc3/2147483647/strip/true/crop/2550x3300+0+0/resize/1760x2278!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F98%2Fe2%2F029e7ecd45e1b9265f94d9fe33c1%2F23-01-19-reforestation-plan-existing-tree-canopy-no-title.jpg')
 ```
 
-### global policy
+### Global policy
 
 From the perspective of the whole world, the urban population around the world has doubled from 1754 million in 1980 to 3,594 million in 2010, and this number will reach up to 5,167 million in 2030 (United Nations, [**2018**](https://onlinelibrary.wiley.com/doi/full/10.1111/1477-8947.12245#narf12245-bib-0033)). It was predicted that by 2050, over 68% of the global population will be living in cities, the rapid urbanisation has caused the various problems, especially when urban areas actually only constitute less than 1% of the earth's surface. UHI has become a more concerning issue across the globe. In 2021, the UN Environment Programme (UNEP) published detailed guidance to help the world combatting extreme heat, especially in urban areas where heating occurs twice the global average rate. THe book is caled *Beating the Heat: A Sustainable Cooling Handbook for Cities.* The handbook notes that the demand for space cooling increasing and the fact that urban heat is not evenly distributed. I think that the handbook has a lot of pages, which might be lengthy to most of the people. However, when it comes to city planning, I believe that city planner are going to find this handbook handy as it provides comprehensive overview of tools to cool cities sustainably and equitably. Also, with 80 supporting case studies that are currently running in the world, I think it would be useful for city planners to reference and create a more sustainable plan for cooling cities accordingly.
 
@@ -52,6 +52,10 @@ In this practical, I have chosen my hometown Hong Kong to analysis the UHI with 
 
 Hence, with the ImageCollection extracted from "2018-01-01', '2022-12-10" in May to September, there are many images used. I have to put larger range in the date as the data is not sufficient with only 2 year, it did not cover the administrative area of Hong Kong. the `.subtract` doesn't work on ImageCollection, so the 273.15 from the formula is adopted to subtract each image within the collection. After that, the reducer using mean as argument is used to create a map
 
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap=" Hong Kong"}
+knitr::include_graphics('figures/week8_landsat.png')
+```
+
 ## Application
 
 A narrative /discussion on how the data / concepts / methods (or related
@@ -63,4 +67,4 @@ literature.
 
 ## Reflection
 
-I think urban heat island is a topic that has be brought up for years,
+I think urban heat island is a topic that has be brought up for years, and I always felt the effects of UHI as Hong Kong is always really hot, not only becuase it is located within the suptropical climate, but definitely the high rise buildings, and the materials in densely populated urban areas have an effect on retaining and absorbing heat.

@@ -60,16 +60,21 @@ tab %>% kbl() %>% kable_styling()
 
 ### Texture analysis
 The next interesting thing of this practical is the texture analysis. Image texture is generally considered as the change and repeat of image grey in space, by adding texture information to the original spectral information of the image can improve the correction and precision. Image texture is the quantification of intuitive qualities described by terms such as rough, smooth, silky, or bumpy as a function of the spatial variation in pixel intensities. I used band 4 (red) and band 5(NIR) for texture analysis illustration, **Grey Level Co-occurrence Matrices (GLCM)** is adopted to describe the basic cell of texture orrandom and spatial statistic character in local pattern. To find texture features from GLCM for texture classification, the criteria of **Homogeneity** is adopted, which measures the closeness of the distribution of elements in the GLCM to the GLCM diagonal. Some other possible criteria such as **Energy, Entropy, Contrast** etc.
-
-
+This is the result for GLCM in homogeneity in the image, it shows that most of the area is close to 1, especially for ocean, while at the peak or higher area, the image shows more with pink to orange colour. the green colour region, which is ocean in this case, are smoother while the areas with pink to orange colour, they are dispersed and disconnected, it is more rough, probably, they are with vegetation and not uniform elevation and texture. 
 ```{r echo=FALSE, out.width="100%", cache=FALSE, fig.align='center', fig.cap="Texture "}
 knitr::include_graphics('figures/week3_texture.png')
 
 ```
 
+### Principal Component Analysis (PCA)
+This is the result for the Principal Component Analysis in Hong Kong
 
-## Reflection
-```{r, echo=FALSE}
+```{r, echo=FALSE,cache=FALSE, fig.cap="PCA result"}
+knitr::include_graphics('figures/week3_pca.png')
+
+```
+
+```{r, echo=FALSE,cache=FALSE, fig.cap=" Summary of PCA analysis"}
 results <- matrix(c(2.6720079, 0.83171901, 0.70789579, 0.5985590, 0.4424598, 0.290805771, 0.129419504, 0.100884842, 0.0442960741,0.7932918, 0.07686183, 0.05567961, 0.0398081, 0.0217523, 0.009396444, 0.001861045, 0.001130861, 0.0002180158,0.7932918, 0.87015363, 0.92583324, 0.9656413, 0.9873936, 0.996790078, 0.998651123, 0.999781984, 1.0000000000), ncol = 9, byrow = T)
 colnames(results) <- c('Component 1','Component 2','Component 3', 'Component 4','Component 5','Component 6','Component 7','Component 8','Component 9')
 rownames(results) <- c('Standard deviation','Proportion of Variance','Cumulative Proportion')
@@ -78,3 +83,12 @@ library(kableExtra)
 tab %>% kbl() %>% kable_styling()
 
 ```
+
+
+## Reflection
+Correction in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is 
+
+
+
+
+
