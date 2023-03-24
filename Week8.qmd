@@ -6,29 +6,13 @@ title: "Week 8"
 
 ## Summary of Lecture 8
 
-This week, we covered Urban Heat Island (UHI) and policy related to it. UHI effects occur when cities replace natural land cover with dense concentrations of pavement, buildings and urban structures that absorb and retain heat. In highly concentrated urban areas with limited greenery, the area will become "islands" of higher temperatures relative to outlying areas [@usepa2014]. There are factors that cause and intensify UHI, such as heat generated from human activities, weather and geography and reduced natural landscapes in urban areas. However, from the view of remote sensing, there are two main factors that is identified as UHI from the images, including the dark surfaces that retain heat and less vegetation to regulate temperature. The magnitude of UHI in world cities are shown below, showing the variations in different regions.
+This week, we covered Urban Heat Island (UHI) and policy related to it. UHI effects occur when cities replace natural land cover with dense concentrations of pavement, buildings and urban structures that absorb and retain heat. In highly concentrated urban areas with limited greenery, the area will become "islands" of higher temperatures relative to outlying areas [@usepa2014]. There are factors that cause and intensify UHI, such as heat generated from human activities, weather and geography and reduced natural landscapes in urban areas. However, from the view of remote sensing, there are two main factors that is identified as UHI from the images, including the dark surfaces that retain heat and less vegetation to regulate temperature. Other than that, another factor would be the low **Sky View Factor(SVF)**,how much we can see the sky when we look up. The magnitude of UHI in world cities are shown below, showing the variations in different regions.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%" ,fig.align='center', fig.cap="Map of summertime UHI intensity in world cities (a), EU (b), and SEA (c). d–g, Observed probability distribution of ΔTs (d), population N (e), mean annual precipitation P (f), and urban green cover gc,u (g). Large circles in b, c indicate cities with green cover data20,22 used to compute the statistics in d–. Source:https://www.nature.com/articles/s41586-019-1512-9"}
 knitr::include_graphics('https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41586-019-1512-9/MediaObjects/41586_2019_1512_Fig2_HTML.png?as=webp')
 ```
 
-### Local Policy
-
-#### New Orleans, US
-
-In the US, Climate Central, nonprofit news organization, created an index to evaluate the intensity of urban heat islands and applied it to 159 cities across the U.S by measuring the type of land cover in each city, from greenspace to paved areas, and factoring in building height and population density. The cities with the five most intense urban heat islands are New Orleans, Newark, N.J., New York City, Houston, and San Francisco. According to a study by the Climate Central, on average the city is about 9 degrees hotter than the surrounding countryside.
-
-The figure below illustrates the average surface temperatures in New Orleans from 2019 to 2021. The areas with higher temperature are areas with less than 10% of tree canopy. Hence, the authority has decided to
-
-```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="Surface temperatures in New Orleans (2019-2021) Source:Spackman Mossop Michaels"}
-knitr::include_graphics('https://i0.wp.com/dirt.asla.org/wp-content/uploads/2023/01/23_01_19-Reforestation-Plan_Urban-Heat-Island_blog.jpg?w=625&ssl=1')
-```
-
-To combat extreme heat, authority in New Orleans proposed a new master plan for rebuilding itsurban forest calls for 100,000 new trees to be planted by 2040. It was hoping that the strategic planting of 100,000 trees could increase the tree canopy in each New Orleans neighborhood to cover at least 10% of the area. While trees and plants have a significant cooling benefit, the reforestation plan offers a more equitable model to reduce dangerous extreme heat while lowering energy use.
-
-```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="A mix of imagery and LiDAR paint a picture New Orleans' tree canop Soruce:https://www.wwno.org/coastal-desk/2023-01-20/new-orleans-has-a-new-goal-for-building-a-greener-city-plant-100k-trees-in-20-years"}
-knitr::include_graphics('https://npr.brightspotcdn.com/dims4/default/b7a6cc3/2147483647/strip/true/crop/2550x3300+0+0/resize/1760x2278!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F98%2Fe2%2F029e7ecd45e1b9265f94d9fe33c1%2F23-01-19-reforestation-plan-existing-tree-canopy-no-title.jpg')
-```
+Unfortunately, UHI actual costs economic loss. Economist expected that climate change can cost a lot of money and impact every sector of the economy. It was expected that if UHI is intensifies, there will be higher cost for the city, which will be caused by the replacement of vegetation and bodies of water by concrete, asphalt, and other materials that trap more heat [@urbanhe2017]. Socially, for Shanghai, it was expected that people from urban area would have much higher excess mortality rate due to hot related illness than those from exurban areas. Since this is not a local issue, but globally occurring in different metropolis, urban areas, hence some international regulations should be discussed below.
 
 ### Global policy
 
@@ -50,7 +34,7 @@ In this practical, I have chosen my hometown Hong Kong to analysis the UHI with 
 
     C = K - 273.15.
 
-Hence, with the ImageCollection extracted from "2018-01-01', '2022-12-10" in May to September, there are many images used. I have to put larger range in the date as the data is not sufficient with only 2 year, it did not cover the administrative area of Hong Kong. the `.subtract` doesn't work on ImageCollection, so the 273.15 from the formula is adopted to subtract each image within the collection. After that, the reducer using mean as argument is used to create a map
+Hence, with the ImageCollection extracted from "2018-01-01', '2022-12-10" in May to September, there are many images used. I have to put larger range in the date as the data is not sufficient with only 2 year, it did not cover the administrative area of Hong Kong. the `.subtract` doesn't work on ImageCollection, so the 273.15 from the formula is adopted to subtract each image within the collection. After that, the reducer using mean as argument is used to create a map.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap=" Hong Kong"}
 knitr::include_graphics('figures/week8_landsat.png')
@@ -62,15 +46,28 @@ knitr::include_graphics('figures/week8_modis.png')
 
 ## Application
 
-A study by [@abulibdeh2021] has used satellite data to analyse formation of UHI in eight different cities in both arid and semi-arid regions.
+In the summary, I have covered the global policy on UHI, for application, I will use a local policy as an example on how cities have been adopting to combat and mitigate UHI.
 
-A narrative /discussion on how the data / concepts / methods (or related
-concepts) have been applied in literature / policy or other studies. It is vital to do some
-reading and reference it each week. Here you must comment on the approaches in
-literature.
+### Local Policy
 
-## 
+#### New Orleans, US
+
+In the US, Climate Central, nonprofit news organization, created an index to evaluate the intensity of urban heat islands and applied it to 159 cities across the U.S by measuring the type of land cover in each city, from greenspace to paved areas, and factoring in building height and population density. The cities with the five most intense urban heat islands are New Orleans, Newark, N.J., New York City, Houston, and San Francisco. According to a study by the Climate Central, on average the city is about 9 degrees hotter than the surrounding countryside.
+
+The figure below illustrates the average surface temperatures in New Orleans from 2019 to 2021. The areas with higher temperature are areas with less than 10% of tree canopy. Hence, the authority has decided to
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="Surface temperatures in New Orleans (2019-2021) Source:Spackman Mossop Michaels"}
+knitr::include_graphics('https://i0.wp.com/dirt.asla.org/wp-content/uploads/2023/01/23_01_19-Reforestation-Plan_Urban-Heat-Island_blog.jpg?w=625&ssl=1')
+```
+
+To combat extreme heat, authority in New Orleans proposed a new master plan for rebuilding its urban forest calls for 100,000 new trees to be planted by 2040. It was hoping that the strategic planting of 100,000 trees could increase the tree canopy in each New Orleans neighborhood to cover at least 10% of the area. While trees and plants have a significant cooling benefit, the reforestation plan offers a more equitable model to reduce dangerous extreme heat while lowering energy use.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="A mix of imagery and LiDAR paint a picture New Orleans' tree canop Soruce:https://www.wwno.org/coastal-desk/2023-01-20/new-orleans-has-a-new-goal-for-building-a-greener-city-plant-100k-trees-in-20-years"}
+knitr::include_graphics('https://npr.brightspotcdn.com/dims4/default/b7a6cc3/2147483647/strip/true/crop/2550x3300+0+0/resize/1760x2278!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F98%2Fe2%2F029e7ecd45e1b9265f94d9fe33c1%2F23-01-19-reforestation-plan-existing-tree-canopy-no-title.jpg')
+```
+
+I personally think that this approach is very pragmatic and reasonable, as trees area essentially the most effective and immediate effect to cool heat. In fact, most of the countries wen combating heat, they try to build trees to cool down the city. However, I am concerned about the maintenance and growth of the newlyplanted trees, just like what Madrid did with the metropolitan forest in week 4, the maintenance of the growth of trees are very important because it without proper management, trees might overgrown, the roots might damage structure etc. Hence, I think planting trees are a good method to combat UHI effects, but there is a need to properly manage afterwards, especially in an area that is already densely populated and dense with development.
 
 ## Reflection
 
-I think urban heat island is a topic that has be brought up for years, and I always felt the effects of UHI as Hong Kong is always really hot, not only becuase it is located within the suptropical climate, but definitely the high rise buildings, and the materials in densely populated urban areas have an effect on retaining and absorbing heat.
+I think urban heat island is a topic that has be brought up for years, and I always felt the effects of UHI as Hong Kong is always really hot, not only because it is located within the suptropical climate, but definitely the high rise buildings, and the materials in densely populated urban areas have an effect on retaining and absorbing heat. One interesting fact is that Hong Kong rely on air conditioning heavily during summer time.
