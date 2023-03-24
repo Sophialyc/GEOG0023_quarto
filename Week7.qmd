@@ -62,7 +62,7 @@ In the lecture, another type of image classification is taught, the **Object bas
 knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-09-00243/article_deploy/html/images/remotesensing-09-00243-g004-550.jpg')
 ```
 
-### Sub Pixel Analysis
+### Sub-Pixel Analysis
 
 Sub pixel classification (SPC) extracts meaningful information on land-cover classes from the mixed pixels. The figure below shows what a mixed pixel looks like. The proportion and abundance of each classes in the mixed pixel can be accounted for. In general, a few endmembers that are specturally pure are generated will work out fractions per pixel and establish a spectral library.
 
@@ -79,12 +79,43 @@ $$
 
 By the end, there will be the percentage/fraction of components for each pixels, for example, fraction of vegetation, soil, urban areas.
 
-To actually understand how classification works, in this week's practical, I have chosen Shiga, a prefecture of Japan that is located in the Kansai Region of Honshu.
+### GEE practice with Shiga
+
+To actually understand how classification works, in this week's practical, I have chosen Shiga, a prefecture of Japan that is located in the Kansai Region of Honshu. I have used Landsat data and vector data of area boundary. As the location has a very big lake, I thought it would show clear result for at least water and land, therefore I chose this as my area of study.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Shiga"}
 knitr::include_graphics('figures/week7_japanshiga.png')
 
 ```
+
+#### Sup-pixel analysis in Shiga
+
+To perform sub-pixel analysis, I have defined variables as endmembers, then using `unmix()` function in GEE to add up the data and generate image. Similar to previous practicals, I have to filter the data with lower cloud coverage and within a time frame. But for the limited data available in the area, I adjusted the date from 2019-01-01 to 2023-3-10. After masking the cloud cover, the image is clipped to the boundary.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Shiga"}
+knitr::include_graphics('figures/week7_tci.png')
+
+```
+
+Instead of inserting the coordinate values for the endmembers, I used the geometry function to generate a list of values for each category and extract the mean. As I have 6 categories, I did not want to redo everything manually, therefore I followed the practical to make the process of extracting mean value to a function and applied to the other landcover data. Finally, using `unmix()` on the processed data to create a map. However, as the map shown is unconstrained, the don't sum up to 1, hence another function of `ee.Image.unmix()` is used to compute the pseudo-inverse and multiplying through each pixel, then the image will return with positive values.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Sub-pixel and fixing th unconstrained problem"}
+knitr::include_graphics('figures/week7_unmix.gif')
+
+```
+
+The main concern with the result above is the generation of error matric, hence there will be the part of hardening the sub-pixel image and classify each pixel that has the largest proportion of land cover. A chunk of code that manually assign value to each category of data with a threshold is done, for example, pixels that are greater than 0.5 will be assigned as 1 and if it is 0.5or below, it will be assigned as 0. After all the computation to reclassify each class, the different class of data needs to be added together. And the result is:
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Reclassified sub-pixel result"}
+knitr::include_graphics('figures/week7_reclassified.png')
+
+```
+
+Just from the figure above, I can't interpret or explain if the analysis is accurate or not, I am not sure ifin GEE, there are some functions to view or reveal the statistics of the analysis. But I think for now I can't think of a way to interpret the results, such as explaining the accuracy, error etc.
+
+#### Object based image analysis (OBIA)
+
+From the previous summary about OBIA, it involves pixels first being grouped into objects based on either spectral similarity. In other words, pixels are grouped together based on some set of rules. To achieve that in the practical, the Image gradient is created from a function of `.gradient() to`
 
 ## Application
 
