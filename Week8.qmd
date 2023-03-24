@@ -36,12 +36,20 @@ In this practical, I have chosen my hometown Hong Kong to analysis the UHI with 
 
 Hence, with the ImageCollection extracted from "2018-01-01', '2022-12-10" in May to September, there are many images used. I have to put larger range in the date as the data is not sufficient with only 2 year, it did not cover the administrative area of Hong Kong. the `.subtract` doesn't work on ImageCollection, so the 273.15 from the formula is adopted to subtract each image within the collection. After that, the reducer using mean as argument is used to create a map.
 
-```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap=" Hong Kong"}
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap=" Hong Kong's Landsat image"}
 knitr::include_graphics('figures/week8_landsat.png')
 ```
 
-```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap=" Hong Kong"}
+The same process is done with adopting another instrument called Moderate Resolution Imaging Spectroradiometer (MODIS). It is an instrument that aboard both Terra and Aqua satellites. The scale factor has to be applied because the resolution for MODIS data is at 1km resolution. Therefore, I used the scale factor to multiply by 0.02 and subtract with 273.1 (for the kelvin celcius change). In addition, I have adjusted the range of date from January to Octorber as the results are not very effective if I only include May to September.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap=" Hong Kong' MODIS Land Surface Temperature"}
 knitr::include_graphics('figures/week8_modis.png')
+```
+
+The time series for MODIS data from May to September is shown below. The range of temperature is not large, the average temperature is above 25 degrees, with only slight fluctuation. However, it can be seem that some days are above 35 degrees.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap=" Hong Kong' MODIS Land Surface Temperature"}
+knitr::include_graphics('figures/week8_timeseries.png')
 ```
 
 ## Application
@@ -54,7 +62,7 @@ In the summary, I have covered the global policy on UHI, for application, I will
 
 In the US, Climate Central, nonprofit news organization, created an index to evaluate the intensity of urban heat islands and applied it to 159 cities across the U.S by measuring the type of land cover in each city, from greenspace to paved areas, and factoring in building height and population density. The cities with the five most intense urban heat islands are New Orleans, Newark, N.J., New York City, Houston, and San Francisco. According to a study by the Climate Central, on average the city is about 9 degrees hotter than the surrounding countryside.
 
-The figure below illustrates the average surface temperatures in New Orleans from 2019 to 2021. The areas with higher temperature are areas with less than 10% of tree canopy. Hence, the authority has decided to
+The figure below illustrates the average surface temperatures in New Orleans from 2019 to 2021. The areas with higher temperature are areas with less than 10% of tree canopy. Hence, the authority has decided to implement plans to combat the rising surface temperature in urban areas.
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.cap="Surface temperatures in New Orleans (2019-2021) Source:Spackman Mossop Michaels"}
 knitr::include_graphics('https://i0.wp.com/dirt.asla.org/wp-content/uploads/2023/01/23_01_19-Reforestation-Plan_Urban-Heat-Island_blog.jpg?w=625&ssl=1')
@@ -70,4 +78,4 @@ I personally think that this approach is very pragmatic and reasonable, as trees
 
 ## Reflection
 
-I think urban heat island is a topic that has be brought up for years, and I always felt the effects of UHI as Hong Kong is always really hot, not only because it is located within the suptropical climate, but definitely the high rise buildings, and the materials in densely populated urban areas have an effect on retaining and absorbing heat. One interesting fact is that Hong Kong rely on air conditioning heavily during summer time.
+I think urban heat island is a topic that has be brought up for years, and I always felt the effects of UHI as Hong Kong is always really hot, not only because it is located within the suptropical climate, but definitely the high rise buildings, and the materials in densely populated urban areas have an effect on retaining and absorbing heat. One interesting fact is that Hong Kong rely on air conditioning heavily during summer time. Not only do shopping malls or public areas use air conditioning, even people at home turn on the air conditioner for full day because it is too hot. However, this actually creates a vicious cycle on UHI effects because it uses large amount of energy and produce more heat when it is turned on. to look broader, Greenhouse Gas (GHGs) and burning of fossil fuels to provide electricity for air conditioning might exercebate global warming.Hence, I think that not only from building things of the existing things to cool down surface, policies should also address issues like the excessive use of electricity on cooling, which actually contributes back to UHI.
