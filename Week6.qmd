@@ -82,8 +82,22 @@ knitr::include_graphics('https://static.javatpoint.com/tutorial/machine-learning
 
 The normal workflow for a regression tree is in the first split, compare and find the lowest average value, then consider another split, find the lowest value again and so on.
 
+#### Random Forest 
+
+In classification of new data, using one decision tree is not ideal, because it is not that accountable. However, with many trees, that form a forest, there are more decision trees to increase accuracy and accountability. In addition to our data, boostrap samples are taken, then create a decision tree from random number of variables.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Random forest classifier . Source: https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/"}
+knitr::include_graphics('https://www.freecodecamp.org/news/content/images/2020/08/how-random-forest-classifier-work.PNG')
+```
+
+It is a tree-based supervised learning algorithms by combining hundreds decision trees and train each tree on a different sample of the observations. **Bootstrapping** is a resampling method by replacing data to make a decision, which is called **Bagging**. So what exactly does the two terms mean?
+
+**Bootstrapping** : A resampling technique that involves random sampling of a dataset *with replacement;* allowing generation of new samples from a population without having to go and collect additional "training data". However, a major drawback of decision trees is being *high-variance estimators,* meaning that the addition of small number of training observations could alter the prediction of a learned tree. Therefore, bagging or bootstrap aggregation can be used to mitigate the problem
+
+**Bagging**: Combine multiple learners that have fitted on separate bootstrapped samples and average the predictions. This effectively reduce overall variance of the predictions. In random forests, bagging helps to decrease the correlation between each decision trees and thus increasing its predictive accuracy.\
+
 ## Application
 
-In this practical, I chose
+In this practical, I chose Antwerpen to try and apply with the aforementioned classifications and machine learning in GEE. Instead of uploading the shapefile, the GAUL global admin layers and level 2 in GEE's catalog was used. Antwerpen is filtered out. Using Sentinel 2 MSI level 2A , I filtered the entire collection based on a low cloud coverage percentage of 5% per tile within the time period of 2022-01-01 to 2022-10-31. Below shows the gif the clipped image of ANtwerpen by increasing the cloud coverage, but using the masking function to mask the cloud pixels.
 
 ## Reflection

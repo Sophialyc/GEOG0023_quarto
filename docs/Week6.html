@@ -87,6 +87,7 @@ background-size: cover;
     }
     </style>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -111,7 +112,7 @@ background-size: cover;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img" aria-label="Source Code">
+    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -274,7 +275,7 @@ background-size: cover;
 </section>
 <section id="machine-learning-in-remote-sensing-with-gee" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="machine-learning-in-remote-sensing-with-gee"><span class="header-section-number">6.1.2</span> Machine learning in remote sensing with GEE</h3>
-<p>Machine learning has been applied in remote sensing for various usage, including image classification, regression, clustering, coding and source separation. In the lecture, <strong>Classification and regression trees (CART)</strong> was introduced.</p>
+<p>Machine learning has been applied in remote sensing for various usage, including image classification, regression, clustering, coding and source separation. In the lecture, <strong>Classification and regression trees (CART)</strong> was introduced. The two types of decision trees are:</p>
 <ul>
 <li><p>Classification trees (CA) : classify data into <strong>≥</strong> 2 discrete categories</p>
 <ul>
@@ -285,7 +286,9 @@ background-size: cover;
 <li>examples: age, height, score</li>
 </ul></li>
 </ul>
-<p>The CART algorithm was published by Leo Breiman in 1984, using decision tree to provide more information to learn from in the form of basic if-else-decision rules. The decision tree is a simple structure that consist of different kinds of elements, a <strong>starting point (Root)</strong>, <strong>decision nodes</strong> and <strong>multiple terminal nodes (Leaves)</strong>. Eventually, each pixel points will be assigned to class for classification purpose. In other words, regression tree tries to subset data into smaller chunks, it is useful when linear regression does not fit, by subseting the original data, the regression tree can generate different category.</p>
+<section id="classification-trees" class="level4" data-number="6.1.2.1">
+<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="classification-trees"><span class="header-section-number">6.1.2.1</span> Classification trees</h4>
+<p>The CART algorithm was published by Leo Breiman in 1984, using decision tree to provide more information to learn from in the form of basic if-else-decision rules. The decision tree is a simple structure that consist of different kinds of elements, a <strong>starting point (Root)</strong>, <strong>decision nodes</strong> and <strong>multiple terminal nodes (Leaves)</strong>. Eventually, each pixel points will be assigned to class for classification purpose. In other words, classification trees tries to subset data into smaller chunks, it is useful when linear regression does not fit, by subseting the original data, the classification tree can generate different category.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -296,17 +299,59 @@ background-size: cover;
 </div>
 </div>
 </div>
-<p>The concept of decision tree is easily grasped, hence, it is rather easy to employ in different analysis. Also, as it can be visualised, people that works better with visualisation in problem solving will benefit from it. However, on the downside, decision tree are prone to overfitting, causing more complex trees fail to properly generalise data. Also, there is the possibility that the final leaves result with a mixture of different categories –&gt; <strong>Impurity.</strong></p>
-<p>To solve the impurity for clear classification, the <strong>Gini Impurity</strong> is quantified, where it measures the likelihood of an incorrect classification of a new instance of a random variable.</p>
+<p>The concept of decision tree is easily grasped, hence, it is rather easy to employ in different analysis. Also, as it can be visualised, people that works better with visualisation in problem solving will benefit from it. However, on the downside, decision tree are prone to <strong>overfitting,</strong> causing more complex trees fail to properly generalise data. Also, there is the possibility that the final leaves result with a mixture of different categories –&gt; <strong>Impurity.</strong></p>
+<p>To solve the impurity for clear classification, the <strong>Gini Impurity</strong> is quantified and used as splitting methods, where it measures the likelihood of an incorrect classification of a new instance of a random variable. The Gini Impurity formula is calculated as:</p>
+<p><span class="math display">\[
+G=i=1∑C​p(i)∗(1−p(i))
+\]</span></p>
+<p>Two other common impurity metrics are <strong>Entropy:</strong></p>
+<p><span class="math display">\[
+Ie(S) = −∑pilog2(pi)
+\]</span></p>
+<p>and <strong>Missclassifcation error:</strong></p>
+<p><span class="math display">\[
+Ic(S) =1 – max(pi)
+\]</span></p>
+<p>Gini index and entropy behave similarly,both attempting to reach a unique maximum, though at slightly different positions. Gini Impurity of 0 is the lowest and best possible impurity, but it only occurs when all the pixels are in the same class. While for misclassification error, it is simply the fraction of points in the subset that are not in the major vote class, it’s more of pruning nature and not growing a tree.</p>
+</section>
+<section id="regression-trees" class="level4" data-number="6.1.2.2">
+<h4 data-number="6.1.2.2" class="anchored" data-anchor-id="regression-trees"><span class="header-section-number">6.1.2.2</span> Regression trees</h4>
+<p>Different from classification trees, regression trees are used when the response variable is <u>continuous</u>. With many predictor variables, the decision trees can undergo trials of different thresholds and calculate the sum of squared residuals (SSR). It helps to predict continuous variables such as amount of pollution. The figure below shows major difference of regression tree and classification tree.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://miro.medium.com/v2/resize:fit:594/1*21vpI4SYfqRLrItRVH0ySg.png" class="img-fluid figure-img" alt=""></p>
+<p><img src="https://static.javatpoint.com/tutorial/machine-learning/images/regression-vs-classification-in-machine-learning.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Classifcation vs Regression . Source: https://www.javatpoint.com/regression-vs-classification-in-machine-learning</figcaption><p></p>
 </figure>
 </div>
+</div>
+</div>
+<p>The normal workflow for a regression tree is in the first split, compare and find the lowest average value, then consider another split, find the lowest value again and so on.</p>
+</section>
+<section id="random-forest" class="level4" data-number="6.1.2.3">
+<h4 data-number="6.1.2.3" class="anchored" data-anchor-id="random-forest"><span class="header-section-number">6.1.2.3</span> Random Forest</h4>
+<p>In classification of new data, using one decision tree is not ideal, because it is not that accountable. However, with many trees, that form a forest, there are more decision trees to increase accuracy and accountability. In addition to our data, boostrap samples are taken, then create a decision tree from random number of variables.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/08/how-random-forest-classifier-work.PNG" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Random forest classifier . Source: https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>It is a tree-based supervised learning algorithms by combining hundreds decision trees and train each tree on a different sample of the observations. <strong>Bootstrapping</strong> is a resampling method by replacing data to make a decision, which is called <strong>Bagging</strong>. So what exactly does the two terms mean?</p>
+<p><strong>Bootstrapping</strong> : A resampling technique that involves random sampling of a dataset <em>with replacement;</em> allowing generation of new samples from a population without having to go and collect additional “training data”. However, a major drawback of decision trees is being <em>high-variance estimators,</em> meaning that the addition of small number of training observations could alter the prediction of a learned tree. Therefore, bagging or bootstrap aggregation can be used to mitigate the problem</p>
+<p><strong>Bagging</strong>: Combine multiple learners that have fitted on separate bootstrapped samples and average the predictions. This effectively reduce overall variance of the predictions. In random forests, bagging helps to decrease the correlation between each decision trees and thus increasing its predictive accuracy.<br>
+</p>
+</section>
 </section>
 </section>
 <section id="application" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="application"><span class="header-section-number">6.2</span> Application</h2>
+<p>In this practical, I chose Antwerpen to try and apply with the aforementioned classifications and machine learning in GEE. Instead of uploading the shapefile, the GAUL global admin layers and level 2 in GEE’s catalog was used. Antwerpen is filtered out. Sentinel 2 MSI level 2A was used and To filter the entire collection based on a low cloud coverage percentage per tile</p>
 </section>
 <section id="reflection" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> Reflection</h2>
