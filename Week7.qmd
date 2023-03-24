@@ -115,9 +115,36 @@ Just from the figure above, I can't interpret or explain if the analysis is accu
 
 #### Object based image analysis (OBIA)
 
-From the previous summary about OBIA, it involves pixels first being grouped into objects based on either spectral similarity. In other words, pixels are grouped together based on some set of rules. To achieve that in the practical, the Image gradient is created from a function of `.gradient() to`
+From the previous summary about OBIA, it involves pixels first being grouped into objects based on either spectral similarity. In other words, pixels are grouped together based on some set of rules. To achieve that in the practical, the Image gradient is created from a function of `.gradient()` to change the intensity and colour in the image. Then, to make it useful for further steps of the analysis, the image gradient has to change to spectral gradient such that it is valuable to the analysis. It is done by `.spectralGradient().`
 
-## Application
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Spectral Gradient in Shiga"}
+knitr::include_graphics('figures/week7_spectralgradient.png')
+```
+
+Then, the next obstacle to carry out OBIA is that the pixels are too small and fragmented, there is a need to reduce pixels to fewer objects, hence the k-means clustering is used to reduce pixels.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="kmeans clustering"}
+knitr::include_graphics('figures/week7_kmeans_seed.png')
+
+```
+
+Another option to reduce pixels and create super pixel is the Simple non-iterative clustering (SNIC) by making a **seed grid** that specifies the spacing in pixels and set a square or a hex grid.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Reclassified sub-pixel result"}
+knitr::include_graphics('figures/week7_seed.png')
+```
+
+After that, the clusters will allow some useful information to be extracted, such as NDVI...
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Reclassified sub-pixel result"}
+  knitr::include_graphics('figures/week7_NDVI.png')
+```
+
+However, when I try to apply classification to the data, it did not work due to a layer that I could not get rid of, it said"(7 bands for 1685346 pixels = 90.0 MiB \> 80.0 MiB). If this is a reduction, try specifying a larger 'tileScale' parameter."I have tried to make some of the maps as a note with "//" to make my code less heavy, but it didn't work. I have also tried to set higher tileScale, it also does not work. I tried to fins solutions online but the answers on stack overflow don't seem to match my problem. Perhaps the region that I use is still too big, hence the computing is overloaded. It's a shame that I could not report results here, but at the same time I would love to find a solution to resolve this problem someday.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Reclassified sub-pixel result"}
+knitr::include_graphics('figures/WEEK7_ERROR.png')
+```
 
 : A narrative /discussion on how the data / concepts / methods (or related
 concepts) have been applied in literature / policy or other studies. It is vital to do some
