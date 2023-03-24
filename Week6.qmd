@@ -201,4 +201,4 @@ knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-03-025
 
 ## Reflection
 
-Classification of image in remote sensing is much more complicated than I think. I originally think image classification is just a simple process by identifying different colour in the image, but in fact, it involves a lot of different technical and mathematical
+Classification of image in remote sensing is much more complicated than I think. I originally think image classification is just a simple process by identifying different colour in the image, but in fact, it involves a lot of different technical and mathematical parameters that could generate different results. It is quite interesting that

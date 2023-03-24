@@ -216,13 +216,15 @@ background-size: cover;
   <ul>
   <li><a href="#summary-of-lecture-6" id="toc-summary-of-lecture-6" class="nav-link active" data-scroll-target="#summary-of-lecture-6"><span class="toc-section-number">6.1</span>  Summary of Lecture 6</a>
   <ul class="collapse">
-  <li><a href="#utilising-classified-image" id="toc-utilising-classified-image" class="nav-link" data-scroll-target="#utilising-classified-image"><span class="toc-section-number">6.1.1</span>  Utilising classified image</a></li>
-  <li><a href="#machine-learning-in-remote-sensing-with-gee" id="toc-machine-learning-in-remote-sensing-with-gee" class="nav-link" data-scroll-target="#machine-learning-in-remote-sensing-with-gee"><span class="toc-section-number">6.1.2</span>  Machine learning in remote sensing with GEE</a></li>
-  <li><a href="#classification-in-antwerpen" id="toc-classification-in-antwerpen" class="nav-link" data-scroll-target="#classification-in-antwerpen"><span class="toc-section-number">6.1.3</span>  Classification in Antwerpen</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="toc-section-number">6.1.4</span>  </a></li>
+  <li><a href="#machine-learning-in-remote-sensing-with-gee" id="toc-machine-learning-in-remote-sensing-with-gee" class="nav-link" data-scroll-target="#machine-learning-in-remote-sensing-with-gee"><span class="toc-section-number">6.1.1</span>  Machine learning in remote sensing with GEE</a></li>
+  <li><a href="#classification-in-antwerpen" id="toc-classification-in-antwerpen" class="nav-link" data-scroll-target="#classification-in-antwerpen"><span class="toc-section-number">6.1.2</span>  Classification in Antwerpen</a></li>
   </ul></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">6.2</span>  Application</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">6.3</span>  Reflection</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">6.2</span>  Application</a>
+  <ul class="collapse">
+  <li><a href="#utilising-classified-image" id="toc-utilising-classified-image" class="nav-link" data-scroll-target="#utilising-classified-image"><span class="toc-section-number">6.2.1</span>  Utilising classified image</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="toc-section-number">6.3</span>  </a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">6.4</span>  Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -237,41 +239,8 @@ background-size: cover;
 <section id="summary-of-lecture-6" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="summary-of-lecture-6"><span class="header-section-number">6.1</span> Summary of Lecture 6</h2>
 <p>This is the second lecture that covers Google Earth Engine (GEE), and it is more focused on image classification. Before going deep into what image classification refers to in technical terms, this lecture focused on how classified images are used in different contexts to solve various problems, also introducing machine learning in remote sensing. To briefly understand the term image classification, it refers to the process of identifying and categorising images according to their appearances or pixels, it is an imperative process before actually analyzing them in research or studies because the classified images provides concrete information of the classes captured in an image.</p>
-<section id="utilising-classified-image" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="utilising-classified-image"><span class="header-section-number">6.1.1</span> Utilising classified image</h3>
-<section id="urban-expansion" class="level4" data-number="6.1.1.1">
-<h4 data-number="6.1.1.1" class="anchored" data-anchor-id="urban-expansion"><span class="header-section-number">6.1.1.1</span> Urban Expansion</h4>
-<p>Urban land use chages have long been a hot topic for the research field, the incoporation of satellite images and GIS has generated a new dimension for researchers to assess and monitor land use cover change <span class="citation" data-cites="tewolde2011">(<a href="#ref-tewolde2011" role="doc-biblioref">Tewolde and Cabral 2011</a>)</span>. But the raw images captured from remote sensors are not easy to use as they do not convey any useful information for analysis, hence, studies that use satellite images for urban land use changes area often classified, creating a scale of values to compare and use.</p>
-<p>For instance, in a study on Eritrea, an independent state in north-eastern Africa, its capital city Asmara was examined with its settlement patterns of urban and suburban areas. Images used were Landsat TM satellite images with 30m resolution from 1908, 2000 and 2009. Processing steps of landsat image is shown below:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.mdpi.com/remotesensing/remotesensing-03-02148/article_deploy/html/images/remotesensing-03-02148-g002-1024.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Data and Methodology used for image classification and result validation. Source: https://www.mdpi.com/2072-4292/3/10/2148</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Object-Based Image Analysis (OBIA) was adopted to classify images at image object level instead of pixel level. For land use study, OBIA is useful because the real world is not made up of pixels, instead, it is arrnaged in objects. Therefore, OBIA can avoid mixed pixel problems such as bare sand soil and the impervious parts of urban areas could create a mixed pixel problem. Hence, with classified images, it can be put to a model for analysis in urban expansion.</p>
-</section>
-<section id="air-pollution-and-lulc" class="level4" data-number="6.1.1.2">
-<h4 data-number="6.1.1.2" class="anchored" data-anchor-id="air-pollution-and-lulc"><span class="header-section-number">6.1.1.2</span> Air Pollution and LULC</h4>
-<p>Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by <span class="citation" data-cites="superczynski2011">(<a href="#ref-superczynski2011" role="doc-biblioref">Superczynski and Christopher 2011</a>)</span> has explored LULC and Pm<sub>2.5</sub> emissions. The classified images to LULC map was linked to Pm<sub>2.5</sub> mass concentration in Alabama to examine the correlation between the two variables. Classification was done with selecting representative samples for each class, which is a supervised classification. It was mentioned that some calssed in the image has to be split into subclasses and combined into Level I Anderson classification in post-classification processing. The figure below shows the result of classification to urban areas in Birmingham in Alabama. Then, the data was used to compute with Pm<sub>2.5</sub> data for further air pollution analysis.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.mdpi.com/remotesensing/remotesensing-03-02552/article_deploy/html/images/remotesensing-03-02552-g002-1024.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">progression of urbanized land around the city of Birmingham since 1998. Source: https://www.mdpi.com/2072-4292/3/12/2552</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="machine-learning-in-remote-sensing-with-gee" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="machine-learning-in-remote-sensing-with-gee"><span class="header-section-number">6.1.2</span> Machine learning in remote sensing with GEE</h3>
+<section id="machine-learning-in-remote-sensing-with-gee" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="machine-learning-in-remote-sensing-with-gee"><span class="header-section-number">6.1.1</span> Machine learning in remote sensing with GEE</h3>
 <p>Machine learning has been applied in remote sensing for various usage, including image classification, regression, clustering, coding and source separation. In the lecture, <strong>Classification and regression trees (CART)</strong> was introduced. The two types of decision trees are:</p>
 <ul>
 <li><p>Classification trees (CA) : classify data into <strong>≥</strong> 2 discrete categories</p>
@@ -283,8 +252,8 @@ background-size: cover;
 <li>examples: age, height, score</li>
 </ul></li>
 </ul>
-<section id="classification-trees" class="level4" data-number="6.1.2.1">
-<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="classification-trees"><span class="header-section-number">6.1.2.1</span> Classification trees</h4>
+<section id="classification-trees" class="level4" data-number="6.1.1.1">
+<h4 data-number="6.1.1.1" class="anchored" data-anchor-id="classification-trees"><span class="header-section-number">6.1.1.1</span> Classification trees</h4>
 <p>The CART algorithm was published by Leo Breiman in 1984, using decision tree to provide more information to learn from in the form of basic if-else-decision rules. The decision tree is a simple structure that consist of different kinds of elements, a <strong>starting point (Root)</strong>, <strong>decision nodes</strong> and <strong>multiple terminal nodes (Leaves)</strong>. Eventually, each pixel points will be assigned to class for classification purpose. In other words, classification trees tries to subset data into smaller chunks, it is useful when linear regression does not fit, by subseting the original data, the classification tree can generate different category.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -311,8 +280,8 @@ Ic(S) =1 – max(pi)
 \]</span></p>
 <p>Gini index and entropy behave similarly,both attempting to reach a unique maximum, though at slightly different positions. Gini Impurity of 0 is the lowest and best possible impurity, but it only occurs when all the pixels are in the same class. While for misclassification error, it is simply the fraction of points in the subset that are not in the major vote class, it’s more of pruning nature and not growing a tree.</p>
 </section>
-<section id="regression-trees" class="level4" data-number="6.1.2.2">
-<h4 data-number="6.1.2.2" class="anchored" data-anchor-id="regression-trees"><span class="header-section-number">6.1.2.2</span> Regression trees</h4>
+<section id="regression-trees" class="level4" data-number="6.1.1.2">
+<h4 data-number="6.1.1.2" class="anchored" data-anchor-id="regression-trees"><span class="header-section-number">6.1.1.2</span> Regression trees</h4>
 <p>Different from classification trees, regression trees are used when the response variable is <u>continuous</u>. With many predictor variables, the decision trees can undergo trials of different thresholds and calculate the sum of squared residuals (SSR). It helps to predict continuous variables such as amount of pollution. The figure below shows major difference of regression tree and classification tree.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -326,8 +295,8 @@ Ic(S) =1 – max(pi)
 </div>
 <p>The normal workflow for a regression tree is in the first split, compare and find the lowest average value, then consider another split, find the lowest value again and so on.</p>
 </section>
-<section id="random-forest" class="level4" data-number="6.1.2.3">
-<h4 data-number="6.1.2.3" class="anchored" data-anchor-id="random-forest"><span class="header-section-number">6.1.2.3</span> Random Forest</h4>
+<section id="random-forest" class="level4" data-number="6.1.1.3">
+<h4 data-number="6.1.1.3" class="anchored" data-anchor-id="random-forest"><span class="header-section-number">6.1.1.3</span> Random Forest</h4>
 <p>In classification of new data, using one decision tree is not ideal, because it is not that accountable. However, with many trees, that form a forest, there are more decision trees to increase accuracy and accountability. In addition to our data, boostrap samples are taken, then create a decision tree from random number of variables.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -345,8 +314,8 @@ Ic(S) =1 – max(pi)
 </p>
 </section>
 </section>
-<section id="classification-in-antwerpen" class="level3" data-number="6.1.3">
-<h3 data-number="6.1.3" class="anchored" data-anchor-id="classification-in-antwerpen"><span class="header-section-number">6.1.3</span> Classification in Antwerpen</h3>
+<section id="classification-in-antwerpen" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="classification-in-antwerpen"><span class="header-section-number">6.1.2</span> Classification in Antwerpen</h3>
 <p>In this practical, I chose Antwerpen to try and apply with the aforementioned classifications and machine learning in GEE. Instead of uploading the shapefile, the GAUL global admin layers and level 2 in GEE’s catalog was used. Antwerpen is filtered out. Using Sentinel 2 MSI level 2A , I filtered the entire collection based on a low cloud coverage percentage of 5% per tile within the time period of 2022-01-01 to 2022-10-31. Below shows the gif the satellite image of Antwerpen by increasing the cloud coverage, but using the masking function to mask the cloud pixels. The cloud cover has significantly reduced with the mask in my case.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -358,18 +327,157 @@ Ic(S) =1 – max(pi)
 </div>
 </div>
 </div>
+<p>To classify Antwerpen with s supervised model, the training dataset has to be selected. I have used 6 category including</p>
+<ul>
+<li><p>Urban area (low)</p></li>
+<li><p>Urban area (high)</p></li>
+<li><p>Bare earth</p></li>
+<li><p>Water</p></li>
+<li><p>Grass</p></li>
+<li><p>Forest</p></li>
+</ul>
+<p>I have used the geometry function to select some of the areas that conform to the category, the figure below shows some examples of how the training data is selected.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week6_train.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Training examples</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Then, the next step is to train the CART classifier with the training data set, and use that for classifying image.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week6_classified.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Training examples</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the figure, purple represents water,light pink refers to urban area (low), darker pink refers to urban area (high), however, dark green refers to forest, however, some of the bare earth is also classified into dark green, and grass to be in light grey colour.</p>
+<p>Unfortunately, the validation results are horrible, with :</p>
+<table class="table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 45%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Validation error matrix:</td>
+<td><p>0: [0,0,0,0,0,0,0]</p>
+<p>1: [0,0,0,4168,332,0,0]</p>
+<p>2: [0,0,0,0,0,0,0]</p>
+<p>3: [0,0,0,0,0,0,0]</p>
+<p>4: [0,0,0,0,0,0,0]</p>
+<p>5: [0,0,2,975,936,0,0]</p>
+<p>6: [0,0,156,29231,29964,0,0]</p></td>
+</tr>
+<tr class="even">
+<td>Validation overall accuracy</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Validation consumer accuracy</td>
+<td>[[0,0,0,0,0,0,0]]</td>
+</tr>
+</tbody>
+</table>
+<p>The bad results are due to the train test split was done on the polygons but not on the original pixels, since I have only included a few polygons for each category, the validation results would turn out ridiculous.</p>
+<section id="classify-image-with-pixel-approach" class="level4" data-number="6.1.2.1">
+<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="classify-image-with-pixel-approach"><span class="header-section-number">6.1.2.1</span> Classify image with pixel approach</h4>
+<p>Instead, I have referred to the practical’s code that is credited to Ollie Ballinger to make the train test split using a pixel approach. The validation results this time is</p>
+<table class="table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Training overall accuracy</td>
+<td>0.996415770609319</td>
+</tr>
+<tr class="even">
+<td>Validation overall accuracy</td>
+<td>0.8683195592286501</td>
+</tr>
+<tr class="odd">
+<td>Validation consumer accuracy</td>
+<td><p>0: 0</p>
+<p>1: 0.7993630573248408</p>
+<p>2: 0.9935897435897436</p>
+<p>3: 0.7927272727272727</p>
+<p>4: 0.8282828282828283</p>
+<p>5: 0.9265175718849841</p>
+<p>6: 0.8585526315789473</p></td>
+</tr>
+<tr class="even">
+<td>OutOfBafErrorEstimate</td>
+<td><br>
+0.12258064516129032</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week6_rfpixel.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Training examples</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>And this is the final output with the pixel approach of training and testing data split, the accuracy is acceptable and it matches with the OOB error estimates. To reflect, I think that I haven’t really considered the standards of high urban areas, as Antwerp is in general a lowland plain, the height above sea level is between 2m in the west to 30m in the north. I could have not included high urban areas in my category, however I think adding it could provide more category to create a higher variation in the map.</p>
 </section>
-<section id="section" class="level3" data-number="6.1.4">
-<h3 data-number="6.1.4" class="anchored" data-anchor-id="section"><span class="header-section-number">6.1.4</span> </h3>
-<p>To classify Antwerpen with s supervised model, the training dataset has to be selected</p>
 </section>
 </section>
 <section id="application" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="application"><span class="header-section-number">6.2</span> Application</h2>
+<p>Machine learning offers a lot to remote sensing by providing effective and efficient classification of imagery, hence, a lot of studies have applied machine learning into their methodology for image classification.</p>
+<section id="utilising-classified-image" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="utilising-classified-image"><span class="header-section-number">6.2.1</span> Utilising classified image</h3>
+<section id="urban-expansion" class="level4" data-number="6.2.1.1">
+<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="urban-expansion"><span class="header-section-number">6.2.1.1</span> Urban Expansion</h4>
+<p>Urban land use chages have long been a hot topic for the research field, the incoporation of satellite images and GIS has generated a new dimension for researchers to assess and monitor land use cover change <span class="citation" data-cites="tewolde2011">(<a href="#ref-tewolde2011" role="doc-biblioref">Tewolde and Cabral 2011</a>)</span>. But the raw images captured from remote sensors are not easy to use as they do not convey any useful information for analysis, hence, studies that use satellite images for urban land use changes area often classified, creating a scale of values to compare and use.</p>
+<p>For instance, in a study on Eritrea, an independent state in north-eastern Africa, its capital city Asmara was examined with its settlement patterns of urban and suburban areas. Images used were Landsat TM satellite images with 30m resolution from 1908, 2000 and 2009. Processing steps of landsat image is shown below:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.mdpi.com/remotesensing/remotesensing-03-02148/article_deploy/html/images/remotesensing-03-02148-g002-1024.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Data and Methodology used for image classification and result validation. Source: https://www.mdpi.com/2072-4292/3/10/2148</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Object-Based Image Analysis (OBIA) was adopted to classify images at image object level instead of pixel level. For land use study, OBIA is useful because the real world is not made up of pixels, instead, it is arrnaged in objects. Therefore, OBIA can avoid mixed pixel problems such as bare sand soil and the impervious parts of urban areas could create a mixed pixel problem. Hence, with classified images, it can be put to a model for analysis in urban expansion.</p>
 </section>
-<section id="reflection" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> Reflection</h2>
-<p>Classification of image in remote sensing is much more complicated than I think. I originally think image classification is just a simple process by identifying different colour in the image, but in fact, it involves a lot of different technical and mathematical</p>
+<section id="air-pollution-and-lulc" class="level4" data-number="6.2.1.2">
+<h4 data-number="6.2.1.2" class="anchored" data-anchor-id="air-pollution-and-lulc"><span class="header-section-number">6.2.1.2</span> Air Pollution and LULC</h4>
+<p>Classified images are useful for identifying air pollution and monitoring variations. For instance, images with classified land use and land cover (LULC) can combine with air quality data, such as the type of air pollutiants, concentration of pollutant particles to see where in the image of an area is prone to air pollution. To illustrate, a study by <span class="citation" data-cites="superczynski2011">(<a href="#ref-superczynski2011" role="doc-biblioref">Superczynski and Christopher 2011</a>)</span> has explored LULC and Pm<sub>2.5</sub> emissions. The classified images to LULC map was linked to Pm<sub>2.5</sub> mass concentration in Alabama to examine the correlation between the two variables. Classification was done with selecting representative samples for each class, which is a supervised classification. It was mentioned that some calssed in the image has to be split into subclasses and combined into Level I Anderson classification in post-classification processing. The figure below shows the result of classification to urban areas in Birmingham in Alabama. Then, the data was used to compute with Pm<sub>2.5</sub> data for further air pollution analysis.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.mdpi.com/remotesensing/remotesensing-03-02552/article_deploy/html/images/remotesensing-03-02552-g002-1024.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">progression of urbanized land around the city of Birmingham since 1998. Source: https://www.mdpi.com/2072-4292/3/12/2552</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="section" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="section"><span class="header-section-number">6.3</span> </h2>
+</section>
+<section id="reflection" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.4</span> Reflection</h2>
+<p>Classification of image in remote sensing is much more complicated than I think. I originally think image classification is just a simple process by identifying different colour in the image, but in fact, it involves a lot of different technical and mathematical parameters that could generate different results. It is quite interesting that</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
