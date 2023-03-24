@@ -60,7 +60,7 @@ knitr::include_graphics('https://static.javatpoint.com/tutorial/machine-learning
 
 The normal workflow for a regression tree is in the first split, compare and find the lowest average value, then consider another split, find the lowest value again and so on.
 
-#### Random Forest 
+#### Random Forest
 
 In classification of new data, using one decision tree is not ideal, because it is not that accountable. However, with many trees, that form a forest, there are more decision trees to increase accuracy and accountability. In addition to our data, boostrap samples are taken, then create a decision tree from random number of variables.
 
@@ -139,28 +139,28 @@ The bad results are due to the train test split was done on the polygons but not
 
 Instead, I have referred to the practical's code that is credited to Ollie Ballinger to make the train test split using a pixel approach. The validation results this time is
 
-+----------------------------------+-----------------------------------+
-| Training overall accuracy        | 0.996415770609319                 |
-+----------------------------------+-----------------------------------+
-| Validation overall accuracy      | 0.8683195592286501                |
-+----------------------------------+-----------------------------------+
-| Validation consumer accuracy     | 0: 0                              |
-|                                  |                                   |
-|                                  | 1: 0.7993630573248408             |
-|                                  |                                   |
-|                                  | 2: 0.9935897435897436             |
-|                                  |                                   |
-|                                  | 3: 0.7927272727272727             |
-|                                  |                                   |
-|                                  | 4: 0.8282828282828283             |
-|                                  |                                   |
-|                                  | 5: 0.9265175718849841             |
-|                                  |                                   |
-|                                  | 6: 0.8585526315789473             |
-+----------------------------------+-----------------------------------+
-| OutOfBafErrorEstimate            | \                                 |
-|                                  | 0.12258064516129032               |
-+----------------------------------+-----------------------------------+
++---------------------------------+----------------------------------+
+| Training overall accuracy       | 0.996415770609319                |
++---------------------------------+----------------------------------+
+| Validation overall accuracy     | 0.8683195592286501               |
++---------------------------------+----------------------------------+
+| Validation consumer accuracy    | 0: 0                             |
+|                                 |                                  |
+|                                 | 1: 0.7993630573248408            |
+|                                 |                                  |
+|                                 | 2: 0.9935897435897436            |
+|                                 |                                  |
+|                                 | 3: 0.7927272727272727            |
+|                                 |                                  |
+|                                 | 4: 0.8282828282828283            |
+|                                 |                                  |
+|                                 | 5: 0.9265175718849841            |
+|                                 |                                  |
+|                                 | 6: 0.8585526315789473            |
++---------------------------------+----------------------------------+
+| OutOfBafErrorEstimate           | \                                |
+|                                 | 0.12258064516129032              |
++---------------------------------+----------------------------------+
 
 ```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Training examples"}
 knitr::include_graphics('figures/week6_rfpixel.png')
@@ -197,7 +197,7 @@ knitr::include_graphics('https://www.mdpi.com/remotesensing/remotesensing-03-025
 
 ```
 
-## 
+I think remote sensing produces images that sometimes cannot be used directly to reflect a phenomenon or issue as they only capture what is present on earth and the objects that are always existing for the sensors. However, I think using the images to generate indirect output and reflect to other issues is very smart, for example the land use and land cover map linking back to Pm~2.5~ is quite impressive as it shows not only the Pm~2.5~ concentration, but also how land use vary or contribute to Pm~2.5.~
 
 ## Reflection
 
