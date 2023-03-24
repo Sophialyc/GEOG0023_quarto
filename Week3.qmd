@@ -5,7 +5,9 @@ title: "Week 3"
 <div style="text-align: justify">
 
 ## Summary of Lecture 3
+
 ### Correction
+
 Raw remote sensing images are known to have notable distortions and flaws, which is mainly caused by the curved Earth, incompletely transparent atmosphere, varying solar radiation throughout the day and limitations of instruments. Therefore, most of the raw data captured by remote sensors are preprocessed to remove most of the flaws, it is called **Image Correction.**
 
 Below shows a summary of 4 different correction methods, including **Geometric correction, Atmospheric correction, Orthorectification correction** and **Radiometric correction.**
@@ -15,9 +17,11 @@ knitr::include_graphics('/Users/sophiac/Desktop/Remotely sensing/Week2_quarto/We
 ```
 
 ### Mosaicking images
+
 In some cases, some areas we want to observe or the Region of interest (ROI) cannot be completely acquired from a single image, therefore, we would use **mosaicking**, a procedure to create a new large area image from multiple overlapping images on the same areas. The typical image mosaicking procedure includes 3 steps, including 1) tonal adjustment 2) seamline detection, and 3) image blending. In R, the function of "mosaic()" does the whole process in 1 line to form a new object with a larger spatial extent. We can specify which function to use such as mean, minimum and maximum value for output.
 
 ### Corrections in Hong Kong
+
 In this practical, I have chosen 4 tiles that consist parts of Hong Kong, including 1 Landsat 8 tile and 3 Landsat 9 tiles. However, as the tiles are with 2 different coordinate reference system of EPSG:32650 for two of them and EPSG:32649 for the remaining two tiles. I have tried using different methods to reproject rasters into the same projection (EPSG: 32649), however, the resolutions for the images are different from each other with 30.03617, 30.03617 (x, y) and 30.05118, 30.05118 (x, y). Hence, with limimte time and I couldn't figure how to alter resolution to create a mosaic image with 4 raster images. I decided to only used two of tiles to create mosaic image of the Pearl River Delta whicn includes also Hong Kong. It works fine considering Hong kong is a really small area and can fit well with two of the images.
 
 ```{r, echo=FALSE,out.width="100%", out.height="20%",cache=FALSE, fig.show='hold', fig.align='center'}
@@ -32,7 +36,9 @@ knitr::include_graphics('figures/bands.png')
 ```
 
 ## Application
+
 ### Image Enhancment with the mosaicked images in Hong Kong -- NDVI
+
 Some of the basic image enhancements were done in this practical. As numerous remote sensing applications such as mapping, classification, soil moisture detection require high resolution and high quality images, therefore , the raw remote sensing images can be enhanced by improving the contrast and edge information of the input image. I have followed the steps in the practical to create the Normalised Difference Vegetation Index (NDVI) for the images around Hong Kong. It is calculated from the visible and near-infrared light reflected by vegetation where healthy and green vegetation reflects more in the NIR and absorbs in the Red wavelength. The land surfaces shown below are mostly yellowish (0.2-0.4) in colour, except where the delta lies in the middle. The colour scheme for the red circled area (Hong Kong) displayed shows gradual change from yellow to green (\>0/4). The green areas are mostly green spaces are hills in Hong Kong.
 
 ```{r echo=FALSE, out.width="100%", fig.align='center', cache=FALSE, fig.cap="the NDVI index for Pearl River Delta."}
@@ -47,6 +53,7 @@ knitr::include_graphics('figures/veg.png')
 ```
 
 ### Different Indices for image enhancement
+
 The table below shows some other different indices and corresponding equations for different features' identification, such as water, geology and landscape indices. I think this makes remote sensing a very useful tool as it helps identify different land features easily.
 
 ```{r, echo=FALSE}
@@ -59,15 +66,17 @@ tab %>% kbl() %>% kable_styling()
 ```
 
 ### Texture analysis
-The next interesting thing of this practical is the texture analysis. Image texture is generally considered as the change and repeat of image grey in space, by adding texture information to the original spectral information of the image can improve the correction and precision. Image texture is the quantification of intuitive qualities described by terms such as rough, smooth, silky, or bumpy as a function of the spatial variation in pixel intensities. I used band 4 (red) and band 5(NIR) for texture analysis illustration, **Grey Level Co-occurrence Matrices (GLCM)** is adopted to describe the basic cell of texture orrandom and spatial statistic character in local pattern. To find texture features from GLCM for texture classification, the criteria of **Homogeneity** is adopted, which measures the closeness of the distribution of elements in the GLCM to the GLCM diagonal. Some other possible criteria such as **Energy, Entropy, Contrast** etc.
-This is the result for GLCM in homogeneity in the image, it shows that most of the area is close to 1, especially for ocean, while at the peak or higher area, the image shows more with pink to orange colour. the green colour region, which is ocean in this case, are smoother while the areas with pink to orange colour, they are dispersed and disconnected, it is more rough, probably, they are with vegetation and not uniform elevation and texture. 
+
+The next interesting thing of this practical is the texture analysis. Image texture is generally considered as the change and repeat of image grey in space, by adding texture information to the original spectral information of the image can improve the correction and precision. Image texture is the quantification of intuitive qualities described by terms such as rough, smooth, silky, or bumpy as a function of the spatial variation in pixel intensities. I used band 4 (red) and band 5(NIR) for texture analysis illustration, **Grey Level Co-occurrence Matrices (GLCM)** is adopted to describe the basic cell of texture orrandom and spatial statistic character in local pattern. To find texture features from GLCM for texture classification, the criteria of **Homogeneity** is adopted, which measures the closeness of the distribution of elements in the GLCM to the GLCM diagonal. Some other possible criteria such as **Energy, Entropy, Contrast** etc. This is the result for GLCM in homogeneity in the image, it shows that most of the area is close to 1, especially for ocean, while at the peak or higher area, the image shows more with pink to orange colour. the green colour region, which is ocean in this case, are smoother while the areas with pink to orange colour, they are dispersed and disconnected, it is more rough, probably, they are with vegetation and not uniform elevation and texture.
+
 ```{r echo=FALSE, out.width="100%", cache=FALSE, fig.align='center', fig.cap="Texture "}
 knitr::include_graphics('figures/week3_texture.png')
 
 ```
 
 ### Principal Component Analysis (PCA)
-This is the result for the Principal Component Analysis in Hong Kong. PCA analysis aims to reduce dimensionality of the data, and in the figure below, it shows how the components varies and are similar to each other in PC 1 band of the image.  Also the table below displays the whole statistics of the 9 components with standard deviation, variance and cumulative proportion. The highest variance is component 1, constituting 79% meaning that the more important this component is. 
+
+This is the result for the Principal Component Analysis in Hong Kong. PCA analysis aims to reduce dimensionality of the data, and in the figure below, it shows how the components varies and are similar to each other in PC 1 band of the image. Also the table below displays the whole statistics of the 9 components with standard deviation, variance and cumulative proportion. The highest variance is component 1, constituting 79% meaning that the more important this component is.
 
 ```{r, echo=FALSE,cache=FALSE, fig.cap="PC1 of PCA analysis result"}
 knitr::include_graphics('figures/week3_pca.png')
@@ -84,12 +93,14 @@ tab %>% kbl() %>% kable_styling()
 
 ```
 
-PCA and Texture analysis are applied in various researches. The principal components (PCs) obtained by PCA are linearly independent and are sorted by variance in descending order. An iconic application of PCA is deforestation monitoring by 
+PCA and Texture analysis are applied in various researches. The principal components (PCs) obtained by PCA are linearly independent and are sorted by variance in descending order. An iconic application of PCA is deforestation monitoring by [@sule2020], PCA is applied to Sentinel 2 Multi-Spectral Instrument (MSI) imagery in examining the capability to detect deforestation through direct analysis of resulting Singular Values and Principal Component loading matrices [@sule2020]. The procedure for the deforestation analysis is using a standardised PCA through the Singular Value Decomposition (SVD) of channel standardised, then resample input imagery. Hence, cropping the sub-areas of input imagery are considered, termed local PCA. It is then applied to images separately (separate rotation) and to two-year image composites (merged rotation).
+
+The image processing and application of PCA are applied and reshaped into a 2D dimension PCA input matrix. After that, separate and merged PCA are applied to one area of no forest change and one area of forest change. The forest delimitation is clear and this helps to identify forestry in future analysis.
+
+```{r echo=FALSE,cache=FALSE, fig.cap=" The 3-dimensional image matrix is reshaped into a 2-dimensional PCA input matrix. Source:https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11528/1152806/Application-of-principal-component-analysis-to-remote-sensing-data-for/10.1117/12.2573725.full?SSO=1"}
+knitr::include_graphics('https://www.spiedigitallibrary.org/ContentImages/Proceedings/11528/1152806/FigureImages/00164_PSISDG11528_1152806_page_3_1.jpg')
+```
 
 ## Reflection
-Correction in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is 
 
-
-
-
-
+Correction in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is

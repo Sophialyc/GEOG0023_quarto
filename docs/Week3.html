@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -95,7 +114,7 @@ background-size: cover;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img" aria-label="Source Code">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -525,7 +544,18 @@ Cumulative Proportion
 <p>Summary of PCA analysis</p>
 </div>
 </div>
-<p>PCA and Texture analysis are applied in various researches. The principal components (PCs) obtained by PCA are linearly independent and are sorted by variance in descending order. An iconic application of PCA is deforestation monitoring by</p>
+<p>PCA and Texture analysis are applied in various researches. The principal components (PCs) obtained by PCA are linearly independent and are sorted by variance in descending order. An iconic application of PCA is deforestation monitoring by <span class="citation" data-cites="sule2020">(<a href="#ref-sule2020" role="doc-biblioref">Sule and Wood 2020</a>)</span>, PCA is applied to Sentinel 2 Multi-Spectral Instrument (MSI) imagery in examining the capability to detect deforestation through direct analysis of resulting Singular Values and Principal Component loading matrices <span class="citation" data-cites="sule2020">(<a href="#ref-sule2020" role="doc-biblioref">Sule and Wood 2020</a>)</span>. The procedure for the deforestation analysis is using a standardised PCA through the Singular Value Decomposition (SVD) of channel standardised, then resample input imagery. Hence, cropping the sub-areas of input imagery are considered, termed local PCA. It is then applied to images separately (separate rotation) and to two-year image composites (merged rotation).</p>
+<p>The image processing and application of PCA are applied and reshaped into a 2D dimension PCA input matrix. After that, separate and merged PCA are applied to one area of no forest change and one area of forest change. The forest delimitation is clear and this helps to identify forestry in future analysis.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.spiedigitallibrary.org/ContentImages/Proceedings/11528/1152806/FigureImages/00164_PSISDG11528_1152806_page_3_1.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The 3-dimensional image matrix is reshaped into a 2-dimensional PCA input matrix. Source:https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11528/1152806/Application-of-principal-component-analysis-to-remote-sensing-data-for/10.1117/12.2573725.full?SSO=1</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="reflection" class="level2" data-number="3.3">
@@ -533,6 +563,11 @@ Cumulative Proportion
 <p>Correction in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-sule2020" class="csl-entry" role="doc-biblioentry">
+Sule, Suki Dauda, and Aidan Wood. 2020. <span>“Remote Sensing for Agriculture, Ecosystems, and Hydrology XXII.”</span> In, 11528:17–29. SPIE. <a href="https://doi.org/10.1117/12.2573725">https://doi.org/10.1117/12.2573725</a>.
+</div>
+</div>
 </section>
 
 </div></main> <!-- /main -->
