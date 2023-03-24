@@ -205,11 +205,6 @@ background-size: cover;
   <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -223,7 +218,8 @@ background-size: cover;
   <ul class="collapse">
   <li><a href="#pixel-based-classification" id="toc-pixel-based-classification" class="nav-link" data-scroll-target="#pixel-based-classification"><span class="toc-section-number">7.1.1</span>  <strong>Pixel-based Classification</strong></a></li>
   <li><a href="#object-based-image-analysis-obia" id="toc-object-based-image-analysis-obia" class="nav-link" data-scroll-target="#object-based-image-analysis-obia"><span class="toc-section-number">7.1.2</span>  <strong>Object Based Image Analysis (OBIA)</strong></a></li>
-  <li><a href="#sub-pixel-analysis" id="toc-sub-pixel-analysis" class="nav-link" data-scroll-target="#sub-pixel-analysis"><span class="toc-section-number">7.1.3</span>  Sub Pixel Analysis</a></li>
+  <li><a href="#sub-pixel-analysis" id="toc-sub-pixel-analysis" class="nav-link" data-scroll-target="#sub-pixel-analysis"><span class="toc-section-number">7.1.3</span>  Sub-Pixel Analysis</a></li>
+  <li><a href="#gee-practice-with-shiga" id="toc-gee-practice-with-shiga" class="nav-link" data-scroll-target="#gee-practice-with-shiga"><span class="toc-section-number">7.1.4</span>  GEE practice with Shiga</a></li>
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">7.2</span>  Application</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">7.3</span>  Reflection</a></li>
@@ -337,7 +333,7 @@ background-size: cover;
 </div>
 </section>
 <section id="sub-pixel-analysis" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.3</span> Sub Pixel Analysis</h3>
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.3</span> Sub-Pixel Analysis</h3>
 <p>Sub pixel classification (SPC) extracts meaningful information on land-cover classes from the mixed pixels. The figure below shows what a mixed pixel looks like. The proportion and abundance of each classes in the mixed pixel can be accounted for. In general, a few endmembers that are specturally pure are generated will work out fractions per pixel and establish a spectral library.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -355,10 +351,9 @@ p_i\lambda=\sum_{k=1}^{n} (p_{ki\lambda} * f_ki) + ei_\lambda
 \]</span></p>
 <p>By the end, there will be the percentage/fraction of components for each pixels, for example, fraction of vegetation, soil, urban areas.</p>
 </section>
-</section>
-<section id="application" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="application"><span class="header-section-number">7.2</span> Application</h2>
-<p>To actually understand how classification works, in this week’s practical, I have chosen Shiga, a prefecture of Japan that is located in the Kansai Region of Honshu.</p>
+<section id="gee-practice-with-shiga" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="gee-practice-with-shiga"><span class="header-section-number">7.1.4</span> GEE practice with Shiga</h3>
+<p>To actually understand how classification works, in this week’s practical, I have chosen Shiga, a prefecture of Japan that is located in the Kansai Region of Honshu. I have used Landsat data and vector data of area boundary. As the location has a very big lake, I thought it would show clear result for at least water and land, therefore I chose this as my area of study.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -369,15 +364,130 @@ p_i\lambda=\sum_{k=1}^{n} (p_{ki\lambda} * f_ki) + ei_\lambda
 </div>
 </div>
 </div>
-<p>: A narrative /discussion on how the data / concepts / methods (or related concepts) have been applied in literature / policy or other studies. It is vital to do some reading and reference it each week. Here you must comment on the approaches in literature.</p>
+<section id="sup-pixel-analysis-in-shiga" class="level4" data-number="7.1.4.1">
+<h4 data-number="7.1.4.1" class="anchored" data-anchor-id="sup-pixel-analysis-in-shiga"><span class="header-section-number">7.1.4.1</span> Sup-pixel analysis in Shiga</h4>
+<p>To perform sub-pixel analysis, I have defined variables as endmembers, then using <code>unmix()</code> function in GEE to add up the data and generate image. Similar to previous practicals, I have to filter the data with lower cloud coverage and within a time frame. But for the limited data available in the area, I adjusted the date from 2019-01-01 to 2023-3-10. After masking the cloud cover, the image is clipped to the boundary.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week7_tci.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Shiga</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Instead of inserting the coordinate values for the endmembers, I used the geometry function to generate a list of values for each category and extract the mean. As I have 6 categories, I did not want to redo everything manually, therefore I followed the practical to make the process of extracting mean value to a function and applied to the other landcover data. Finally, using <code>unmix()</code> on the processed data to create a map. However, as the map shown is unconstrained, the don’t sum up to 1, hence another function of <code>ee.Image.unmix()</code> is used to compute the pseudo-inverse and multiplying through each pixel, then the image will return with positive values.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week7_unmix.gif" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Sub-pixel and fixing th unconstrained problem</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The main concern with the result above is the generation of error matric, hence there will be the part of hardening the sub-pixel image and classify each pixel that has the largest proportion of land cover. A chunk of code that manually assign value to each category of data with a threshold is done, for example, pixels that are greater than 0.5 will be assigned as 1 and if it is 0.5or below, it will be assigned as 0. After all the computation to reclassify each class, the different class of data needs to be added together. And the result is:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week7_reclassified.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Reclassified sub-pixel result</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Just from the figure above, I can’t interpret or explain if the analysis is accurate or not, I am not sure ifin GEE, there are some functions to view or reveal the statistics of the analysis. But I think for now I can’t think of a way to interpret the results, such as explaining the accuracy, error etc.</p>
+</section>
+<section id="object-based-image-analysis-obia-1" class="level4" data-number="7.1.4.2">
+<h4 data-number="7.1.4.2" class="anchored" data-anchor-id="object-based-image-analysis-obia-1"><span class="header-section-number">7.1.4.2</span> Object based image analysis (OBIA)</h4>
+<p>From the previous summary about OBIA, it involves pixels first being grouped into objects based on either spectral similarity. In other words, pixels are grouped together based on some set of rules. To achieve that in the practical, the Image gradient is created from a function of <code>.gradient()</code> to change the intensity and colour in the image. Then, to make it useful for further steps of the analysis, the image gradient has to change to spectral gradient such that it is valuable to the analysis. It is done by <code>.spectralGradient().</code></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week7_spectralgradient.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Spectral Gradient in Shiga</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Then, the next obstacle to carry out OBIA is that the pixels are too small and fragmented, there is a need to reduce pixels to fewer objects, hence the k-means clustering is used to reduce pixels.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week7_kmeans_seed.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">kmeans clustering</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Another option to reduce pixels and create super pixel is the Simple non-iterative clustering (SNIC) by making a <strong>seed grid</strong> that specifies the spacing in pixels and set a square or a hex grid.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week7_seed.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Reclassified sub-pixel result</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>After that, the clusters will allow some useful information to be extracted, such as NDVI…</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week7_NDVI.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Reclassified sub-pixel result</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>However, when I try to apply classification to the data, it did not work due to a layer that I could not get rid of, it said”(7 bands for 1685346 pixels = 90.0 MiB &gt; 80.0 MiB). If this is a reduction, try specifying a larger ‘tileScale’ parameter.”I have tried to make some of the maps as a note with “//” to make my code less heavy, but it didn’t work. I have also tried to set higher tileScale, it also does not work. I tried to find solutions online but the answers on stack overflow don’t seem to match my problem. Perhaps the region that I use is still too big, hence the computing is overloaded. It’s a shame that I could not report results here, but at the same time I would love to find a solution to resolve this problem someday.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/WEEK7_ERROR.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Layer Error for classification output</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="application" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="application"><span class="header-section-number">7.2</span> Application</h2>
+<p>The methods mentioned in this lecture are quite advanced and pertinent to reality such as OBIA considers objects instead of pixels. I find this interesting at first because OBIA images look like pixelate images. But after learning about the principle of OBIA, I think it is an effective tool for detecting challenging objects such as animals that can move. In a study by <span class="citation" data-cites="chabot2018">Chabot, Dillon, and Francis (<a href="#ref-chabot2018" role="doc-biblioref">2018</a>)</span>, the study aims to detect and count birds in large volumes of aerial imagery using OBIA software. their approach was to select training inmages and manually identify birds first, then establishing image segmentation parameters, including features boundaries, segmentation. They transform the input image into contrast gradient map, where higher values are assigned to pixels along the boundaries of spectrally contrasting features such as Snow geese against a darker ground. After the pre-processing, they compile attribute data of segmented bird objects and set up bird object classification rule sets</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.ace-eco.org/vol13/iss1/art15/figure9.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">automated object-based analysis of large volumes of aerial imagery to detect Lesser Snow Geese. Source: https://www.ace-eco.org/vol13/iss1/art15/#Compiling</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I think this study design is very comprehensive and almost flawless as it accounts for most of the potential errors and how to mitigate them. Also, the description and selection of the raw image used is well accounted for. The steps to set up parameters for bird identification and procedure for OBIA are very detailed. I think the project is very interesting because birds are moving objects that are constantly moving. Hence, I wonder if there will be overlapped count for the same bird because it is not possible to identify each individual birds in a remotely sensed image.</p>
 </section>
 <section id="reflection" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
+<p>In this week, I have learnt quite in-depth about image classification in remote sensing. I think different analysis has its own advantage, for example, the sub-pixel analysis takes into account the possibility of a pixel to belong to different classes in an image segmentation context.The mixed pixels makes image classification very precise and high resolution. this has enhanced the quality of output in remote sensing and also helps to broaden the capability of remote sensing in research that require higher resolution images, such as animal studies, deep learning etc.</p>
+<p>Also with the GEE, I think the OBIA is quite easy to compute as it is only a few lines of codes from reducing pixels through kmeans or create hex or square grids to running a cluster function. In the future, I think I would need more experience with running machine learning model in GEE because the training and testing data split is still complicated for me. Thus, the classification part has been quite confusing to me on how it is actually executed.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-bekan2022" class="csl-entry" role="doc-biblioentry">
 BEKAN. 2022. <span>“The Pros and Cons Supervised and Unsupervised Image Classification.”</span> <a href="https://beekangsi.com/the-pros-and-cons-supervised-and-unsupervised-image-classification/">https://beekangsi.com/the-pros-and-cons-supervised-and-unsupervised-image-classification/</a>.
+</div>
+<div id="ref-chabot2018" class="csl-entry" role="doc-biblioentry">
+Chabot, Dominique, Christopher Dillon, and Charles Francis. 2018. <span>“An Approach for Using Off-the-Shelf Object-Based Image Analysis Software to Detect and Count Birds in Large Volumes of Aerial Imagery.”</span> <em>Avian Conservation and Ecology</em> 13 (1). <a href="https://doi.org/10.5751/ACE-01205-130115">https://doi.org/10.5751/ACE-01205-130115</a>.
 </div>
 <div id="ref-dou2020" class="csl-entry" role="doc-biblioentry">
 Dou, Peng, and Chao Zeng. 2020. <span>“Hyperspectral Image Classification Using Feature Relations Map Learning.”</span> <em>Remote Sensing</em> 12 (18): 2956. <a href="https://doi.org/10.3390/rs12182956">https://doi.org/10.3390/rs12182956</a>.

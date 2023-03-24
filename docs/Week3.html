@@ -95,7 +95,7 @@ background-size: cover;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img" aria-label="Source Code">
+    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -188,11 +188,6 @@ background-size: cover;
   <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -213,6 +208,7 @@ background-size: cover;
   <li><a href="#image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi" id="toc-image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi" class="nav-link" data-scroll-target="#image-enhancment-with-the-mosaicked-images-in-hong-kong-ndvi"><span class="toc-section-number">3.2.1</span>  Image Enhancment with the mosaicked images in Hong Kong – NDVI</a></li>
   <li><a href="#different-indices-for-image-enhancement" id="toc-different-indices-for-image-enhancement" class="nav-link" data-scroll-target="#different-indices-for-image-enhancement"><span class="toc-section-number">3.2.2</span>  Different Indices for image enhancement</a></li>
   <li><a href="#texture-analysis" id="toc-texture-analysis" class="nav-link" data-scroll-target="#texture-analysis"><span class="toc-section-number">3.2.3</span>  Texture analysis</a></li>
+  <li><a href="#principal-component-analysis-pca" id="toc-principal-component-analysis-pca" class="nav-link" data-scroll-target="#principal-component-analysis-pca"><span class="toc-section-number">3.2.4</span>  Principal Component Analysis (PCA)</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
   </ul>
@@ -364,7 +360,7 @@ background-size: cover;
 </section>
 <section id="texture-analysis" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="texture-analysis"><span class="header-section-number">3.2.3</span> Texture analysis</h3>
-<p>The next interesting thing of this practical is the texture analysis. Image texture is generally considered as the change and repeat of image grey in space, by adding texture information to the original spectral information of the image can improve the correction and precision. Image texture is the quantification of intuitive qualities described by terms such as rough, smooth, silky, or bumpy as a function of the spatial variation in pixel intensities. I used band 4 (red) and band 5(NIR) for texture analysis illustration, <strong>Grey Level Co-occurrence Matrices (GLCM)</strong> is adopted to describe the basic cell of texture orrandom and spatial statistic character in local pattern. To find texture features from GLCM for texture classification, the criteria of <strong>Homogeneity</strong> is adopted, which measures the closeness of the distribution of elements in the GLCM to the GLCM diagonal. Some other possible criteria such as <strong>Energy, Entropy, Contrast</strong> etc.</p>
+<p>The next interesting thing of this practical is the texture analysis. Image texture is generally considered as the change and repeat of image grey in space, by adding texture information to the original spectral information of the image can improve the correction and precision. Image texture is the quantification of intuitive qualities described by terms such as rough, smooth, silky, or bumpy as a function of the spatial variation in pixel intensities. I used band 4 (red) and band 5(NIR) for texture analysis illustration, <strong>Grey Level Co-occurrence Matrices (GLCM)</strong> is adopted to describe the basic cell of texture orrandom and spatial statistic character in local pattern. To find texture features from GLCM for texture classification, the criteria of <strong>Homogeneity</strong> is adopted, which measures the closeness of the distribution of elements in the GLCM to the GLCM diagonal. Some other possible criteria such as <strong>Energy, Entropy, Contrast</strong> etc. This is the result for GLCM in homogeneity in the image, it shows that most of the area is close to 1, especially for ocean, while at the peak or higher area, the image shows more with pink to orange colour. the green colour region, which is ocean in this case, are smoother while the areas with pink to orange colour, they are dispersed and disconnected, it is more rough, probably, they are with vegetation and not uniform elevation and texture.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -376,69 +372,165 @@ background-size: cover;
 </div>
 </div>
 </section>
-</section>
-<section id="reflection" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
+<section id="principal-component-analysis-pca" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="principal-component-analysis-pca"><span class="header-section-number">3.2.4</span> Principal Component Analysis (PCA)</h3>
+<p>This is the result for the Principal Component Analysis in Hong Kong. PCA analysis aims to reduce dimensionality of the data, and in the figure below, it shows how the components varies and are similar to each other in PC 1 band of the image. Also the table below displays the whole statistics of the 9 components with standard deviation, variance and cumulative proportion. The highest variance is component 1, constituting 79% meaning that the more important this component is.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/week3_pca.png" class="img-fluid figure-img" width="1440"></p>
+<p></p><figcaption class="figure-caption">PC1 of PCA analysis result</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:right;"> Component 1 </th>
-   <th style="text-align:right;"> Component 2 </th>
-   <th style="text-align:right;"> Component 3 </th>
-   <th style="text-align:right;"> Component 4 </th>
-   <th style="text-align:right;"> Component 5 </th>
-   <th style="text-align:right;"> Component 6 </th>
-   <th style="text-align:right;"> Component 7 </th>
-   <th style="text-align:right;"> Component 8 </th>
-   <th style="text-align:right;"> Component 9 </th>
-  </tr>
- </thead>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Component 1
+</th>
+<th style="text-align:right;">
+Component 2
+</th>
+<th style="text-align:right;">
+Component 3
+</th>
+<th style="text-align:right;">
+Component 4
+</th>
+<th style="text-align:right;">
+Component 5
+</th>
+<th style="text-align:right;">
+Component 6
+</th>
+<th style="text-align:right;">
+Component 7
+</th>
+<th style="text-align:right;">
+Component 8
+</th>
+<th style="text-align:right;">
+Component 9
+</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> Standard deviation </td>
-   <td style="text-align:right;"> 2.6720079 </td>
-   <td style="text-align:right;"> 0.8317190 </td>
-   <td style="text-align:right;"> 0.7078958 </td>
-   <td style="text-align:right;"> 0.5985590 </td>
-   <td style="text-align:right;"> 0.4424598 </td>
-   <td style="text-align:right;"> 0.2908058 </td>
-   <td style="text-align:right;"> 0.1294195 </td>
-   <td style="text-align:right;"> 0.1008848 </td>
-   <td style="text-align:right;"> 0.0442961 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Proportion of Variance </td>
-   <td style="text-align:right;"> 0.7932918 </td>
-   <td style="text-align:right;"> 0.0768618 </td>
-   <td style="text-align:right;"> 0.0556796 </td>
-   <td style="text-align:right;"> 0.0398081 </td>
-   <td style="text-align:right;"> 0.0217523 </td>
-   <td style="text-align:right;"> 0.0093964 </td>
-   <td style="text-align:right;"> 0.0018610 </td>
-   <td style="text-align:right;"> 0.0011309 </td>
-   <td style="text-align:right;"> 0.0002180 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Cumulative Proportion </td>
-   <td style="text-align:right;"> 0.7932918 </td>
-   <td style="text-align:right;"> 0.8701536 </td>
-   <td style="text-align:right;"> 0.9258332 </td>
-   <td style="text-align:right;"> 0.9656413 </td>
-   <td style="text-align:right;"> 0.9873936 </td>
-   <td style="text-align:right;"> 0.9967901 </td>
-   <td style="text-align:right;"> 0.9986511 </td>
-   <td style="text-align:right;"> 0.9997820 </td>
-   <td style="text-align:right;"> 1.0000000 </td>
-  </tr>
+<tr>
+<td style="text-align:left;">
+Standard deviation
+</td>
+<td style="text-align:right;">
+2.6720079
+</td>
+<td style="text-align:right;">
+0.8317190
+</td>
+<td style="text-align:right;">
+0.7078958
+</td>
+<td style="text-align:right;">
+0.5985590
+</td>
+<td style="text-align:right;">
+0.4424598
+</td>
+<td style="text-align:right;">
+0.2908058
+</td>
+<td style="text-align:right;">
+0.1294195
+</td>
+<td style="text-align:right;">
+0.1008848
+</td>
+<td style="text-align:right;">
+0.0442961
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Proportion of Variance
+</td>
+<td style="text-align:right;">
+0.7932918
+</td>
+<td style="text-align:right;">
+0.0768618
+</td>
+<td style="text-align:right;">
+0.0556796
+</td>
+<td style="text-align:right;">
+0.0398081
+</td>
+<td style="text-align:right;">
+0.0217523
+</td>
+<td style="text-align:right;">
+0.0093964
+</td>
+<td style="text-align:right;">
+0.0018610
+</td>
+<td style="text-align:right;">
+0.0011309
+</td>
+<td style="text-align:right;">
+0.0002180
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cumulative Proportion
+</td>
+<td style="text-align:right;">
+0.7932918
+</td>
+<td style="text-align:right;">
+0.8701536
+</td>
+<td style="text-align:right;">
+0.9258332
+</td>
+<td style="text-align:right;">
+0.9656413
+</td>
+<td style="text-align:right;">
+0.9873936
+</td>
+<td style="text-align:right;">
+0.9967901
+</td>
+<td style="text-align:right;">
+0.9986511
+</td>
+<td style="text-align:right;">
+0.9997820
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+</tr>
 </tbody>
-</table>
 
+</table>
+<p>Summary of PCA analysis</p>
 </div>
 </div>
+<p>PCA and Texture analysis are applied in various researches. The principal components (PCs) obtained by PCA are linearly independent and are sorted by variance in descending order. An iconic application of PCA is deforestation monitoring by</p>
+</section>
+</section>
+<section id="reflection" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
+<p>Correction in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is</p>
 
 
 </section>

@@ -111,7 +111,7 @@ background-size: cover;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img" aria-label="Source Code">
+    <a class="nav-link" href="https://github.com/Sophialyc/GEOG0023_quarto.git"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -204,11 +204,6 @@ background-size: cover;
   <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -287,7 +282,7 @@ background-size: cover;
 </div>
 </div>
 <p>In this image, urban features tend to appear in white and grey, while water is dark blue and vegetation is green. This image is very similar to the TCI provided in the data downloaded</p>
-<p>As vegetation strongly reflects near-infrared radiation and absorbs red light, rather than generating aa vegetation index ((B8-B4)/(B8+B4)), a scatter plot of B8 against B4 can also reflect vegetation of the image. From the figure below, the “Tasseled Cap” shape is created. It reveals that vegetation does not contribute big proportion in the image as the zone of low red and high near infrared values are narrow. Instead, many values concentrate at the low red and low infrared regions, showing that water is present and has higher ratio in the image. Referring back to the image, it is true that the image contains both land and sea. In addition, the values of higher red band values indicate that vegetation decreases as their presence can absorb red bands. Large part of the image that are not ocean is developed and built area.</p>
+<p>As vegetation strongly reflects near-infrared radiation and absorbs red light, rather than generating a vegetation index ((B8-B4)/(B8+B4)), a scatter plot of B8 against B4 can also reflect vegetation of the image. From the figure below, the “Tasseled Cap” shape is created. It reveals that vegetation does not contribute big proportion in the image as the zone of low red and high near infrared values are narrow. Instead, many values concentrate at the low red and low infrared regions, showing that water is present and has higher ratio in the image. Referring back to the image, it is true that the image contains both land and sea. In addition, the values of higher red band values indicate that vegetation decreases as their presence can absorb red bands. Large part of the image that are not ocean is developed and built area.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -297,6 +292,8 @@ background-size: cover;
 </div>
 </div>
 </div>
+<p>Other than sentinel products, vegetation indices (VIs) can be optained through different airbourne and satellite platforms with recent advances using Unmanned Aerial Vehicles(UAV). According to <span class="citation" data-cites="xue2017">(<a href="#ref-xue2017" role="doc-biblioref">Xue and Su 2017</a>)</span>, there are different VIs that have been widely generated in RS applications, yet, due to complexity of different life spectra combinations, instrumentations, there is no unified mathematical expressions to define VIs. <span class="citation" data-cites="xue2017">Xue and Su (<a href="#ref-xue2017" role="doc-biblioref">2017</a>)</span> mentioned that the main applications for RS of vegetation are based on the ultraviolet light region (10- 380nm), visible spectra(450-495nm), green(496-570nm), red (620-750nm) wavelength regions, and near and mid infrared ban(850-1700nm). However, for different conditions of vegetations, the observations vary, such as dry plants will have larger range in the emissivity rate, going from 0.88 to 0.94 ; fully grown green plants without any biotic/abiotic stress will be smaller range in emissivity rate, ranging from 0.96-0.99.</p>
+<p>The generation of VIs are applied to different purposes, such as one of the most commonly used Indices is the Normalise Difference Vegetation Index (NDVI) to characterize canopy growth and compared with Leaf Area Index (LAI). For interpreting the vegetation information, It is common to include validation process through direct or indirect correlations between VIs obtained and the vegetation characteristics of interest measured in situ, such as vegetation cover, LAI, biomass, growth, and vigor assessment. I believe the generation of VIs is a more advanced level than generating the scatter plot to compare B8 against B4 that reflects vegetation , and it should be covered in future weeks. However, at this point, I think the scatter plot is visually more comprehendible for me to understand and interpret about vegetation.</p>
 </section>
 <section id="reflection" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>
@@ -309,6 +306,9 @@ Aplin, Paul. 2004. <span>“Remote Sensing: Land Cover.”</span> <em>Progress i
 </div>
 <div id="ref-tempfli2009" class="csl-entry" role="doc-biblioentry">
 Tempfli, Klaus, G. C. Huurneman, Wim Bakker, L. L. F. Janssen, W. F. Feringa, Ambro Gieske, K. A. Grabmaier, et al. 2009. <span>“Principles of Remote Sensing : An Introductory Textbook.”</span> In, 56–85.
+</div>
+<div id="ref-xue2017" class="csl-entry" role="doc-biblioentry">
+Xue, Jinru, and Baofeng Su. 2017. <span>“Significant Remote Sensing Vegetation Indices: A Review of Developments and Applications.”</span> <em>Journal of Sensors</em> 2017 (May): e1353691. <a href="https://doi.org/10.1155/2017/1353691">https://doi.org/10.1155/2017/1353691</a>.
 </div>
 </div>
 </section>
