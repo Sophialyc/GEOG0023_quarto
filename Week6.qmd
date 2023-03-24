@@ -98,6 +98,11 @@ It is a tree-based supervised learning algorithms by combining hundreds decision
 
 ## Application
 
-In this practical, I chose Antwerpen to try and apply with the aforementioned classifications and machine learning in GEE. Instead of uploading the shapefile, the GAUL global admin layers and level 2 in GEE's catalog was used. Antwerpen is filtered out. Using Sentinel 2 MSI level 2A , I filtered the entire collection based on a low cloud coverage percentage of 5% per tile within the time period of 2022-01-01 to 2022-10-31. Below shows the gif the clipped image of ANtwerpen by increasing the cloud coverage, but using the masking function to mask the cloud pixels.
+In this practical, I chose Antwerpen to try and apply with the aforementioned classifications and machine learning in GEE. Instead of uploading the shapefile, the GAUL global admin layers and level 2 in GEE's catalog was used. Antwerpen is filtered out. Using Sentinel 2 MSI level 2A , I filtered the entire collection based on a low cloud coverage percentage of 5% per tile within the time period of 2022-01-01 to 2022-10-31. Below shows the gif the satellite image of Antwerpen by increasing the cloud coverage, but using the masking function to mask the cloud pixels. The cloud cover has ssignificantly reduced with the mask in my case.
+
+```{r echo=FALSE, cache=FALSE, out.width="100%", fig.align='center', fig.cap="Cloud cover mask in Antwerpen"}
+knitr::include_graphics('figures/week6_rgb.gif')
+
+```
 
 ## Reflection
