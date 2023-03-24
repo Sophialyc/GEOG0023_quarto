@@ -84,7 +84,7 @@ tab %>% kbl() %>% kable_styling()
 
 ```
 
-PCA and Texture analysis are applied
+PCA and Texture analysis are applied in various research
 
 ## Reflection
 Correction in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is 
