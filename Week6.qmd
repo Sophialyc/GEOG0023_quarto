@@ -8,7 +8,7 @@ title: "Week 6"
 
 This is the second lecture that covers Google Earth Engine (GEE), and it is more focused on image classification. Before going deep into what image classification refers to in technical terms, this lecture focused on how classified images are used in different contexts to solve various problems, also introducing machine learning in remote sensing. To briefly understand the term image classification, it refers to the process of identifying and categorising images according to their appearances or pixels, it is an imperative process before actually analyzing them in research or studies because the classified images provides concrete information of the classes captured in an image.
 
-### Utilising classified image in different scenarios
+### Utilising classified image
 
 #### Urban Expansion
 
