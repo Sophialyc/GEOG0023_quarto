@@ -67,9 +67,9 @@ knitr::include_graphics('figures/week3_texture.png')
 ```
 
 ### Principal Component Analysis (PCA)
-This is the result for the Principal Component Analysis in Hong Kong
+This is the result for the Principal Component Analysis in Hong Kong. PCA analysis aims to reduce dimensionality of the data, and in the figure below, it shows how the components varies and are similar to each other in PC 1 band of the image.  Also the table below displays the whole statistics of the 9 components with standard deviation, variance and cumulative proportion. The highest variance is component 1, constituting 79% meaning that the more important this component is. 
 
-```{r, echo=FALSE,cache=FALSE, fig.cap="PCA result"}
+```{r, echo=FALSE,cache=FALSE, fig.cap="PC1 of PCA analysis result"}
 knitr::include_graphics('figures/week3_pca.png')
 
 ```
@@ -84,6 +84,7 @@ tab %>% kbl() %>% kable_styling()
 
 ```
 
+PCA and Texture analysis are applied
 
 ## Reflection
 Correction in satellite images are very important, because there are actually many error source, such as geometric, radiometric, atmospheric errors that cannot be avoided. For example, a satellite that travels in an orbit with an angle of 30 degree will always take image in that angle, hence, creating a skewed image that requires correction before using it for analysis or research purpose. I also think that texture analysis is 
